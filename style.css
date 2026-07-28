@@ -1,0 +1,59 @@
+/* ===========================
+   VANDANA'S VILLA
+   PREMIUM LUXURY CSS
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0d0d0d;
+    color:#fff;
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#c9a227;
+    border-radius:20px;
+}
+
+/* Links */
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+/* Images */
+
+img{
+    width:100%;
+    display:block;
+}
+
+/* Container */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
