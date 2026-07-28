@@ -717,3 +717,70 @@ transform:translateY(-6px);
 .navbar ul li a.active{
     color:#c9a227;
 }
+/* ===========================
+FLOATING WHATSAPP
+=========================== */
+
+.whatsapp{
+
+position:fixed;
+
+bottom:95px;
+
+right:25px;
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+background:#25D366;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:34px;
+
+color:white;
+
+z-index:999;
+
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+animation:whatsapp 2s infinite;
+
+}
+
+@keyframes whatsapp{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.12);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+.whatsapp:hover{
+
+animation:none;
+
+transform:scale(1.1);
+
+}
