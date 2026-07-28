@@ -527,3 +527,188 @@ footer h2{
     background:#c9a227;
     color:#111;
 }
+/* ===========================
+SECTION TITLE ANIMATION
+=========================== */
+
+section h2{
+    position:relative;
+    display:inline-block;
+    padding-bottom:15px;
+}
+
+section h2::after{
+    content:'';
+    position:absolute;
+    width:70px;
+    height:4px;
+    background:#c9a227;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:0;
+    border-radius:50px;
+}
+
+/* ===========================
+HOVER EFFECT
+=========================== */
+
+.card,
+.features div,
+.gallery-grid img,
+.book-btn,
+.btn1,
+.btn2{
+    transition:.4s ease;
+}
+
+.card:hover,
+.features div:hover{
+    transform:translateY(-12px);
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+}
+
+/* ===========================
+SECTIONS
+=========================== */
+
+section{
+    scroll-margin-top:100px;
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.about{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.navbar{
+padding:0 20px;
+}
+
+.navbar ul{
+display:none;
+}
+
+.book-btn{
+display:none;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+padding:0 20px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero h2{
+font-size:24px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.btn1,
+.btn2{
+width:220px;
+text-align:center;
+}
+
+.about,
+.villa,
+.gallery,
+.contact{
+padding:80px 20px;
+}
+
+.features{
+grid-template-columns:1fr;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.contact input,
+.contact textarea{
+font-size:16px;
+}
+
+}
+
+/* ===========================
+BACK TO TOP
+=========================== */
+
+#topBtn{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:55px;
+
+height:55px;
+
+background:#c9a227;
+
+color:#111;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+font-size:22px;
+
+cursor:pointer;
+
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+z-index:999;
+
+transition:.4s;
+
+}
+
+#topBtn:hover{
+
+transform:translateY(-6px);
+
+}
