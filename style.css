@@ -712,3 +712,8 @@ transition:.4s;
 transform:translateY(-6px);
 
 }
+/* Active Menu */
+
+.navbar ul li a.active{
+    color:#c9a227;
+}
