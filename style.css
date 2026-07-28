@@ -317,3 +317,213 @@ background:white;
 color:#111;
 
 }
+/* ===========================
+ABOUT SECTION
+=========================== */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+    padding:120px 8%;
+    background:#111;
+}
+
+.about-image img{
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.about-text h2{
+    font-size:42px;
+    margin-bottom:20px;
+    color:#c9a227;
+}
+
+.about-text p{
+    color:#ccc;
+    margin-bottom:35px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.features div{
+    background:#181818;
+    padding:20px;
+    border-radius:15px;
+    transition:.4s;
+    text-align:center;
+}
+
+.features div:hover{
+    transform:translateY(-8px);
+    background:#222;
+}
+
+.features i{
+    color:#c9a227;
+    font-size:28px;
+    margin-bottom:10px;
+}
+/* ===========================
+VILLA HIGHLIGHTS
+=========================== */
+
+.villa{
+    padding:120px 8%;
+    background:#0d0d0d;
+    text-align:center;
+}
+
+.villa h2{
+    font-size:42px;
+    margin-bottom:60px;
+    color:#c9a227;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#181818;
+    padding:50px 30px;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(201,162,39,.25);
+}
+
+.card i{
+    font-size:45px;
+    color:#c9a227;
+    margin-bottom:20px;
+}
+
+.card h3{
+    font-size:24px;
+}
+/* ===========================
+GALLERY
+=========================== */
+
+.gallery{
+    padding:120px 8%;
+    background:#111;
+    text-align:center;
+}
+
+.gallery h2{
+    color:#c9a227;
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery-grid img{
+    height:300px;
+    object-fit:cover;
+    border-radius:18px;
+    transition:.5s;
+    cursor:pointer;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+}
+/* ===========================
+CONTACT
+=========================== */
+
+.contact{
+    padding:120px 8%;
+    text-align:center;
+    background:#0d0d0d;
+}
+
+.contact h2{
+    font-size:42px;
+    margin-bottom:40px;
+    color:#c9a227;
+}
+
+.contact form{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:18px;
+    margin-bottom:20px;
+    background:#181818;
+    border:none;
+    border-radius:12px;
+    color:white;
+}
+
+.contact textarea{
+    height:180px;
+    resize:none;
+}
+
+.contact button{
+    padding:18px 45px;
+    background:#c9a227;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:600;
+}
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+    padding:50px 20px;
+    background:#080808;
+    text-align:center;
+}
+
+footer h2{
+    color:#c9a227;
+    margin-bottom:15px;
+}
+
+.social{
+    margin:30px 0;
+}
+
+.social a{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#181818;
+    margin:0 8px;
+    transition:.4s;
+}
+
+.social a:hover{
+    background:#c9a227;
+    color:#111;
+}
