@@ -935,3 +935,31 @@ WHY CHOOSE US
 .choose-card p{
     color:#ccc;
 }
+/* ===========================
+STATS
+=========================== */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:100px 8%;
+    background:#0d0d0d;
+}
+
+.stat-box{
+    text-align:center;
+    padding:40px;
+    background:#181818;
+    border-radius:18px;
+}
+
+.stat-box h2{
+    color:#c9a227;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.stat-box p{
+    color:#ccc;
+}
