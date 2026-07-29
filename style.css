@@ -834,3 +834,50 @@ transform:rotate(360deg);
 }
 
 }
+/* ===========================
+LIGHTBOX
+=========================== */
+
+.lightbox{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.9);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+}
+
+.lightbox img{
+
+max-width:90%;
+
+max-height:85%;
+
+border-radius:15px;
+
+}
+
+.close-lightbox{
+
+position:absolute;
+
+top:30px;
+
+right:40px;
+
+font-size:45px;
+
+cursor:pointer;
+
+color:white;
+
+}
