@@ -963,3 +963,70 @@ STATS
 .stat-box p{
     color:#ccc;
 }
+/* ===========================
+LOCATION
+=========================== */
+
+.location{
+
+padding:120px 8%;
+
+background:#111;
+
+}
+
+.location-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+margin-top:60px;
+
+}
+
+.location-card{
+
+background:#181818;
+
+padding:40px;
+
+border-radius:20px;
+
+text-align:center;
+
+transition:.4s;
+
+}
+
+.location-card:hover{
+
+transform:translateY(-10px);
+
+border:1px solid #c9a227;
+
+}
+
+.location-card i{
+
+font-size:45px;
+
+color:#c9a227;
+
+margin-bottom:20px;
+
+}
+
+.location-card h3{
+
+margin-bottom:15px;
+
+}
+
+.location-card p{
+
+color:#ccc;
+
+}
