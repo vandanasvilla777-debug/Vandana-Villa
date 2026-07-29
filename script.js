@@ -121,3 +121,46 @@ document.getElementById("loader")
 },1200);
 
 });
+// ===========================
+// GALLERY LIGHTBOX
+// ===========================
+
+const galleryImages =
+document.querySelectorAll(".gallery img");
+
+const lightbox =
+document.querySelector(".lightbox");
+
+const lightboxImg =
+document.getElementById("lightbox-img");
+
+const closeBtn =
+document.querySelector(".close-lightbox");
+
+galleryImages.forEach(img=>{
+
+img.onclick=()=>{
+
+lightbox.style.display="flex";
+
+lightboxImg.src=img.src;
+
+}
+
+});
+
+closeBtn.onclick=()=>{
+
+lightbox.style.display="none";
+
+}
+
+lightbox.onclick=(e)=>{
+
+if(e.target===lightbox){
+
+lightbox.style.display="none";
+
+}
+
+}
