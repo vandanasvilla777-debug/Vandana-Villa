@@ -107,3 +107,17 @@ window.addEventListener("scroll", () => {
     });
 
 });
+// ===========================
+// LOADER
+// ===========================
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader")
+.classList.add("hide");
+
+},1200);
+
+});
