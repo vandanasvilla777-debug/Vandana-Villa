@@ -784,3 +784,53 @@ animation:none;
 transform:scale(1.1);
 
 }
+/* ===========================
+LOADER
+=========================== */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#0d0d0d;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:opacity .8s ease, visibility .8s;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-logo img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    animation:spinLogo 3s linear infinite;
+}
+
+#loader h2{
+    margin-top:25px;
+    color:#c9a227;
+    font-size:32px;
+}
+
+#loader p{
+    color:#ddd;
+    margin-top:10px;
+}
+
+@keyframes spinLogo{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
