@@ -4,7 +4,7 @@ Welcome to **Vandana's Villa**, a peaceful private villa in Gorai, Mumbai. Desig
 
 ## 🌐 Live Website
 
-https://vandanasvilla777-debug.github.io/Vandana-s-Villa-gorai/
+https://vandanasvilla777-debug.github.io/Vandanas-Villa/
 
 ## ✨ Features
 
