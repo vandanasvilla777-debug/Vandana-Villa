@@ -984,3 +984,53 @@ height:55px;
 }
 
 }
+/* ========= JavaScript Support ========= */
+
+#menu.show{
+display:flex !important;
+flex-direction:column;
+position:absolute;
+top:90px;
+left:0;
+width:100%;
+background:#111;
+padding:20px 0;
+gap:20px;
+text-align:center;
+}
+
+.hidden-element{
+opacity:0;
+transform:translateY(40px);
+transition:.8s ease;
+}
+
+.show-element{
+opacity:1;
+transform:translateY(0);
+}
+
+.lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.92);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:15px;
+}
+
+.close-lightbox{
+position:absolute;
+top:30px;
+right:40px;
+font-size:45px;
+cursor:pointer;
+color:#fff;
+}
