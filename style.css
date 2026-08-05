@@ -1034,3 +1034,15 @@ font-size:45px;
 cursor:pointer;
 color:#fff;
 }
+.location-content{
+    padding: 0 20px;
+}
+
+.location-info{
+    padding: 0;
+}
+
+.location-info h3,
+.location-info p{
+    margin-left: 0;
+}
