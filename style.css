@@ -905,7 +905,25 @@ transition:.3s;
 background:var(--primary);
 color:#111;
 }
+.social-icons a:nth-child(1){
+    background:#E4405F; /* Instagram */
+    color:#fff;
+}
 
+.social-icons a:nth-child(2){
+    background:#1877F2; /* Facebook */
+    color:#fff;
+}
+
+.social-icons a:nth-child(3){
+    background:#25D366; /* WhatsApp */
+    color:#fff;
+}
+
+.social-icons a:hover{
+    transform:translateY(-5px);
+    opacity:0.9;
+}
 .copyright{
 text-align:center;
 margin-top:50px;
