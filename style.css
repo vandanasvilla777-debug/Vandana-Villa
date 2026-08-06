@@ -672,7 +672,10 @@ AMENITIES
 ========================================*/
 
 .amenities{
-background:#111;
+.amenity-card{
+    background:#111;
+    border:1px solid rgba(212,175,55,.25);
+
 }
 
 .amenities-grid{
