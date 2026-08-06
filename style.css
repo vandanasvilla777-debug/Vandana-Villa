@@ -783,7 +783,9 @@ CONTACT
 ========================================*/
 
 .contact{
-background:#0d0d0d;
+.contact-form{
+    background:#111;
+    border:1px solid rgba(212,175,55,.25);
 }
 
 .contact-form{
