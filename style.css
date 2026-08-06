@@ -641,12 +641,8 @@ gap:30px;
 }
 
 .highlight-card{
-background:#181818;
-padding:35px 25px;
-border-radius:20px;
-text-align:center;
-transition:.35s;
-border:1px solid rgba(255,255,255,.05);
+background:#111;
+border:1px solid rgba(212,175,55,.25);
 }
 
 .highlight-card:hover{
