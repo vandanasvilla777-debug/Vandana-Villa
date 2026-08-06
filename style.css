@@ -85,8 +85,6 @@ margin-bottom:60px;
 }
 
 .section-heading h2{
-
-.section-heading h2{
     color:#D4AF37;
     text-shadow:0 0 10px rgba(212,175,55,.4);
 
@@ -670,6 +668,9 @@ AMENITIES
 ========================================*/
 
 .amenities{
+    background:#111;
+}
+
 .amenity-card{
     background:#111;
     border:1px solid rgba(212,175,55,.25);
@@ -731,7 +732,6 @@ cursor:pointer;
 transition:.4s;
 }
 
-.gallery-grid img:hover{
 .gallery-item:hover{
     transform:translateY(-8px) scale(1.03);
     box-shadow:0 15px 35px rgba(212,175,55,.35);
@@ -783,9 +783,13 @@ CONTACT
 ========================================*/
 
 .contact{
+    background:#111;
+}
+
 .contact-form{
     background:#111;
     border:1px solid rgba(212,175,55,.25);
+
 }
 
 .contact-form{
