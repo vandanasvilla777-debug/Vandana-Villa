@@ -407,10 +407,8 @@ flex-wrap:wrap;
 
 padding:16px 38px;
 
-background:var(--primary);
-
-color:#111;
-
+background:#D4AF37;
+color:#000;
 font-weight:700;
 
 border-radius:50px;
@@ -439,9 +437,8 @@ transition:var(--transition);
 
 .btn-secondary:hover{
 
-background:white;
-
-color:#111;
+background:#F4D03F;
+color:#000;
 
 }
 /*========================================
