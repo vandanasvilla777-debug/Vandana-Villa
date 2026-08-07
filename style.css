@@ -765,10 +765,21 @@ color:var(--primary);
 margin-bottom:20px;
 }
 
+.location-info{
+    padding: 0 20px;
+}
+
+.location-info h3{
+    font-size:28px;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
 .location-info p{
-color:#ddd;
-margin-bottom:25px;
-line-height:1.8;
+    color:#ddd;
+    margin-bottom:25px;
+    line-height:1.8;
+    text-align:left;
 }
 
 .location-buttons{
