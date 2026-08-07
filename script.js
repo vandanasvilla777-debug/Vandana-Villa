@@ -155,12 +155,22 @@ document.querySelectorAll("section").forEach(sec => {
 });
 const toggle = document.getElementById("theme-toggle");
 
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-mode");
+    toggle.textContent = "☀️";
+} else {
+    toggle.textContent = "🌙";
+}
+
 toggle.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
 
     if (document.body.classList.contains("light-mode")) {
         toggle.textContent = "☀️";
+        localStorage.setItem("theme", "light");
     } else {
         toggle.textContent = "🌙";
+        localStorage.setItem("theme", "dark");
     }
 });
