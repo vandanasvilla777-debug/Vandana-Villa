@@ -186,3 +186,73 @@ if (year) {
     year.textContent = new Date().getFullYear();
 
 }
+/*====================================
+GALLERY LIGHTBOX
+====================================*/
+
+const galleryImages = document.querySelectorAll(".gallery-grid img");
+
+if (galleryImages.length) {
+
+    const lightbox = document.createElement("div");
+    lightbox.id = "lightbox";
+
+    lightbox.innerHTML = `
+        <span id="closeLightbox">&times;</span>
+        <img id="lightboxImg" src="" alt="Gallery Image">
+    `;
+
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = document.getElementById("lightboxImg");
+    const closeBtn = document.getElementById("closeLightbox");
+
+    galleryImages.forEach(img => {
+
+        img.addEventListener("click", () => {
+
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+
+        });
+
+    });
+
+    closeBtn.addEventListener("click", () => {
+
+        lightbox.style.display = "none";
+
+    });
+
+    lightbox.addEventListener("click", (e) => {
+
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+
+    });
+
+}
+
+/*====================================
+LAZY IMAGE FADE-IN
+====================================*/
+
+const images = document.querySelectorAll("img");
+
+images.forEach(img => {
+
+    img.addEventListener("load", () => {
+
+        img.classList.add("loaded");
+
+    });
+
+});
+
+/*====================================
+CONSOLE MESSAGE
+====================================*/
+
+console.log("%cWelcome to Vandana's Villa", "color:#D4AF37;font-size:20px;font-weight:bold;");
+console.log("%cLuxury Villa Website", "color:white;font-size:14px;");
