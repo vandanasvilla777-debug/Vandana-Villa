@@ -224,22 +224,23 @@ link.classList.add("active");
 
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-window.addEventListener("scroll", () => {
+if (scrollTopBtn) {
 
-    if (window.scrollY > 400) {
-        scrollTopBtn.style.display = "flex";
-        scrollTopBtn.style.justifyContent = "center";
-        scrollTopBtn.style.alignItems = "center";
-    } else {
-        scrollTopBtn.style.display = "none";
-    }
-
-});
-
-scrollTopBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+            scrollTopBtn.style.display = "flex";
+            scrollTopBtn.style.justifyContent = "center";
+            scrollTopBtn.style.alignItems = "center";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
     });
-});
+
+    scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+}
