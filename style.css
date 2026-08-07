@@ -995,3 +995,33 @@ height:55px;
 }
 
 }
+.theme-toggle{
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+    margin-right:15px;
+}
+
+body.light-mode{
+    background:#fff;
+    color:#111;
+}
+
+body.light-mode section,
+body.light-mode .about,
+body.light-mode .amenities,
+body.light-mode .gallery,
+body.light-mode .location,
+body.light-mode .contact,
+body.light-mode footer{
+    background:#fff;
+    color:#111;
+}
+
+body.light-mode p,
+body.light-mode span,
+body.light-mode a{
+    color:#333;
+}
