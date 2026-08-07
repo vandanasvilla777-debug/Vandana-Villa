@@ -1028,3 +1028,41 @@ footer,
 .btn-secondary{
     transition:background .4s,color .4s,border-color .4s;
 }
+body.light-mode{
+    background:#f7f7f7;
+    color:#111;
+}
+
+body.light-mode header{
+    background:#ffffff;
+}
+
+body.light-mode .about,
+body.light-mode .amenities,
+body.light-mode .gallery,
+body.light-mode .location,
+body.light-mode .contact,
+body.light-mode footer,
+body.light-mode .highlights{
+    background:#ffffff;
+}
+
+body.light-mode .highlight-card,
+body.light-mode .amenity,
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea{
+    background:#f0f0f0;
+    color:#111;
+    border:1px solid #ddd;
+}
+
+body.light-mode p,
+body.light-mode a,
+body.light-mode span{
+    color:#333;
+}
+
+body.light-mode .theme-toggle{
+    background:#222;
+    color:#fff;
+}
