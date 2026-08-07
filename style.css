@@ -1115,3 +1115,40 @@ color:#fff;
 .location-info p{
     margin-left: 0;
 }
+/* ===========================
+LUXURY FOOTER
+=========================== */
+
+footer{
+    background:#050505;
+    text-align:center;
+    padding:70px 20px 30px;
+}
+
+.footer-logo{
+    width:90px;
+    margin-bottom:20px;
+}
+
+footer h3{
+    color:#D4AF37;
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#bbb;
+    line-height:1.8;
+}
+
+footer hr{
+    width:120px;
+    margin:35px auto;
+    border:none;
+    border-top:1px solid rgba(212,175,55,.3);
+}
+
+footer .copyright{
+    color:#888;
+    font-size:14px;
+}
