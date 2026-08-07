@@ -1,246 +1,188 @@
-/*=========================================
+/*====================================
 VANDANA'S VILLA
 script.js
-=========================================*/
+====================================*/
 
-// =========================
-// LOADER
-// =========================
+// Wait until page loads
+window.addEventListener("load", () => {
 
-function hideLoader() {
     const loader = document.getElementById("loader");
+
     if (loader) {
-        loader.style.display = "none";
+
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+        }, 500);
+
     }
-}
 
-window.addEventListener("load", hideLoader);
+    AOS.init({
+        duration: 900,
+        once: true
+    });
 
-// Fallback: 3 seconds baad bhi loader hata do
-setTimeout(hideLoader, 3000);
+});
 
 
-// =========================
-// STICKY HEADER
-// =========================
+/*====================================
+SCROLL TO TOP
+====================================*/
 
-const header = document.querySelector("header");
+const scrollBtn = document.getElementById("scrollTopBtn");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 80) {
+    if (window.scrollY > 400) {
 
-        header.classList.add("scrolled");
+        scrollBtn.style.display = "flex";
 
     } else {
 
-        header.classList.remove("scrolled");
+        scrollBtn.style.display = "none";
 
     }
 
 });
 
+scrollBtn.addEventListener("click", () => {
 
-// =========================
-// MOBILE MENU
-// =========================
+    window.scrollTo({
 
-const menuBtn = document.querySelector(".menu-btn");
-const menu = document.querySelector("#menu");
+        top: 0,
 
-menuBtn.addEventListener("click", () => {
-
-    menu.classList.toggle("show");
-
-});
-
-
-// =========================
-// CLOSE MENU
-// =========================
-
-document.querySelectorAll("#menu a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        menu.classList.remove("show");
+        behavior: "smooth"
 
     });
 
 });
 
 
-// =========================
-// SCROLL ANIMATION
-// =========================
+/*====================================
+DARK / LIGHT MODE
+====================================*/
 
-const observer = new IntersectionObserver((entries) => {
+const themeBtn = document.getElementById("theme-toggle");
 
-    entries.forEach(entry => {
+themeBtn.addEventListener("click", () => {
 
-        if (entry.isIntersecting) {
+    document.body.classList.toggle("light");
 
-            entry.target.classList.add("show-element");
+    const icon = themeBtn.querySelector("i");
 
-        }
+    if (document.body.classList.contains("light")) {
+
+        icon.classList.remove("fa-moon");
+
+        icon.classList.add("fa-sun");
+
+        localStorage.setItem("theme", "light");
+
+    } else {
+
+        icon.classList.remove("fa-sun");
+
+        icon.classList.add("fa-moon");
+
+        localStorage.setItem("theme", "dark");
+
+    }
+
+});
+
+if (localStorage.getItem("theme") === "light") {
+
+    document.body.classList.add("light");
+
+    themeBtn.querySelector("i").classList.replace("fa-moon", "fa-sun");
+
+}
+/*====================================
+MOBILE MENU
+====================================*/
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
 
     });
 
-}, {
+    document.querySelectorAll(".nav-links a").forEach(link => {
 
-    threshold: .15
+        link.addEventListener("click", () => {
 
-});
-
-document.querySelectorAll("section,.highlight-card,.amenity,.gallery img")
-.forEach(el => {
-
-    el.classList.add("hidden-element");
-
-    observer.observe(el);
-
-});
-
-
-// =========================
-// GALLERY LIGHTBOX
-// =========================
-
-const images = document.querySelectorAll(".gallery-grid img");
-
-images.forEach(img => {
-
-    img.addEventListener("click", () => {
-
-        const overlay = document.createElement("div");
-
-        overlay.className = "lightbox";
-
-        overlay.innerHTML = `
-
-            <span class="close-lightbox">&times;</span>
-
-            <img src="${img.src}">
-
-        `;
-
-        document.body.appendChild(overlay);
-
-        overlay.addEventListener("click", () => {
-
-            overlay.remove();
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
 
         });
 
     });
 
-});
-
-
-// =========================
-// CONTACT FORM
-// =========================
-
-const form = document.querySelector(".contact-form");
-
-if (form) {
-form.addEventListener("submit", function(e){
-
-e.preventDefault();
-
-const name=this.querySelectorAll("input")[0].value;
-
-const phone=this.querySelectorAll("input")[1].value;
-
-const email=this.querySelectorAll("input")[2].value;
-
-const message=this.querySelector("textarea").value;
-
-const text=
-
-`Hello Vandana's Villa,
-
-Name : ${name}
-
-Phone : ${phone}
-
-Email : ${email}
-
-Message : ${message}`;
-
-window.open(
-
-`https://wa.me/919769602777?text=${encodeURIComponent(text)}`,
-
-"_blank"
-
-);
-
-this.reset();
-});
 }
 
+/*====================================
+SMOOTH SCROLL
+====================================*/
 
-// =========================
-// ACTIVE MENU
-// =========================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-const sections=document.querySelectorAll("section");
+    anchor.addEventListener("click", function (e) {
 
-const navLinks=document.querySelectorAll("#menu a");
+        e.preventDefault();
 
-window.addEventListener("scroll",()=>{
+        const target = document.querySelector(this.getAttribute("href"));
 
-let current="";
+        if (target) {
 
-sections.forEach(section=>{
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
 
-const top=section.offsetTop-150;
-
-if(scrollY>=top){
-
-current=section.getAttribute("id");
-
-}
-
-});
-
-navLinks.forEach(link=>{
-
-link.classList.remove("active");
-
-if(link.getAttribute("href")=="#"+current){
-
-link.classList.add("active");
-
-}
-
-});
-
-});
-// ===========================
-// Scroll To Top Button
-// ===========================
-
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-if (scrollTopBtn) {
-
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-            scrollTopBtn.style.display = "flex";
-            scrollTopBtn.style.justifyContent = "center";
-            scrollTopBtn.style.alignItems = "center";
-        } else {
-            scrollTopBtn.style.display = "none";
         }
+
     });
 
-    scrollTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
+});
+
+/*====================================
+HEADER SHADOW
+====================================*/
+
+window.addEventListener("scroll", () => {
+
+    const header = document.querySelector("header");
+
+    if (window.scrollY > 50) {
+
+        header.style.background = "rgba(0,0,0,0.90)";
+        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.35)";
+
+    } else {
+
+        header.style.background = "rgba(0,0,0,0.55)";
+        header.style.boxShadow = "none";
+
+    }
+
+});
+
+/*====================================
+CURRENT YEAR
+====================================*/
+
+const year = document.getElementById("year");
+
+if (year) {
+
+    year.textContent = new Date().getFullYear();
 
 }
