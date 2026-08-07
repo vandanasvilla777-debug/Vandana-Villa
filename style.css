@@ -1016,3 +1016,15 @@ height:55px;
     background:#D4AF37;
     color:#111;
 }
+body,
+section,
+header,
+footer,
+.highlight-card,
+.amenity,
+.contact-form input,
+.contact-form textarea,
+.btn-primary,
+.btn-secondary{
+    transition:background .4s,color .4s,border-color .4s;
+}
