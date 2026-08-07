@@ -207,6 +207,23 @@ current=section.getAttribute("id");
 });
 
 navLinks.forEach(link=>{
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+    
 
 link.classList.remove("active");
 
