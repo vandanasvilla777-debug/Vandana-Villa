@@ -1,6 +1,6 @@
-# 🏡 Vandana's Villa – Gorai
+# 🏡 Vandana Villa – Gorai
 
-Welcome to **Vandana's Villa**, a peaceful private villa in Gorai, Mumbai. Designed for families, friends, and small groups, the villa offers a relaxing getaway close to the beach with modern amenities and a comfortable stay.
+Welcome to **Vandana Villa**, a peaceful private villa in Gorai, Mumbai. Designed for families, friends, and small groups, the villa offers a relaxing getaway close to the beach with modern amenities and a comfortable stay.
 
 ## 🌐 Live Website
 
@@ -72,8 +72,8 @@ This website is hosted using **GitHub Pages**. Simply push changes to the reposi
 
 ## 📄 License
 
-This project is created for **Vandana's Villa**. All rights reserved.
+This project is created for **Vandana Villa**. All rights reserved.
 
 ---
 
-Made with ❤️ for Vandana's Villa
+Made with ❤️ for Vandana Villa
