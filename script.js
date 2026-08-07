@@ -153,3 +153,14 @@ document.querySelectorAll("section").forEach(sec => {
     observer.observe(sec);
 
 });
+const toggle = document.getElementById("theme-toggle");
+
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+        toggle.textContent = "☀️";
+    } else {
+        toggle.textContent = "🌙";
+    }
+});
