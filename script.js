@@ -218,3 +218,29 @@ link.classList.add("active");
 });
 
 });
+// ===========================
+// Scroll To Top Button
+// ===========================
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+        scrollTopBtn.style.display = "flex";
+        scrollTopBtn.style.justifyContent = "center";
+        scrollTopBtn.style.alignItems = "center";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+
+});
+
+scrollTopBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
