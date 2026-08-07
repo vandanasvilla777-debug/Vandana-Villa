@@ -7,18 +7,17 @@ script.js
 // LOADER
 // =========================
 
-window.addEventListener("load", () => {
-
+function hideLoader() {
     const loader = document.getElementById("loader");
+    if (loader) {
+        loader.style.display = "none";
+    }
+}
 
-    setTimeout(() => {
+window.addEventListener("load", hideLoader);
 
-        loader.style.opacity = "0";
-        loader.style.visibility = "hidden";
-
-    }, 1200);
-
-});
+// Fallback: 3 seconds baad bhi loader hata do
+setTimeout(hideLoader, 3000);
 
 
 // =========================
