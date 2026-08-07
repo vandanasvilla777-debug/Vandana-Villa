@@ -1152,3 +1152,29 @@ footer .copyright{
     color:#888;
     font-size:14px;
 }
+/* ===========================
+SCROLL TO TOP BUTTON
+=========================== */
+
+#scrollTopBtn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#D4AF37;
+    color:#000;
+    font-size:22px;
+    cursor:pointer;
+    display:none;
+    z-index:9999;
+    transition:.3s ease;
+    box-shadow:0 8px 20px rgba(212,175,55,.35);
+}
+
+#scrollTopBtn:hover{
+    transform:translateY(-5px);
+    background:#F4D03F;
+}
