@@ -821,3 +821,41 @@ padding:25px 18px;
 }
 
 }
+/*==========================
+LIGHTBOX
+==========================*/
+
+#lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.92);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:99999;
+padding:20px;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:15px;
+}
+
+#closeLightbox{
+position:absolute;
+top:25px;
+right:30px;
+font-size:45px;
+color:#fff;
+cursor:pointer;
+}
+
+img{
+opacity:0;
+transition:opacity .5s ease;
+}
+
+img.loaded{
+opacity:1;
+}
