@@ -1098,3 +1098,22 @@ body.light-mode .theme-toggle{
     transform:translateY(-3px) scale(1.08);
     filter:brightness(1.15);
 }
+/* ===== REAL SOCIAL MEDIA COLORS ===== */
+
+.social-icons a:nth-child(1) {
+    color: #E4405F !important; /* Instagram */
+}
+
+.social-icons a:nth-child(2) {
+    color: #1877F2 !important; /* Facebook */
+}
+
+.social-icons a:nth-child(3) {
+    color: #25D366 !important; /* WhatsApp */
+}
+
+/* Hover effect */
+.social-icons a:hover {
+    transform: translateY(-3px) scale(1.1);
+    transition: 0.3s ease;
+}
