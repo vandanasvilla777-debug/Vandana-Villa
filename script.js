@@ -365,3 +365,34 @@ if (hero && heroContent) {
     });
 
 }
+// =========================================
+// CINEMATIC HERO BACKGROUND PARALLAX
+// =========================================
+
+if (hero) {
+
+    hero.addEventListener("mousemove", (e) => {
+
+        if (window.innerWidth <= 768) return;
+
+        const rect = hero.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const moveX = (x / rect.width - 0.5) * 10;
+        const moveY = (y / rect.height - 0.5) * 6;
+
+        hero.style.backgroundPosition =
+            `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
+
+    });
+
+    hero.addEventListener("mouseleave", () => {
+
+        hero.style.backgroundPosition =
+            "center center";
+
+    });
+
+}
