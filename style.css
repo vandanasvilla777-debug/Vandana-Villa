@@ -1701,3 +1701,58 @@ body.light-mode .theme-toggle{
     }
 
 }
+/* =========================================
+   PREMIUM LIGHT MODE POLISH
+========================================= */
+
+body.light-mode .hero::before {
+    background:rgba(0,0,0,.45);
+}
+
+body.light-mode .hero p {
+    color:#f1f1f1;
+}
+
+body.light-mode .section-heading p,
+body.light-mode .highlight-card p,
+body.light-mode .about-content p,
+body.light-mode .location-info p,
+body.light-mode .footer-about p,
+body.light-mode .footer-contact p {
+    color:#555;
+}
+
+body.light-mode .highlight-card,
+body.light-mode .amenity {
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+body.light-mode .gallery-grid img {
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+body.light-mode .social-icons a {
+    background:#f1f1f1;
+}
+
+body.light-mode .social-icons a:hover {
+    background:#e5e5e5;
+}
+
+body.light-mode header.scrolled {
+    background:rgba(255,255,255,.94);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+@media (max-width:992px) {
+
+    body.light-mode .navbar ul.mobile-open {
+        background:rgba(255,255,255,.97);
+        border-top:1px solid rgba(212,175,55,.25);
+    }
+
+    body.light-mode .navbar ul.mobile-open a {
+        color:#111;
+    }
+
+}
