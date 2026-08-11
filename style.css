@@ -1590,3 +1590,114 @@ body.light-mode .theme-toggle{
     }
 
 }
+/* =========================================
+   PREMIUM MOBILE NAVBAR
+========================================= */
+
+@media (max-width: 992px) {
+
+    .navbar {
+        position:relative;
+    }
+
+    .navbar ul {
+        display:none;
+    }
+
+    .navbar ul.mobile-open {
+
+        display:flex;
+
+        flex-direction:column;
+
+        position:absolute;
+
+        top:90px;
+
+        left:0;
+
+        width:100%;
+
+        padding:25px;
+
+        gap:20px;
+
+        background:rgba(10,10,10,.97);
+
+        backdrop-filter:blur(18px);
+
+        border-top:1px solid rgba(212,175,55,.2);
+
+        box-shadow:
+            0 20px 40px rgba(0,0,0,.35);
+
+        animation:
+            mobileMenuIn .3s ease;
+
+    }
+
+    .navbar ul.mobile-open a {
+
+        display:block;
+
+        padding:8px 5px;
+
+    }
+
+    .menu-btn {
+
+        display:block;
+
+        margin-left:10px;
+
+        transition:.3s ease;
+
+    }
+
+    .menu-btn.active {
+
+        color:var(--primary);
+
+        transform:rotate(90deg);
+
+    }
+
+}
+
+@keyframes mobileMenuIn {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(-10px);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Theme button + menu alignment */
+
+.navbar > .theme-toggle {
+
+    margin-left:auto;
+
+}
+
+@media (max-width: 992px) {
+
+    .navbar > .theme-toggle {
+
+        margin-left:auto;
+
+    }
+
+}
