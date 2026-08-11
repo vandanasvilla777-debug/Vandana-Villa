@@ -27,34 +27,31 @@ window.addEventListener("scroll", () => {
 // ==============================
 // MOBILE MENU
 // ==============================
+
 const menuBtn = document.querySelector(".menu-btn");
 const menu = document.getElementById("menu");
 
 menuBtn.addEventListener("click", () => {
-    if (menu.style.display === "flex") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "flex";
-        menu.style.flexDirection = "column";
-        menu.style.position = "absolute";
-        menu.style.top = "90px";
-        menu.style.left = "0";
-        menu.style.width = "100%";
-        menu.style.background = "#111";
-        menu.style.padding = "20px";
-        menu.style.gap = "20px";
-    }
+
+    menu.classList.toggle("mobile-open");
+
+    menuBtn.classList.toggle("active");
+
 });
 
 // ==============================
 // CLOSE MENU AFTER CLICK
 // ==============================
+
 document.querySelectorAll("#menu a").forEach(link => {
+
     link.addEventListener("click", () => {
-        if (window.innerWidth < 992) {
-            menu.style.display = "none";
-        }
+
+        menu.classList.remove("mobile-open");
+        menuBtn.classList.remove("active");
+
     });
+
 });
 
 // ==============================
