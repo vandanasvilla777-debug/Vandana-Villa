@@ -236,34 +236,45 @@ form.addEventListener("submit", function(e) {
     form.reset();
 
 });
-
 // ==============================
-// FADE ANIMATION
+// PREMIUM SCROLL REVEAL
 // ==============================
-const observer = new IntersectionObserver(entries => {
 
-    entries.forEach(entry => {
+const revealElements = document.querySelectorAll(
+    ".section-heading, .highlight-card, .amenity, .gallery-grid img, .about-image, .about-content, .location-info, .map, .contact-form"
+);
 
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
+revealElements.forEach((element, index) => {
 
-    });
+    element.classList.add("reveal-element");
 
-}, {
-    threshold: 0.2
 });
 
-document.querySelectorAll("section").forEach(sec => {
+const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
 
-    sec.style.opacity = "0";
-    sec.style.transform = "translateY(40px)";
-    sec.style.transition = "0.8s";
+        entries.forEach(entry => {
 
-    observer.observe(sec);
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("reveal-visible");
+
+            observer.unobserve(entry.target);
+
+        });
+
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
 
 });
+
 const toggle = document.getElementById("theme-toggle");
 
 // Load saved theme
