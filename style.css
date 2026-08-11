@@ -1498,3 +1498,46 @@ body.light-mode .theme-toggle{
         background .4s ease;
 
 }
+/* =========================================
+   PREMIUM SCROLL REVEAL
+========================================= */
+
+.reveal-element{
+
+    opacity:0;
+
+    transform:
+        translateY(35px)
+        scale(.98);
+
+    transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.2,.65,.3,1);
+
+}
+
+.reveal-visible{
+
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+/* Respect reduced-motion preference */
+
+@media (prefers-reduced-motion: reduce){
+
+    .reveal-element{
+
+        opacity:1;
+
+        transform:none;
+
+        transition:none;
+
+    }
+
+}
