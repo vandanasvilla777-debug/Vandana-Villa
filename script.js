@@ -75,36 +75,147 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==============================
-// GALLERY IMAGE VIEW
+// PREMIUM 3D GALLERY LIGHTBOX
 // ==============================
-document.querySelectorAll(".gallery-grid img").forEach(img => {
+
+const galleryImages = document.querySelectorAll(".gallery-grid img");
+
+let currentImage = 0;
+
+galleryImages.forEach((img, index) => {
 
     img.addEventListener("click", () => {
 
-        const popup = document.createElement("div");
-        popup.style.position = "fixed";
-        popup.style.top = "0";
-        popup.style.left = "0";
-        popup.style.width = "100%";
-        popup.style.height = "100%";
-        popup.style.background = "rgba(0,0,0,0.95)";
-        popup.style.display = "flex";
-        popup.style.justifyContent = "center";
-        popup.style.alignItems = "center";
-        popup.style.zIndex = "99999";
-        popup.style.cursor = "pointer";
+        currentImage = index;
 
-        const image = document.createElement("img");
-        image.src = img.src;
-        image.style.maxWidth = "90%";
-        image.style.maxHeight = "90%";
-        image.style.borderRadius = "15px";
+        const lightbox = document.createElement("div");
+        lightbox.className = "premium-lightbox";
 
-        popup.appendChild(image);
-        document.body.appendChild(popup);
+        lightbox.innerHTML = `
+            <button class="lightbox-close">&times;</button>
 
-        popup.addEventListener("click", () => {
-            popup.remove();
+            <button class="lightbox-prev">&#10094;</button>
+
+            <div class="lightbox-content">
+
+                <img src="${galleryImages[currentImage].src}"
+                     alt="Vandana Villa Gallery">
+
+                <div class="lightbox-counter">
+                    ${currentImage + 1} / ${galleryImages.length}
+                </div>
+
+            </div>
+
+            <button class="lightbox-next">&#10095;</button>
+        `;
+
+        document.body.appendChild(lightbox);
+
+        document.body.style.overflow = "hidden";
+
+        const lightboxImage =
+            lightbox.querySelector(".lightbox-content img");
+
+        const counter =
+            lightbox.querySelector(".lightbox-counter");
+
+        function showImage(index) {
+
+            currentImage =
+                (index + galleryImages.length) %
+                galleryImages.length;
+
+            lightboxImage.style.opacity = "0";
+
+            setTimeout(() => {
+
+                lightboxImage.src =
+                    galleryImages[currentImage].src;
+
+                counter.textContent =
+                    `${currentImage + 1} / ${galleryImages.length}`;
+
+                lightboxImage.style.opacity = "1";
+
+            }, 150);
+        }
+
+        lightbox
+            .querySelector(".lightbox-next")
+            .addEventListener("click", (e) => {
+
+                e.stopPropagation();
+
+                showImage(currentImage + 1);
+
+            });
+
+        lightbox
+            .querySelector(".lightbox-prev")
+            .addEventListener("click", (e) => {
+
+                e.stopPropagation();
+
+                showImage(currentImage - 1);
+
+            });
+
+        lightbox
+            .querySelector(".lightbox-close")
+            .addEventListener("click", () => {
+
+                lightbox.remove();
+
+                document.body.style.overflow = "";
+
+            });
+
+        lightbox.addEventListener("click", (e) => {
+
+            if (e.target === lightbox) {
+
+                lightbox.remove();
+
+                document.body.style.overflow = "";
+
+            }
+
+        });
+
+        document.addEventListener("keydown", function keyboardHandler(e) {
+
+            if (!document.body.contains(lightbox)) {
+
+                document.removeEventListener(
+                    "keydown",
+                    keyboardHandler
+                );
+
+                return;
+
+            }
+
+            if (e.key === "Escape") {
+
+                lightbox.remove();
+
+                document.body.style.overflow = "";
+
+            }
+
+            if (e.key === "ArrowRight") {
+
+                showImage(currentImage + 1);
+
+            }
+
+            if (e.key === "ArrowLeft") {
+
+                showImage(currentImage - 1);
+
+            }
+
         });
 
     });
