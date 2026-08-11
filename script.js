@@ -330,3 +330,38 @@ tiltCards.forEach(card => {
     });
 
 });
+// =========================================
+// PREMIUM HERO 3D PARALLAX
+// =========================================
+
+const hero = document.querySelector(".hero");
+const heroContent = document.querySelector(".hero-content");
+
+if (hero && heroContent) {
+
+    hero.addEventListener("mousemove", (e) => {
+
+        if (window.innerWidth <= 768) return;
+
+        const rect = hero.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const moveX = (x / rect.width - 0.5) * 12;
+        const moveY = (y / rect.height - 0.5) * 8;
+
+        heroContent.style.transform = `
+            translate3d(${moveX}px, ${moveY}px, 0)
+        `;
+
+    });
+
+    hero.addEventListener("mouseleave", () => {
+
+        heroContent.style.transform =
+            "translate3d(0, 0, 0)";
+
+    });
+
+}
