@@ -1479,3 +1479,22 @@ body.light-mode .theme-toggle{
     }
 
 }
+/* =========================================
+   HERO 3D DEPTH
+========================================= */
+
+.hero-content{
+
+    transition:
+        transform .25s ease-out;
+
+    will-change:transform;
+
+}
+
+.hero::before{
+
+    transition:
+        background .4s ease;
+
+}
