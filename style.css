@@ -1541,3 +1541,52 @@ body.light-mode .theme-toggle{
     }
 
 }
+/* =========================================
+   PREMIUM MOBILE POLISH
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero-content {
+        transition: transform .3s ease;
+    }
+
+    .highlight-card,
+    .amenity {
+        transform-style: flat;
+    }
+
+    .highlight-card:hover,
+    .amenity:hover,
+    .gallery-grid img:hover {
+        transform: none;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: translateY(-2px);
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    section {
+        padding: 75px 0;
+    }
+
+}
+
+/* Touch devices */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .highlight-card:hover,
+    .amenity:hover,
+    .gallery-grid img:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: none;
+    }
+
+}
