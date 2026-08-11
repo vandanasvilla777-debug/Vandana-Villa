@@ -1117,3 +1117,105 @@ body.light-mode .theme-toggle{
     transform: translateY(-3px) scale(1.1);
     transition: 0.3s ease;
 }
+/* =========================================
+   VANDANA VILLA — PREMIUM 3D EFFECTS
+========================================= */
+
+/* 3D foundation */
+.highlight-card,
+.amenity,
+.gallery-grid img,
+.btn-primary,
+.btn-secondary {
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* 3D Highlight Cards */
+.highlight-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.highlight-card:hover {
+    transform: perspective(900px)
+               rotateX(4deg)
+               rotateY(-4deg)
+               translateY(-10px)
+               scale(1.02);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* 3D Amenity Cards */
+.amenity {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.amenity:hover {
+    transform: perspective(800px)
+               rotateX(3deg)
+               rotateY(-3deg)
+               translateY(-6px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 3D Gallery */
+.gallery-grid img {
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.gallery-grid img:hover {
+    transform:
+        perspective(900px)
+        translateZ(25px)
+        scale(1.04);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Premium 3D Buttons */
+.btn-primary,
+.btn-secondary {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+    transform: translateY(1px);
+}
+
+/* Mobile — keep effects lighter */
+@media (max-width: 768px) {
+
+    .highlight-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+
+    .amenity:hover {
+        transform: translateY(-4px);
+    }
+
+    .gallery-grid img:hover {
+        transform: scale(1.02);
+    }
+
+}
