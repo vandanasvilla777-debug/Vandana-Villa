@@ -3036,3 +3036,101 @@ body:not(.light-mode) .about-content p {
 body:not(.light-mode) .section-subtitle {
     color: #e0bd62;
 }
+/* =========================================
+   FINAL DARK MODE VISIBILITY FIX
+========================================= */
+
+body:not(.light-mode) .hero-content h1,
+body:not(.light-mode) .hero-content p,
+body:not(.light-mode) .hero-content .tag {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+body:not(.light-mode) .hero-content h1 {
+    color: #ffffff !important;
+    text-shadow: 0 3px 18px rgba(0,0,0,.65);
+}
+
+body:not(.light-mode) .hero-content p {
+    color: #f0f0f0 !important;
+}
+
+body:not(.light-mode) .hero-content .tag {
+    color: #e0bd62 !important;
+}
+
+
+/* SECTION HEADINGS */
+
+body:not(.light-mode) .section-heading h2 {
+    color: #e0bd62 !important;
+}
+
+body:not(.light-mode) .section-heading p {
+    color: #dddddd !important;
+}
+
+
+/* AMENITIES */
+
+body:not(.light-mode) .amenity {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .amenity span {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .amenity i {
+    color: #e0bd62 !important;
+}
+
+
+/* HIGHLIGHTS */
+
+body:not(.light-mode) .highlight-card h3 {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .highlight-card p {
+    color: #d8d8d8 !important;
+}
+
+
+/* ABOUT */
+
+body:not(.light-mode) .about-content h2 {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .about-content p {
+    color: #d5d5d5 !important;
+}
+
+
+/* NAVBAR */
+
+body:not(.light-mode) .logo h2,
+body:not(.light-mode) .navbar ul a {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .logo span {
+    color: #cccccc !important;
+}
+
+
+/* LOCATION */
+
+body:not(.light-mode) .location-info p {
+    color: #dddddd !important;
+}
+
+
+/* FOOTER */
+
+body:not(.light-mode) footer p,
+body:not(.light-mode) footer a {
+    color: #cccccc !important;
+}
