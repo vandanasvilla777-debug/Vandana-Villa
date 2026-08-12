@@ -520,3 +520,28 @@ if (aboutImage) {
     });
 
 }
+// =========================================
+// PLAYFUL AMENITY FLOAT
+// =========================================
+
+const amenityIcons =
+    document.querySelectorAll(".amenity i");
+
+amenityIcons.forEach(icon => {
+
+    icon.addEventListener("mouseenter", () => {
+
+        if (window.innerWidth <= 768) return;
+
+        icon.style.animation =
+            "amenityFloat .7s ease";
+
+    });
+
+    icon.addEventListener("animationend", () => {
+
+        icon.style.animation = "";
+
+    });
+
+});
