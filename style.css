@@ -3506,317 +3506,54 @@ body.light-mode header .tagline {
     }
 }
 /* =========================================
-   VANDANA VILLA — FINAL DARK THEME
-   ========================================= */
+   DARK MODE — TEXT VISIBILITY FIX ONLY
+========================================= */
 
-:root {
-    --primary: #D4AF37;
-    --dark: #0b0b0b;
-    --dark2: #151515;
-    --text: #d9d9d9;
-}
-
-/* MAIN */
-body {
-    background: #0b0b0b !important;
+/* Home / Hero text */
+.hero h1 {
     color: #ffffff !important;
 }
 
-/* ALL SECTIONS */
-.about,
-.amenities,
-.location {
-    background: #111111 !important;
+.hero p {
+    color: #eeeeee !important;
 }
 
-.highlights,
-.gallery,
-.contact {
-    background: #0d0d0d !important;
-}
-
-footer {
-    background: #050505 !important;
-}
-
-/* HEADER */
-header {
-    background: transparent !important;
-}
-
-header.scrolled {
-    background: rgba(0,0,0,.94) !important;
-}
-
-.logo h2,
-.navbar ul a {
-    color: #ffffff !important;
-}
-
-.logo span {
-    color: #cccccc !important;
-}
-
-/* MOBILE MENU */
-@media (max-width: 992px) {
-    .navbar ul.mobile-open {
-        background: rgba(10,10,10,.98) !important;
-    }
-
-    .navbar ul.mobile-open a {
-        color: #ffffff !important;
-    }
-
-    .menu-btn {
-        color: #ffffff !important;
-    }
-}
-
-/* HEADINGS */
-.section-heading h2 {
+.hero .tag {
     color: #D4AF37 !important;
 }
 
-.section-heading p {
+/* Amenities */
+.amenities .section-heading h2 {
+    color: #D4AF37 !important;
+}
+
+.amenities .section-heading p {
     color: #dddddd !important;
 }
 
-/* ABOUT */
-.about-content h2 {
+.amenity span {
     color: #ffffff !important;
 }
 
-.about-content p {
-    color: #d0d0d0 !important;
+.amenity i {
+    color: #D4AF37 !important;
 }
 
-/* HIGHLIGHTS */
-.highlight-card {
-    background: linear-gradient(
-        145deg,
-        #211f1b,
-        #171614
-    ) !important;
-
-    color: #ffffff !important;
-}
-
+/* Highlights */
 .highlight-card h3 {
     color: #ffffff !important;
 }
 
 .highlight-card p {
-    color: #d0d0d0 !important;
-}
-
-/* AMENITIES */
-.amenity {
-    background: linear-gradient(
-        145deg,
-        #211f1b,
-        #181715
-    ) !important;
-
-    color: #ffffff !important;
-}
-
-.amenity span {
-    color: #ffffff !important;
-}
-
-.amenity i {
-    color: #D4AF37 !important;
-}
-
-/* LOCATION */
-.location-info h3 {
-    color: #D4AF37 !important;
-}
-
-.location-info p {
     color: #dddddd !important;
 }
 
-/* CONTACT */
-.contact-form input,
-.contact-form textarea {
-    background: #181818 !important;
-    color: #ffffff !important;
-    border: 1px solid #333333 !important;
+.highlight-label {
+    color: #bbbbbb !important;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #888888 !important;
+/* General section text */
+.section-heading p {
+    color: #dddddd !important;
 }
 
-/* BUTTON */
-.btn-primary {
-    background: #D4AF37 !important;
-    color: #111111 !important;
-}
-
-.btn-secondary {
-    border-color: #ffffff !important;
-    color: #ffffff !important;
-}
-
-/* FOOTER */
-.footer-about p,
-.footer-contact p,
-.footer-links a {
-    color: #cccccc !important;
-}
-
-.footer-links h3,
-.footer-contact h3 {
-    color: #D4AF37 !important;
-}
-
-/* DARK MODE FORCED */
-body.light-mode {
-    background: #0b0b0b !important;
-    color: #ffffff !important;
-}
-/* =========================================
-   VANDANA VILLA — FORCE DARK ONLY
-   ========================================= */
-
-:root {
-    --primary: #D4AF37 !important;
-    --secondary: #ffffff !important;
-    --dark: #0b0b0b !important;
-    --dark2: #151515 !important;
-    --light: #f8f8f8 !important;
-    --text: #d9d9d9 !important;
-}
-
-/* PAGE */
-html,
-body {
-    background: #0b0b0b !important;
-    color: #ffffff !important;
-}
-
-/* SECTIONS */
-.about,
-.amenities,
-.location {
-    background: #111111 !important;
-}
-
-.highlights,
-.gallery,
-.contact {
-    background: #0d0d0d !important;
-}
-
-footer {
-    background: #050505 !important;
-}
-
-/* TEXT */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #ffffff !important;
-}
-
-p {
-    color: #d9d9d9 !important;
-}
-
-/* AMENITIES */
-.amenity {
-    background: #181818 !important;
-    color: #ffffff !important;
-}
-
-.amenity span {
-    color: #ffffff !important;
-}
-
-.amenity i {
-    color: #D4AF37 !important;
-}
-
-/* HIGHLIGHTS */
-.highlight-card {
-    background: #181818 !important;
-    color: #ffffff !important;
-}
-
-.highlight-card h3,
-.highlight-card p,
-.highlight-card span {
-    color: #ffffff !important;
-}
-
-/* ABOUT */
-.about-content h2 {
-    color: #ffffff !important;
-}
-
-.about-content p {
-    color: #d9d9d9 !important;
-}
-
-/* LOCATION */
-.location-info h3 {
-    color: #D4AF37 !important;
-}
-
-.location-info p {
-    color: #d9d9d9 !important;
-}
-
-/* CONTACT */
-.contact-form input,
-.contact-form textarea {
-    background: #181818 !important;
-    color: #ffffff !important;
-    border-color: #333333 !important;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #888888 !important;
-}
-
-/* HEADER */
-header.scrolled {
-    background: rgba(0,0,0,.94) !important;
-}
-
-.logo h2,
-.navbar a {
-    color: #ffffff !important;
-}
-
-.logo span {
-    color: #cccccc !important;
-}
-
-/* MOBILE MENU */
-@media (max-width: 992px) {
-    .navbar ul.mobile-open {
-        background: #111111 !important;
-    }
-
-    .navbar ul.mobile-open a {
-        color: #ffffff !important;
-    }
-}
-
-/* FOOTER */
-footer p,
-footer a {
-    color: #cccccc !important;
-}
-
-footer h3 {
-    color: #D4AF37 !important;
-}
