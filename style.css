@@ -2574,3 +2574,102 @@ footer {
         translateX(5px);
 
 }
+/* =========================================
+   VANDANA VILLA — PLAYFUL 3D AMENITIES
+========================================= */
+
+.amenity {
+
+    position: relative;
+
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+
+}
+
+
+/* Soft ambient glow */
+
+.amenity::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -45px;
+    top: -45px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(197,161,90,.20),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    transition:
+        transform .5s ease,
+        opacity .5s ease;
+
+}
+
+
+/* Icon becomes a floating object */
+
+.amenity i {
+
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        text-shadow .4s ease;
+
+    transform-style: preserve-3d;
+
+}
+
+
+/* Hover interaction */
+
+.amenity:hover i {
+
+    transform:
+        translateZ(25px)
+        translateY(-4px)
+        rotate(-6deg)
+        scale(1.15);
+
+    text-shadow:
+        0 8px 18px rgba(197,161,90,.25);
+
+}
+
+.amenity:hover::after {
+
+    transform:
+        scale(1.5);
+
+}
+
+
+/* Text depth */
+
+.amenity span {
+
+    transition:
+        transform .35s ease;
+
+}
+
+.amenity:hover span {
+
+    transform:
+        translateZ(10px)
+        translateX(3px);
+
+}
