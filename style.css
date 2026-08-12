@@ -3342,3 +3342,238 @@ body:not(.light-mode) .amenity p,
 body:not(.light-mode) .highlight-card p {
     color: #d8d2c7;
 }
+/* =========================================
+   FINAL THEME TEXT VISIBILITY FIX
+   ========================================= */
+
+/* ---------- DEFAULT / DARK THEME ---------- */
+
+body:not(.light-mode) {
+    color: #f5f1e8;
+}
+
+body:not(.light-mode) p,
+body:not(.light-mode) li,
+body:not(.light-mode) .about-content p,
+body:not(.light-mode) .location-info p,
+body:not(.light-mode) .section-subtitle,
+body:not(.light-mode) .contact-section p {
+    color: #e8e3d8 !important;
+}
+
+body:not(.light-mode) h1,
+body:not(.light-mode) h2,
+body:not(.light-mode) h3,
+body:not(.light-mode) h4 {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .section-heading,
+body:not(.light-mode) .section-title {
+    color: #d8ad45 !important;
+}
+
+
+/* ---------- AMENITIES ---------- */
+
+body:not(.light-mode) .amenity {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .amenity h3,
+body:not(.light-mode) .amenity h4,
+body:not(.light-mode) .amenity span,
+body:not(.light-mode) .amenity p {
+    color: #ffffff !important;
+}
+
+
+/* ---------- HIGHLIGHTS ---------- */
+
+body:not(.light-mode) .highlight-card {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .highlight-card h3,
+body:not(.light-mode) .highlight-card p,
+body:not(.light-mode) .highlight-card span {
+    color: #ffffff !important;
+}
+
+
+/* ---------- ABOUT ---------- */
+
+body:not(.light-mode) .about-content h2,
+body:not(.light-mode) .about-content h3 {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .about-content p {
+    color: #e8e3d8 !important;
+}
+
+
+/* ---------- LOCATION ---------- */
+
+body:not(.light-mode) .location-info h2,
+body:not(.light-mode) .location-info h3 {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .location-info p {
+    color: #e8e3d8 !important;
+}
+
+
+/* ---------- ENQUIRY ---------- */
+
+body:not(.light-mode) .contact-section h2,
+body:not(.light-mode) .contact-section h3 {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .contact-section p {
+    color: #e8e3d8 !important;
+}
+
+body:not(.light-mode) .contact-form input,
+body:not(.light-mode) .contact-form textarea {
+    color: #222222 !important;
+    background: #ffffff !important;
+}
+
+body:not(.light-mode) .contact-form input::placeholder,
+body:not(.light-mode) .contact-form textarea::placeholder {
+    color: #777777 !important;
+}
+
+
+/* ---------- HERO ---------- */
+
+body:not(.light-mode) .hero h1,
+body:not(.light-mode) .hero h2,
+body:not(.light-mode) .hero p {
+    color: #ffffff !important;
+}
+
+
+/* =========================================
+   LIGHT THEME
+   ========================================= */
+
+body.light-mode {
+    color: #29251f;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4 {
+    color: #29251f !important;
+}
+
+body.light-mode p,
+body.light-mode li,
+body.light-mode .about-content p,
+body.light-mode .location-info p,
+body.light-mode .section-subtitle,
+body.light-mode .contact-section p {
+    color: #5b554d !important;
+}
+
+body.light-mode .section-heading,
+body.light-mode .section-title {
+    color: #b98b32 !important;
+}
+
+
+/* ---------- LIGHT AMENITIES ---------- */
+
+body.light-mode .amenity h3,
+body.light-mode .amenity h4,
+body.light-mode .amenity span,
+body.light-mode .amenity p {
+    color: #29251f !important;
+}
+
+
+/* ---------- LIGHT HIGHLIGHTS ---------- */
+
+body.light-mode .highlight-card h3,
+body.light-mode .highlight-card p,
+body.light-mode .highlight-card span {
+    color: #29251f !important;
+}
+
+
+/* ---------- LIGHT ABOUT ---------- */
+
+body.light-mode .about-content h2,
+body.light-mode .about-content h3 {
+    color: #29251f !important;
+}
+
+body.light-mode .about-content p {
+    color: #5b554d !important;
+}
+
+
+/* ---------- LIGHT LOCATION ---------- */
+
+body.light-mode .location-info h2,
+body.light-mode .location-info h3 {
+    color: #29251f !important;
+}
+
+body.light-mode .location-info p {
+    color: #5b554d !important;
+}
+
+
+/* ---------- LIGHT ENQUIRY ---------- */
+
+body.light-mode .contact-section h2,
+body.light-mode .contact-section h3 {
+    color: #29251f !important;
+}
+
+body.light-mode .contact-section p {
+    color: #5b554d !important;
+}
+
+
+/* ---------- HEADER ---------- */
+
+body.light-mode header h1,
+body.light-mode header h2,
+body.light-mode header p,
+body.light-mode header .logo-text,
+body.light-mode header .tagline {
+    color: #29251f !important;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    body.light-mode .amenity h3,
+    body.light-mode .highlight-card h3 {
+        color: #29251f !important;
+    }
+
+    body.light-mode .amenity p,
+    body.light-mode .highlight-card p {
+        color: #5b554d !important;
+    }
+
+    body:not(.light-mode) .amenity h3,
+    body:not(.light-mode) .highlight-card h3 {
+        color: #ffffff !important;
+    }
+
+    body:not(.light-mode) .amenity p,
+    body:not(.light-mode) .highlight-card p {
+        color: #e8e3d8 !important;
+    }
+}
