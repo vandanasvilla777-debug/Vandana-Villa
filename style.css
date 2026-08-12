@@ -1756,3 +1756,408 @@ body.light-mode header.scrolled {
     }
 
 }
+/* =========================================
+   VANDANA VILLA — LUXURY RESORT THEME
+   STEP 1
+========================================= */
+
+:root {
+
+    --primary: #C9A44C;
+    --secondary: #ffffff;
+
+    --dark: #F7F3EA;
+    --dark2: #EFE8DA;
+
+    --light: #FFFDF8;
+
+    --text: #5F5A50;
+
+    --espresso: #2D2924;
+    --cream: #F7F3EA;
+    --ivory: #FFFDF8;
+    --sand: #EDE3D2;
+    --sage: #7A8063;
+
+    --radius: 20px;
+
+    --transition: .35s ease;
+}
+
+
+/* =========================================
+   MAIN BODY
+========================================= */
+
+body {
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFDF8 0%,
+            #F7F3EA 50%,
+            #EFE8DA 100%
+        );
+
+    color: var(--espresso);
+
+}
+
+
+/* =========================================
+   SECTION BACKGROUNDS
+========================================= */
+
+.about,
+.amenities,
+.location {
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFDF8,
+            #F5EFE4
+        );
+
+}
+
+
+.highlights,
+.gallery,
+.contact {
+
+    background:
+        linear-gradient(
+            135deg,
+            #F1E9DC,
+            #FBF8F2
+        );
+
+}
+
+
+footer {
+
+    background:
+        linear-gradient(
+            135deg,
+            #302B25,
+            #201D19
+        );
+
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.section-heading h2 {
+
+    color: var(--primary);
+
+}
+
+.section-heading p {
+
+    color: #686257;
+
+}
+
+.about-content h2 {
+
+    color: var(--espresso);
+
+}
+
+.about-content p {
+
+    color: #625D54;
+
+}
+
+.highlight-card h3,
+.amenity span {
+
+    color: var(--espresso);
+
+}
+
+.highlight-card p {
+
+    color: #6B665D;
+
+}
+
+.location-info p {
+
+    color: #625D54;
+
+}
+
+
+/* =========================================
+   HIGHLIGHT CARDS
+========================================= */
+
+.highlight-card {
+
+    background:
+        rgba(255,255,255,.75);
+
+    border:
+        1px solid rgba(201,164,76,.18);
+
+    box-shadow:
+        0 15px 40px rgba(80,65,40,.08);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.highlight-card:hover {
+
+    border-color:
+        rgba(201,164,76,.55);
+
+    box-shadow:
+        0 25px 55px rgba(80,65,40,.14);
+
+}
+
+
+/* =========================================
+   AMENITY CARDS
+========================================= */
+
+.amenity {
+
+    background:
+        rgba(255,255,255,.72);
+
+    border:
+        1px solid rgba(201,164,76,.15);
+
+    box-shadow:
+        0 12px 35px rgba(80,65,40,.07);
+
+}
+
+
+.amenity:hover {
+
+    background:
+        rgba(255,255,255,.95);
+
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery-grid img {
+
+    box-shadow:
+        0 15px 35px rgba(50,40,25,.12);
+
+}
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+.contact-form input,
+.contact-form textarea {
+
+    background:
+        rgba(255,255,255,.85);
+
+    color:
+        var(--espresso);
+
+    border:
+        1px solid #DED5C5;
+
+    box-shadow:
+        0 8px 25px rgba(70,55,35,.05);
+
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+
+    color:
+        #8A8479;
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-primary {
+
+    background:
+        linear-gradient(
+            135deg,
+            #D8B85A,
+            #B99132
+        );
+
+    color:
+        #211E19;
+
+    box-shadow:
+        0 10px 25px rgba(185,145,50,.18);
+
+}
+
+
+.btn-secondary {
+
+    border-color:
+        var(--espresso);
+
+    color:
+        var(--espresso);
+
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        var(--espresso);
+
+    color:
+        #fff;
+
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+header.scrolled {
+
+    background:
+        rgba(255,253,248,.90);
+
+    box-shadow:
+        0 10px 35px rgba(70,55,35,.12);
+
+}
+
+
+.navbar ul a {
+
+    color:
+        var(--espresso);
+
+}
+
+
+.navbar ul a:hover {
+
+    color:
+        var(--primary);
+
+}
+
+
+/* =========================================
+   THEME BUTTON
+========================================= */
+
+.theme-toggle {
+
+    background:
+        rgba(255,255,255,.75);
+
+    color:
+        var(--espresso);
+
+    border:
+        1px solid rgba(201,164,76,.25);
+
+    box-shadow:
+        0 8px 20px rgba(70,55,35,.08);
+
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+@media (max-width:992px) {
+
+    .navbar ul.mobile-open {
+
+        background:
+            rgba(255,253,248,.97);
+
+        box-shadow:
+            0 20px 45px rgba(60,50,35,.15);
+
+    }
+
+    .navbar ul.mobile-open a {
+
+        color:
+            var(--espresso);
+
+    }
+
+}
+
+
+/* =========================================
+   FOOTER TEXT
+========================================= */
+
+.footer-about p,
+.footer-contact p {
+
+    color:
+        #D0C9BD;
+
+}
+
+.footer-links a {
+
+    color:
+        #E8E2D8;
+
+}
+
+.footer-links a:hover {
+
+    color:
+        #D8B85A;
+
+}
+
+.footer-links h3,
+.footer-contact h3 {
+
+    color:
+        #D8B85A;
+
+}
+
+.copyright {
+
+    border-color:
+        rgba(255,255,255,.12);
+
+    color:
+        #9D968B;
+
+}
