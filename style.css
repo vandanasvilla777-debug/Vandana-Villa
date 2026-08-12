@@ -3884,3 +3884,354 @@ body:not(.light-mode) .hero .tag {
         font-size: 17px;
     }
 }
+/* =========================================================
+   VANDANA VILLA — FINAL WARM LUXURY THEME
+   SAME ON MOBILE + DESKTOP
+   ========================================================= */
+
+/* MAIN PAGE */
+html,
+body {
+    background: #E8E0D2 !important;
+    color: #302C27 !important;
+}
+
+/* ALL NORMAL SECTIONS */
+.about,
+.amenities,
+.location {
+    background: #E8E0D2 !important;
+    color: #302C27 !important;
+}
+
+.highlights,
+.gallery,
+.contact {
+    background: #DCD2C2 !important;
+    color: #302C27 !important;
+}
+
+/* SECTION HEADINGS */
+.section-heading h2 {
+    color: #C49A45 !important;
+}
+
+.section-heading p {
+    color: #5C554B !important;
+}
+
+/* ABOUT */
+.about-content h2 {
+    color: #302C27 !important;
+}
+
+.about-content p {
+    color: #5C554B !important;
+}
+
+.section-subtitle {
+    color: #C49A45 !important;
+}
+
+/* =========================================================
+   EXPERIENCE CARDS
+   ========================================================= */
+
+.highlight-card {
+    background:
+        linear-gradient(
+            145deg,
+            #211F1B,
+            #181715
+        ) !important;
+
+    border: 1px solid rgba(197,161,90,.22) !important;
+
+    box-shadow:
+        0 15px 35px rgba(50,40,25,.15) !important;
+}
+
+.highlight-card h3 {
+    color: #FFFFFF !important;
+}
+
+.highlight-card p {
+    color: #D8D2C8 !important;
+}
+
+.highlight-label {
+    color: #D8AD45 !important;
+}
+
+.highlight-icon {
+    color: #D8AD45 !important;
+    background: rgba(197,161,90,.12) !important;
+}
+
+.highlight-number {
+    color: rgba(216,173,69,.12) !important;
+}
+
+/* =========================================================
+   AMENITIES
+   ========================================================= */
+
+.amenity {
+    background:
+        linear-gradient(
+            145deg,
+            #211F1B,
+            #181715
+        ) !important;
+
+    color: #FFFFFF !important;
+
+    border: 1px solid rgba(197,161,90,.18) !important;
+
+    box-shadow:
+        0 12px 30px rgba(50,40,25,.14) !important;
+}
+
+.amenity span {
+    color: #FFFFFF !important;
+}
+
+.amenity i {
+    color: #D8AD45 !important;
+}
+
+.amenity:hover {
+    background:
+        linear-gradient(
+            145deg,
+            #292722,
+            #1B1917
+        ) !important;
+}
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.location-info h3 {
+    color: #C49A45 !important;
+}
+
+.location-info p {
+    color: #5C554B !important;
+}
+
+/* =========================================================
+   CONTACT / ENQUIRY
+   ========================================================= */
+
+.contact .section-heading h2 {
+    color: #C49A45 !important;
+}
+
+.contact .section-heading p {
+    color: #5C554B !important;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: #FFFFFF !important;
+    color: #302C27 !important;
+    border: 1px solid #D3C7B5 !important;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #77716A !important;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #C49A45 !important;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.logo h2 {
+    color: #302C27 !important;
+}
+
+.logo span {
+    color: #6B645B !important;
+}
+
+.navbar ul a {
+    color: #302C27 !important;
+}
+
+.menu-btn {
+    color: #302C27 !important;
+}
+
+/* SCROLLED HEADER */
+header.scrolled {
+    background: rgba(255,253,248,.95) !important;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 10px 30px rgba(60,50,35,.12) !important;
+}
+
+/* =========================================================
+   MOBILE + DESKTOP MENU
+   ========================================================= */
+
+.navbar ul.mobile-open {
+    background: #F1EBE1 !important;
+    border: 1px solid rgba(197,161,90,.25) !important;
+    box-shadow: 0 20px 45px rgba(60,50,35,.18) !important;
+}
+
+.navbar ul.mobile-open a {
+    color: #302C27 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #302C27,
+            #24211D
+        ) !important;
+}
+
+.footer-about p,
+.footer-contact p,
+.footer-links a {
+    color: #D8D2C8 !important;
+}
+
+/* SOCIAL ICON BACKGROUND */
+.social-icons a {
+    background: #3A352E !important;
+}
+
+/* =========================================================
+   IMPORTANT — STOP OLD DARK MODE FROM OVERRIDING THE THEME
+   ========================================================= */
+
+body:not(.light-mode) .about,
+body:not(.light-mode) .amenities,
+body:not(.light-mode) .location,
+body:not(.light-mode) .highlights,
+body:not(.light-mode) .gallery,
+body:not(.light-mode) .contact {
+    background: #E8E0D2 !important;
+}
+
+body:not(.light-mode) .highlights,
+body:not(.light-mode) .gallery,
+body:not(.light-mode) .contact {
+    background: #DCD2C2 !important;
+}
+
+/* Keep experience + amenities cards dark */
+body:not(.light-mode) .highlight-card {
+    background:
+        linear-gradient(
+            145deg,
+            #211F1B,
+            #181715
+        ) !important;
+}
+
+body:not(.light-mode) .amenity {
+    background:
+        linear-gradient(
+            145deg,
+            #211F1B,
+            #181715
+        ) !important;
+}
+
+/* Readable warm-theme text */
+body:not(.light-mode) .about-content h2,
+body:not(.light-mode) .location-info h3 {
+    color: #302C27 !important;
+}
+
+body:not(.light-mode) .about-content p,
+body:not(.light-mode) .location-info p,
+body:not(.light-mode) .section-heading p {
+    color: #5C554B !important;
+}
+
+/* Cards stay white text */
+body:not(.light-mode) .highlight-card h3,
+body:not(.light-mode) .highlight-card p,
+body:not(.light-mode) .highlight-card span,
+body:not(.light-mode) .amenity span {
+    color: #FFFFFF !important;
+}
+
+body:not(.light-mode) .highlight-card p {
+    color: #D8D2C8 !important;
+}
+
+body:not(.light-mode) .highlight-label,
+body:not(.light-mode) .amenity i,
+body:not(.light-mode) .highlight-icon {
+    color: #D8AD45 !important;
+}
+
+/* =========================================================
+   SAME RESULT ON DESKTOP
+   ========================================================= */
+
+@media (min-width: 993px) {
+
+    body {
+        background: #E8E0D2 !important;
+    }
+
+    .about,
+    .amenities,
+    .location {
+        background: #E8E0D2 !important;
+    }
+
+    .highlights,
+    .gallery,
+    .contact {
+        background: #DCD2C2 !important;
+    }
+
+    .highlight-card,
+    .amenity {
+        background:
+            linear-gradient(
+                145deg,
+                #211F1B,
+                #181715
+            ) !important;
+    }
+
+    .highlight-card h3,
+    .highlight-card p,
+    .highlight-card span,
+    .amenity span {
+        color: #FFFFFF !important;
+    }
+
+    .about-content h2,
+    .location-info h3 {
+        color: #302C27 !important;
+    }
+
+    .about-content p,
+    .location-info p,
+    .section-heading p {
+        color: #5C554B !important;
+    }
+}
