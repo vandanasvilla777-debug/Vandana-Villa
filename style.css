@@ -3218,3 +3218,127 @@ body.light-mode .about-content p {
 body.light-mode .location-info p {
     color: #444444 !important;
 }
+/* =========================================
+   FINAL THEME TEXT FIX
+   ========================================= */
+
+/* ---------- LIGHT MODE ---------- */
+
+body.light-mode {
+    color: #302d28;
+}
+
+/* Main headings */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6 {
+    color: #302d28;
+}
+
+/* Paragraphs */
+body.light-mode p {
+    color: #5f5a52;
+}
+
+/* Section headings */
+body.light-mode .section-heading,
+body.light-mode .section-title,
+body.light-mode .section-heading h2,
+body.light-mode .section-heading p {
+    color: #302d28;
+}
+
+/* About section */
+body.light-mode .about-content,
+body.light-mode .about-content h2,
+body.light-mode .about-content h3,
+body.light-mode .about-content p {
+    color: #302d28;
+}
+
+/* Amenities */
+body.light-mode .amenity,
+body.light-mode .amenity h3,
+body.light-mode .amenity p,
+body.light-mode .amenity span {
+    color: #302d28;
+}
+
+/* Highlights */
+body.light-mode .highlight-card,
+body.light-mode .highlight-card h3,
+body.light-mode .highlight-card p,
+body.light-mode .highlight-card span {
+    color: #302d28;
+}
+
+/* Location */
+body.light-mode .location-info,
+body.light-mode .location-info h3,
+body.light-mode .location-info p,
+body.light-mode .location-info span {
+    color: #302d28;
+}
+
+/* Contact */
+body.light-mode .contact-form,
+body.light-mode .contact-form h2,
+body.light-mode .contact-form p {
+    color: #302d28;
+}
+
+/* Form placeholders */
+body.light-mode .contact-form input::placeholder,
+body.light-mode .contact-form textarea::placeholder {
+    color: #77716a;
+}
+
+/* Header */
+body.light-mode header .logo-text,
+body.light-mode header h1,
+body.light-mode header h2,
+body.light-mode header p {
+    color: #302d28;
+}
+
+/* Navigation */
+body.light-mode #menu a {
+    color: #302d28;
+}
+
+/* ---------- DARK MODE ---------- */
+
+body:not(.light-mode) {
+    color: #f5f1e8;
+}
+
+body:not(.light-mode) h1,
+body:not(.light-mode) h2,
+body:not(.light-mode) h3,
+body:not(.light-mode) h4,
+body:not(.light-mode) h5,
+body:not(.light-mode) h6 {
+    color: #f5f1e8;
+}
+
+body:not(.light-mode) p {
+    color: #d8d2c7;
+}
+
+body:not(.light-mode) .amenity,
+body:not(.light-mode) .highlight-card {
+    color: #f5f1e8;
+}
+
+body:not(.light-mode) .amenity h3,
+body:not(.light-mode) .highlight-card h3 {
+    color: #f5f1e8;
+}
+
+body:not(.light-mode) .amenity p,
+body:not(.light-mode) .highlight-card p {
+    color: #d8d2c7;
+}
