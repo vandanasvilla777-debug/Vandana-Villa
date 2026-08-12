@@ -105,67 +105,8 @@ font-size:18px;
 max-width:700px;
 
 margin:auto;
-
-}
-/*==========================
-LOADER
-==========================*/
-
-#loader{
-
-position:fixed;
-
-inset:0;
-
-background:#000;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:999999;
-
 }
 
-#loader img{
-
-width:120px;
-
-animation:logoRotate 4s linear infinite;
-
-}
-
-#loader h2{
-
-margin-top:25px;
-
-font-size:32px;
-
-color:var(--primary);
-
-}
-
-#loader p{
-
-color:#ccc;
-
-margin-top:10px;
-
-}
-
-@keyframes logoRotate{
-
-100%{
-
-transform:rotate(360deg);
-
-}
-
-}
 /*==========================
 NAVBAR
 ==========================*/
@@ -4233,5 +4174,230 @@ body:not(.light-mode) .highlight-icon {
     .location-info p,
     .section-heading p {
         color: #5C554B !important;
+    }
+}
+/* =========================================================
+   VANDANA VILLA — 3D LUXURY LOADER
+   ========================================================= */
+
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #f6efe4 0%,
+            #e8e0d2 45%,
+            #d8cdbb 100%
+        );
+
+    perspective: 1200px;
+
+    overflow: hidden;
+}
+
+/* Ambient glow */
+#loader::before {
+    content: "";
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: rgba(196,154,69,.18);
+
+    filter: blur(55px);
+
+    animation: loaderGlow 3s ease-in-out infinite;
+}
+
+/* 3D Logo */
+#loader img {
+    position: relative;
+    z-index: 2;
+
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    filter:
+        drop-shadow(0 15px 20px rgba(60,45,25,.25))
+        drop-shadow(0 0 25px rgba(196,154,69,.25));
+
+    animation:
+        loaderLogo3D 3s ease-in-out infinite;
+}
+
+/* Gold orbit ring */
+#loader::after {
+    content: "";
+
+    position: absolute;
+
+    width: 175px;
+    height: 175px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid rgba(196,154,69,.55);
+
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+
+    animation: loaderOrbit 2.5s linear infinite;
+}
+
+/* Villa name */
+#loader h2 {
+    position: relative;
+    z-index: 3;
+
+    margin-top: 32px;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #302c27;
+
+    text-shadow:
+        0 5px 12px rgba(60,45,25,.15);
+
+    animation:
+        loaderTextIn 1.2s ease forwards;
+}
+
+/* Subtitle */
+#loader p {
+    position: relative;
+    z-index: 3;
+
+    margin-top: 8px;
+
+    color: #6b6257;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    animation:
+        loaderTextIn 1.5s ease forwards;
+}
+
+/* Logo 3D floating */
+@keyframes loaderLogo3D {
+
+    0% {
+        transform:
+            perspective(900px)
+            rotateY(-12deg)
+            rotateX(5deg)
+            translateY(0)
+            translateZ(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            perspective(900px)
+            rotateY(12deg)
+            rotateX(-5deg)
+            translateY(-12px)
+            translateZ(35px)
+            scale(1.04);
+    }
+
+    100% {
+        transform:
+            perspective(900px)
+            rotateY(-12deg)
+            rotateX(5deg)
+            translateY(0)
+            translateZ(0)
+            scale(1);
+    }
+}
+
+/* Orbit */
+@keyframes loaderOrbit {
+
+    from {
+        transform:
+            rotateX(65deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            rotateX(65deg)
+            rotateZ(360deg);
+    }
+}
+
+/* Glow */
+@keyframes loaderGlow {
+
+    0%,
+    100% {
+        transform: scale(.85);
+        opacity: .5;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: .9;
+    }
+}
+
+/* Text entrance */
+@keyframes loaderTextIn {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px)
+            translateZ(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            translateZ(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    #loader img {
+        width: 105px;
+        height: 105px;
+    }
+
+    #loader::after {
+        width: 150px;
+        height: 150px;
+    }
+
+    #loader h2 {
+        font-size: 27px;
+    }
+
+    #loader p {
+        font-size: 12px;
     }
 }
