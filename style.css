@@ -2981,3 +2981,58 @@ body:not(.light-mode) .amenity {
     }
 
 }
+/* =========================================
+   DARK MODE — TEXT VISIBILITY FIX
+========================================= */
+
+body:not(.light-mode) .hero h1 {
+    color: #ffffff;
+}
+
+body:not(.light-mode) .hero p {
+    color: #e5e5e5;
+}
+
+body:not(.light-mode) .hero .tag {
+    color: #e0bd62;
+}
+
+body:not(.light-mode) .section-heading h2 {
+    color: #e0bd62;
+}
+
+body:not(.light-mode) .section-heading p {
+    color: #d6d6d6;
+}
+
+body:not(.light-mode) .amenity span {
+    color: #f2f2f2;
+}
+
+body:not(.light-mode) .amenity i {
+    color: #e0bd62;
+}
+
+body:not(.light-mode) .highlight-card h3 {
+    color: #ffffff;
+}
+
+body:not(.light-mode) .highlight-card p {
+    color: #d0d0d0;
+}
+
+body:not(.light-mode) .highlight-label {
+    color: #e0bd62;
+}
+
+body:not(.light-mode) .about-content h2 {
+    color: #ffffff;
+}
+
+body:not(.light-mode) .about-content p {
+    color: #d0d0d0;
+}
+
+body:not(.light-mode) .section-subtitle {
+    color: #e0bd62;
+}
