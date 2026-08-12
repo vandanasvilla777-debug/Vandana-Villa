@@ -404,3 +404,35 @@ if (hero) {
     });
 
 }
+// =========================================
+// PREMIUM 3D CURSOR LIGHT
+// =========================================
+
+const lightCards = document.querySelectorAll(
+    ".highlight-card, .amenity"
+);
+
+lightCards.forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        if (window.innerWidth <= 768) return;
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty(
+            "--mouse-x",
+            `${x}px`
+        );
+
+        card.style.setProperty(
+            "--mouse-y",
+            `${y}px`
+        );
+
+    });
+
+});
