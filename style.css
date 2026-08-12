@@ -3645,3 +3645,94 @@ body.light-mode header .tagline {
 .footer-links a {
     color: #cccccc !important;
 }
+/* =========================================
+   VANDANA VILLA — FINAL TEXT VISIBILITY FIX
+   KEEP CURRENT WARM LUXURY THEME
+========================================= */
+
+/* Main warm-theme text */
+body:not(.light-mode) {
+    color: #302d28;
+}
+
+/* Normal section headings */
+body:not(.light-mode) .section-heading h2,
+body:not(.light-mode) .section-title {
+    color: #C49A45 !important;
+}
+
+/* Section descriptions */
+body:not(.light-mode) .section-heading p {
+    color: #5C554B !important;
+}
+
+/* About / Experience */
+body:not(.light-mode) .about-content h2,
+body:not(.light-mode) .about-content h3 {
+    color: #302d28 !important;
+}
+
+body:not(.light-mode) .about-content p {
+    color: #5C554B !important;
+}
+
+/* Location */
+body:not(.light-mode) .location-info h2,
+body:not(.light-mode) .location-info h3 {
+    color: #302d28 !important;
+}
+
+body:not(.light-mode) .location-info p {
+    color: #5C554B !important;
+}
+
+/* Enquiry / Contact */
+body:not(.light-mode) .contact-section h2,
+body:not(.light-mode) .contact-section h3 {
+    color: #302d28 !important;
+}
+
+body:not(.light-mode) .contact-section p {
+    color: #5C554B !important;
+}
+
+/* Header on beige background */
+body:not(.light-mode) .logo h2 {
+    color: #302d28 !important;
+}
+
+body:not(.light-mode) .logo span {
+    color: #6B645B !important;
+}
+
+/* Keep dark amenity/highlight cards looking premium */
+body:not(.light-mode) .amenity,
+body:not(.light-mode) .highlight-card {
+    color: #ffffff;
+}
+
+body:not(.light-mode) .amenity span,
+body:not(.light-mode) .highlight-card h3 {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .amenity i {
+    color: #D4AF37 !important;
+}
+
+body:not(.light-mode) .highlight-card p {
+    color: #dddddd !important;
+}
+
+/* Hero stays exactly as it is */
+body:not(.light-mode) .hero h1 {
+    color: #ffffff !important;
+}
+
+body:not(.light-mode) .hero p {
+    color: #eeeeee !important;
+}
+
+body:not(.light-mode) .hero .tag {
+    color: #D4AF37 !important;
+}
