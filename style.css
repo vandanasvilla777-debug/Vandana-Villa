@@ -3506,57 +3506,6 @@ body.light-mode header .tagline {
     }
 }
 /* =========================================
-   DARK MODE — TEXT VISIBILITY FIX ONLY
-========================================= */
-
-/* Home / Hero text */
-.hero h1 {
-    color: #ffffff !important;
-}
-
-.hero p {
-    color: #eeeeee !important;
-}
-
-.hero .tag {
-    color: #D4AF37 !important;
-}
-
-/* Amenities */
-.amenities .section-heading h2 {
-    color: #D4AF37 !important;
-}
-
-.amenities .section-heading p {
-    color: #dddddd !important;
-}
-
-.amenity span {
-    color: #ffffff !important;
-}
-
-.amenity i {
-    color: #D4AF37 !important;
-}
-
-/* Highlights */
-.highlight-card h3 {
-    color: #ffffff !important;
-}
-
-.highlight-card p {
-    color: #dddddd !important;
-}
-
-.highlight-label {
-    color: #bbbbbb !important;
-}
-
-/* General section text */
-.section-heading p {
-    color: #dddddd !important;
-}
-/* =========================================
    DARK THEME — TEXT VISIBILITY ONLY
 ========================================= */
 
