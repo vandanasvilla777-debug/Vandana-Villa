@@ -3685,3 +3685,49 @@ body:not(.light-mode) .hero p {
 body:not(.light-mode) .hero .tag {
     color: #D4AF37 !important;
 }
+/* =========================================
+   VANDANA VILLA — HOME PAGE FINAL TEXT
+   SAME LUXURY THEME ON DESKTOP + MOBILE
+========================================= */
+
+/* Home Hero */
+.hero .hero-content h1,
+.hero .hero-content p {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.hero .hero-content h1 {
+    color: #ffffff !important;
+}
+
+.hero .hero-content p {
+    color: #ffffff !important;
+}
+
+.hero .hero-content .tag {
+    color: #D8B85A !important;
+}
+
+/* Hero secondary button */
+.hero .hero-content .btn-secondary {
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,.65) !important;
+}
+
+/* Keep same text appearance on desktop + mobile */
+@media (max-width: 768px) {
+
+    .hero .hero-content h1 {
+        color: #ffffff !important;
+    }
+
+    .hero .hero-content p {
+        color: #ffffff !important;
+    }
+
+    .hero .hero-content .tag {
+        color: #D8B85A !important;
+    }
+
+}
