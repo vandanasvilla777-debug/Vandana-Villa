@@ -2673,3 +2673,30 @@ footer {
         translateX(3px);
 
 }
+@keyframes amenityFloat {
+
+    0% {
+        transform:
+            translateZ(25px)
+            translateY(0)
+            rotate(0)
+            scale(1.15);
+    }
+
+    40% {
+        transform:
+            translateZ(35px)
+            translateY(-8px)
+            rotate(6deg)
+            scale(1.2);
+    }
+
+    100% {
+        transform:
+            translateZ(25px)
+            translateY(-4px)
+            rotate(-6deg)
+            scale(1.15);
+    }
+
+}
