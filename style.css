@@ -2224,3 +2224,79 @@ footer {
             #24211D
         );
 }
+/* =========================================
+   VANDANA VILLA — 3D LIGHTING SYSTEM
+========================================= */
+
+.highlight-card,
+.amenity {
+
+    position: relative;
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+
+}
+
+
+/* Moving light */
+
+.highlight-card::before,
+.amenity::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.42) 0%,
+            rgba(201,164,76,.12) 35%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition:
+        opacity .25s ease;
+
+    z-index: 0;
+
+}
+
+
+/* Light appears on interaction */
+
+.highlight-card:hover::before,
+.amenity:hover::before {
+
+    opacity: 1;
+
+}
+
+
+/* Keep content above light */
+
+.highlight-card > *,
+.amenity > * {
+
+    position: relative;
+
+    z-index: 1;
+
+}
