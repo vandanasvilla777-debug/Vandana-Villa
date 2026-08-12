@@ -994,41 +994,6 @@ width:55px;
 height:55px;
 }
 
-}
-.theme-toggle{
-    width:45px;
-    height:45px;
-    border:none;
-    border-radius:50%;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(10px);
-    color:#fff;
-    font-size:20px;
-    cursor:pointer;
-    transition:.35s;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.theme-toggle:hover{
-    transform:rotate(180deg) scale(1.08);
-    background:#D4AF37;
-    color:#111;
-}
-body,
-section,
-header,
-footer,
-.highlight-card,
-.amenity,
-.contact-form input,
-.contact-form textarea,
-.btn-primary,
-.btn-secondary{
-    transition:background .4s,color .4s,border-color .4s;
-}
-
 /* ===== SOCIAL BRAND COLORS ===== */
 
 .social-links a[href*="instagram"]{
