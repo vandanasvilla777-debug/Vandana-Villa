@@ -3556,4 +3556,92 @@ body.light-mode header .tagline {
 .section-heading p {
     color: #dddddd !important;
 }
+/* =========================================
+   DARK THEME — TEXT VISIBILITY ONLY
+========================================= */
 
+/* Home / Hero */
+.hero h1 {
+    color: #ffffff !important;
+}
+
+.hero p {
+    color: #eeeeee !important;
+}
+
+/* Section headings */
+.section-heading h2 {
+    color: #D4AF37 !important;
+}
+
+.section-heading p {
+    color: #dddddd !important;
+}
+
+/* About */
+.about-content h2 {
+    color: #ffffff !important;
+}
+
+.about-content p {
+    color: #dddddd !important;
+}
+
+/* Highlights */
+.highlight-card h3 {
+    color: #ffffff !important;
+}
+
+.highlight-card p {
+    color: #dddddd !important;
+}
+
+.highlight-label {
+    color: #c8c8c8 !important;
+}
+
+/* Amenities */
+.amenity span {
+    color: #ffffff !important;
+}
+
+.amenity i {
+    color: #D4AF37 !important;
+}
+
+/* Location */
+.location-info h3 {
+    color: #D4AF37 !important;
+}
+
+.location-info p {
+    color: #dddddd !important;
+}
+
+/* Contact */
+.contact-form input,
+.contact-form textarea {
+    color: #ffffff !important;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999999 !important;
+}
+
+/* Navbar */
+.logo h2,
+.navbar ul a {
+    color: #ffffff !important;
+}
+
+.logo span {
+    color: #cccccc !important;
+}
+
+/* Footer */
+.footer-about p,
+.footer-contact p,
+.footer-links a {
+    color: #cccccc !important;
+}
