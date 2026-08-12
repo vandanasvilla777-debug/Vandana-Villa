@@ -436,3 +436,37 @@ lightCards.forEach(card => {
     });
 
 });
+// =========================================
+// PREMIUM MAGNETIC BUTTONS
+// =========================================
+
+const magneticButtons = document.querySelectorAll(
+    ".btn-primary, .btn-secondary"
+);
+
+magneticButtons.forEach(button => {
+
+    button.addEventListener("mousemove", (e) => {
+
+        if (window.innerWidth <= 768) return;
+
+        const rect = button.getBoundingClientRect();
+
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        const moveX = x * 0.18;
+        const moveY = y * 0.18;
+
+        button.style.transform =
+            `translate(${moveX}px, ${moveY}px)`;
+
+    });
+
+    button.addEventListener("mouseleave", () => {
+
+        button.style.transform = "";
+
+    });
+
+});
