@@ -3789,3 +3789,98 @@ body:not(.light-mode) .hero .tag {
         color: #5C554B !important;
     }
 }
+/* =========================================
+   FINAL NAV MENU FIX
+   SAME WARM LUXURY THEME — MOBILE + DESKTOP
+========================================= */
+
+/* Menu button */
+.menu-btn {
+    cursor: pointer;
+    color: #302C27 !important;
+    z-index: 10001;
+}
+
+/* Menu links — force readable colour */
+.navbar ul.mobile-open a {
+    color: #302C27 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Open menu */
+.navbar ul.mobile-open {
+    background: #F1EBE1 !important;
+    border: 1px solid rgba(197,161,90,.25);
+    box-shadow: 0 20px 45px rgba(60,50,35,.18);
+    z-index: 10000;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 992px) {
+
+    .menu-btn {
+        display: block !important;
+    }
+
+    .navbar ul {
+        display: none !important;
+    }
+
+    .navbar ul.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .navbar ul.mobile-open a {
+        display: block !important;
+        padding: 8px 5px;
+        color: #302C27 !important;
+        font-weight: 500;
+    }
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+@media (min-width: 993px) {
+
+    .menu-btn {
+        display: block !important;
+    }
+
+    .navbar > ul {
+        display: none !important;
+    }
+
+    .navbar ul.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 0;
+        left: auto;
+        width: 360px;
+        padding: 30px;
+        gap: 22px;
+        background: #F1EBE1 !important;
+        border: 1px solid rgba(197,161,90,.25);
+        border-radius: 0 0 18px 18px;
+        box-shadow: 0 20px 45px rgba(60,50,35,.18);
+    }
+
+    .navbar ul.mobile-open a {
+        display: block !important;
+        padding: 8px 5px;
+        color: #302C27 !important;
+        font-size: 17px;
+    }
+}
