@@ -3731,3 +3731,61 @@ body:not(.light-mode) .hero .tag {
     }
 
 }
+/* =========================================
+   HOME PAGE TEXT ONLY — FINAL FIX
+   KEEP EXISTING THEME EXACTLY SAME
+========================================= */
+
+/* About section text */
+.about .about-content .section-subtitle {
+    color: #C49A45 !important;
+}
+
+.about .about-content h2 {
+    color: #302D28 !important;
+}
+
+.about .about-content p {
+    color: #5C554B !important;
+}
+
+/* Home page experience/section headings */
+.highlights .section-heading .section-subtitle {
+    color: #302D28 !important;
+}
+
+.highlights .section-heading h2 {
+    color: #C49A45 !important;
+}
+
+.highlights .section-heading p {
+    color: #5C554B !important;
+}
+
+/* Keep the same colors on mobile */
+@media (max-width: 768px) {
+
+    .about .about-content .section-subtitle {
+        color: #C49A45 !important;
+    }
+
+    .about .about-content h2 {
+        color: #302D28 !important;
+    }
+
+    .about .about-content p {
+        color: #5C554B !important;
+    }
+
+    .highlights .section-heading .section-subtitle {
+        color: #302D28 !important;
+    }
+
+    .highlights .section-heading h2 {
+        color: #C49A45 !important;
+    }
+
+    .highlights .section-heading p {
+        color: #5C554B !important;
+    }
+}
