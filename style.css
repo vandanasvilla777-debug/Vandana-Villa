@@ -2300,3 +2300,19 @@ footer {
     z-index: 1;
 
 }
+/* =========================================
+   MAGNETIC BUTTON POLISH
+========================================= */
+
+.btn-primary,
+.btn-secondary {
+
+    will-change: transform;
+
+    transition:
+        transform .25s cubic-bezier(.2,.8,.2,1),
+        box-shadow .25s ease,
+        background .3s ease,
+        color .3s ease;
+
+}
