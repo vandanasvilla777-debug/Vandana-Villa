@@ -470,3 +470,53 @@ magneticButtons.forEach(button => {
     });
 
 });
+// =========================================
+// ABOUT IMAGE 3D PARALLAX
+// =========================================
+
+const aboutImage = document.querySelector(".about-image");
+
+if (aboutImage) {
+
+    aboutImage.addEventListener("mousemove", (e) => {
+
+        if (window.innerWidth <= 768) return;
+
+        const rect =
+            aboutImage.getBoundingClientRect();
+
+        const x =
+            e.clientX - rect.left;
+
+        const y =
+            e.clientY - rect.top;
+
+        const rotateY =
+            ((x / rect.width) - 0.5) * 8;
+
+        const rotateX =
+            ((y / rect.height) - 0.5) * -6;
+
+        const image =
+            aboutImage.querySelector("img");
+
+        image.style.transform = `
+            perspective(1000px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            translateZ(18px)
+            scale(1.015)
+        `;
+
+    });
+
+    aboutImage.addEventListener("mouseleave", () => {
+
+        const image =
+            aboutImage.querySelector("img");
+
+        image.style.transform = "";
+
+    });
+
+}
