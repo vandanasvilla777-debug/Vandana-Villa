@@ -4175,229 +4175,239 @@ body:not(.light-mode) .highlight-icon {
     .section-heading p {
         color: #5C554B !important;
     }
-}
-/* =========================================================
-   VANDANA VILLA — 3D LUXURY LOADER
-   ========================================================= */
+/* =========================================
+   VANDANA VILLA — SUBTLE 3D LOADER
+   SAME THEME • DESKTOP + MOBILE
+========================================= */
 
-#loader {
-    position: fixed;
-    inset: 0;
-    z-index: 999999;
+#loader{
+    position:fixed;
+    inset:0;
+    z-index:999999;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
-    background:
-        radial-gradient(
-            circle at center,
-            #f6efe4 0%,
-            #e8e0d2 45%,
-            #d8cdbb 100%
-        );
+    /* SAME WARM LIGHT THEME */
+    background:#f8f5ef;
 
-    perspective: 1200px;
-
-    overflow: hidden;
+    overflow:hidden;
+    perspective:1000px;
 }
 
-/* Ambient glow */
-#loader::before {
-    content: "";
-    position: absolute;
+/* Soft background glow */
+#loader::before{
+    content:"";
+    position:absolute;
 
-    width: 320px;
-    height: 320px;
+    width:280px;
+    height:280px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    background: rgba(196,154,69,.18);
+    background:rgba(212,175,55,.12);
 
-    filter: blur(55px);
+    filter:blur(45px);
 
-    animation: loaderGlow 3s ease-in-out infinite;
+    animation:loaderGlow 3s ease-in-out infinite;
 }
 
-/* 3D Logo */
-#loader img {
-    position: relative;
-    z-index: 2;
+/* 3D logo */
+#loader img{
+    position:relative;
+    z-index:2;
 
-    width: 125px;
-    height: 125px;
-    object-fit: contain;
+    width:120px;
+    height:120px;
+    object-fit:contain;
 
-    border-radius: 50%;
+    border-radius:50%;
 
     filter:
-        drop-shadow(0 15px 20px rgba(60,45,25,.25))
-        drop-shadow(0 0 25px rgba(196,154,69,.25));
+        drop-shadow(0 12px 18px rgba(0,0,0,.18))
+        drop-shadow(0 0 18px rgba(212,175,55,.18));
 
-    animation:
-        loaderLogo3D 3s ease-in-out infinite;
+    animation:loaderFloat 3s ease-in-out infinite;
 }
 
-/* Gold orbit ring */
-#loader::after {
-    content: "";
+/* Gold 3D ring */
+#loader::after{
+    content:"";
 
-    position: absolute;
+    position:absolute;
 
-    width: 175px;
-    height: 175px;
+    width:155px;
+    height:155px;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    border:
-        2px solid rgba(196,154,69,.55);
+    border:2px solid rgba(212,175,55,.5);
 
-    border-top-color: transparent;
-    border-bottom-color: transparent;
+    border-left-color:transparent;
+    border-right-color:transparent;
 
-    animation: loaderOrbit 2.5s linear infinite;
+    animation:loaderRing 3s linear infinite;
 }
 
-/* Villa name */
-#loader h2 {
-    position: relative;
-    z-index: 3;
+/* Title */
+#loader h2{
+    position:relative;
+    z-index:3;
 
-    margin-top: 32px;
+    margin-top:28px;
 
-    font-size: 32px;
-    font-weight: 700;
+    color:#302d29;
 
-    letter-spacing: 2px;
+    font-size:30px;
+    font-weight:700;
 
-    color: #302c27;
+    letter-spacing:1.5px;
 
-    text-shadow:
-        0 5px 12px rgba(60,45,25,.15);
-
-    animation:
-        loaderTextIn 1.2s ease forwards;
+    animation:loaderText 1s ease both;
 }
 
 /* Subtitle */
-#loader p {
-    position: relative;
-    z-index: 3;
+#loader p{
+    position:relative;
+    z-index:3;
 
-    margin-top: 8px;
+    margin-top:7px;
 
-    color: #6b6257;
+    color:#756f66;
 
-    font-size: 14px;
+    font-size:13px;
 
-    letter-spacing: 1px;
+    letter-spacing:.7px;
 
-    animation:
-        loaderTextIn 1.5s ease forwards;
+    animation:loaderText 1.3s ease both;
 }
 
-/* Logo 3D floating */
-@keyframes loaderLogo3D {
 
-    0% {
+/* =========================================
+   3D FLOAT
+========================================= */
+
+@keyframes loaderFloat{
+
+    0%{
         transform:
-            perspective(900px)
-            rotateY(-12deg)
-            rotateX(5deg)
+            perspective(800px)
+            rotateY(-5deg)
+            rotateX(3deg)
             translateY(0)
-            translateZ(0)
-            scale(1);
+            translateZ(0);
     }
 
-    50% {
+    50%{
         transform:
-            perspective(900px)
-            rotateY(12deg)
-            rotateX(-5deg)
-            translateY(-12px)
-            translateZ(35px)
-            scale(1.04);
+            perspective(800px)
+            rotateY(5deg)
+            rotateX(-3deg)
+            translateY(-10px)
+            translateZ(20px);
     }
 
-    100% {
+    100%{
         transform:
-            perspective(900px)
-            rotateY(-12deg)
-            rotateX(5deg)
+            perspective(800px)
+            rotateY(-5deg)
+            rotateX(3deg)
             translateY(0)
-            translateZ(0)
-            scale(1);
+            translateZ(0);
     }
+
 }
 
-/* Orbit */
-@keyframes loaderOrbit {
 
-    from {
+/* =========================================
+   3D RING
+========================================= */
+
+@keyframes loaderRing{
+
+    0%{
         transform:
             rotateX(65deg)
             rotateZ(0deg);
     }
 
-    to {
+    100%{
         transform:
             rotateX(65deg)
             rotateZ(360deg);
     }
+
 }
 
-/* Glow */
-@keyframes loaderGlow {
+
+/* =========================================
+   SOFT GLOW
+========================================= */
+
+@keyframes loaderGlow{
 
     0%,
-    100% {
-        transform: scale(.85);
-        opacity: .5;
+    100%{
+        transform:scale(.85);
+        opacity:.5;
     }
 
-    50% {
-        transform: scale(1.15);
-        opacity: .9;
+    50%{
+        transform:scale(1.15);
+        opacity:.9;
     }
+
 }
 
-/* Text entrance */
-@keyframes loaderTextIn {
 
-    from {
-        opacity: 0;
+/* =========================================
+   TEXT
+========================================= */
+
+@keyframes loaderText{
+
+    from{
+        opacity:0;
         transform:
-            translateY(15px)
-            translateZ(-20px);
+            translateY(12px)
+            translateZ(-10px);
     }
 
-    to {
-        opacity: 1;
+    to{
+        opacity:1;
         transform:
             translateY(0)
             translateZ(0);
     }
+
 }
 
-/* Mobile */
-@media (max-width: 768px) {
 
-    #loader img {
-        width: 105px;
-        height: 105px;
+/* =========================================
+   MOBILE
+   SAME DESIGN — ONLY SIZE ADJUSTMENT
+========================================= */
+
+@media(max-width:768px){
+
+    #loader img{
+        width:105px;
+        height:105px;
     }
 
-    #loader::after {
-        width: 150px;
-        height: 150px;
+    #loader::after{
+        width:140px;
+        height:140px;
     }
 
-    #loader h2 {
-        font-size: 27px;
+    #loader h2{
+        font-size:27px;
     }
 
-    #loader p {
-        font-size: 12px;
+    #loader p{
+        font-size:12px;
     }
+
 }
