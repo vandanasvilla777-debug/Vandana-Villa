@@ -2161,3 +2161,66 @@ header.scrolled {
         #9D968B;
 
 }
+/* =========================================
+   VANDANA VILLA — WARM LUXURY OVERRIDE
+========================================= */
+
+:root {
+    --dark: #E8E0D2;
+    --dark2: #DCD2C2;
+    --light: #F1EBE1;
+
+    --text: #5C554B;
+
+    --espresso: #302C27;
+    --cream: #E8E0D2;
+    --ivory: #F1EBE1;
+    --sand: #DCD2C2;
+    --sage: #73785E;
+
+    --primary: #C5A15A;
+}
+
+body {
+    background:
+        linear-gradient(
+            135deg,
+            #E8E0D2,
+            #DED5C7
+        );
+
+    color: #302C27;
+}
+
+.about,
+.amenities,
+.location {
+    background: #E8E0D2;
+}
+
+.highlights,
+.gallery,
+.contact {
+    background: #DCD2C2;
+}
+
+.highlight-card,
+.amenity {
+    background: rgba(241,235,225,.88);
+}
+
+.section-heading p,
+.about-content p,
+.highlight-card p,
+.location-info p {
+    color: #5C554B;
+}
+
+footer {
+    background:
+        linear-gradient(
+            135deg,
+            #302C27,
+            #24211D
+        );
+}
