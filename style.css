@@ -3678,3 +3678,145 @@ body.light-mode {
     background: #0b0b0b !important;
     color: #ffffff !important;
 }
+/* =========================================
+   VANDANA VILLA — FORCE DARK ONLY
+   ========================================= */
+
+:root {
+    --primary: #D4AF37 !important;
+    --secondary: #ffffff !important;
+    --dark: #0b0b0b !important;
+    --dark2: #151515 !important;
+    --light: #f8f8f8 !important;
+    --text: #d9d9d9 !important;
+}
+
+/* PAGE */
+html,
+body {
+    background: #0b0b0b !important;
+    color: #ffffff !important;
+}
+
+/* SECTIONS */
+.about,
+.amenities,
+.location {
+    background: #111111 !important;
+}
+
+.highlights,
+.gallery,
+.contact {
+    background: #0d0d0d !important;
+}
+
+footer {
+    background: #050505 !important;
+}
+
+/* TEXT */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ffffff !important;
+}
+
+p {
+    color: #d9d9d9 !important;
+}
+
+/* AMENITIES */
+.amenity {
+    background: #181818 !important;
+    color: #ffffff !important;
+}
+
+.amenity span {
+    color: #ffffff !important;
+}
+
+.amenity i {
+    color: #D4AF37 !important;
+}
+
+/* HIGHLIGHTS */
+.highlight-card {
+    background: #181818 !important;
+    color: #ffffff !important;
+}
+
+.highlight-card h3,
+.highlight-card p,
+.highlight-card span {
+    color: #ffffff !important;
+}
+
+/* ABOUT */
+.about-content h2 {
+    color: #ffffff !important;
+}
+
+.about-content p {
+    color: #d9d9d9 !important;
+}
+
+/* LOCATION */
+.location-info h3 {
+    color: #D4AF37 !important;
+}
+
+.location-info p {
+    color: #d9d9d9 !important;
+}
+
+/* CONTACT */
+.contact-form input,
+.contact-form textarea {
+    background: #181818 !important;
+    color: #ffffff !important;
+    border-color: #333333 !important;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #888888 !important;
+}
+
+/* HEADER */
+header.scrolled {
+    background: rgba(0,0,0,.94) !important;
+}
+
+.logo h2,
+.navbar a {
+    color: #ffffff !important;
+}
+
+.logo span {
+    color: #cccccc !important;
+}
+
+/* MOBILE MENU */
+@media (max-width: 992px) {
+    .navbar ul.mobile-open {
+        background: #111111 !important;
+    }
+
+    .navbar ul.mobile-open a {
+        color: #ffffff !important;
+    }
+}
+
+/* FOOTER */
+footer p,
+footer a {
+    color: #cccccc !important;
+}
+
+footer h3 {
+    color: #D4AF37 !important;
+}
