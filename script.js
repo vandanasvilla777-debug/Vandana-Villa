@@ -224,15 +224,15 @@ galleryImages.forEach((img, index) => {
 // ==============================
 const form = document.querySelector(".contact-form");
 
-form.addEventListener("submit", function(e) {
+if (form) {
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-    e.preventDefault();
+        alert("Thank you! Your enquiry has been sent.");
 
-    alert("Thank you! Your enquiry has been sent.");
-
-    form.reset();
-
-});
+        form.reset();
+    });
+}
 // ==============================
 // PREMIUM SCROLL REVEAL
 // ==============================
