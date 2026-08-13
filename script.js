@@ -1,16 +1,27 @@
 // ==============================
-// LOADER
+// LOADER — SAFE VERSION
 // ==============================
-window.addEventListener("load", () => {
+function hideLoader() {
     const loader = document.getElementById("loader");
 
+    if (!loader) return;
+
+    loader.style.transition = "opacity 0.6s ease, visibility 0.6s ease";
+    loader.style.opacity = "0";
+    loader.style.visibility = "hidden";
+    loader.style.pointerEvents = "none";
+
     setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.visibility = "hidden";
-        loader.style.transition = "0.5s";
-    }, 1000);
+        loader.style.display = "none";
+    }, 700);
+}
+
+window.addEventListener("load", () => {
+    setTimeout(hideLoader, 800);
 });
 
+// Safety fallback — loader kabhi permanently stuck nahi hoga
+setTimeout(hideLoader, 5000);
 // ==============================
 // STICKY HEADER
 // ==============================
