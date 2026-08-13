@@ -4796,3 +4796,42 @@ body.light-mode footer a {
         background: #F1EBE1 !important;
     }
 }
+/* FINAL DESKTOP MENU FIX */
+@media (min-width: 993px) {
+
+    .navbar {
+        position: relative !important;
+    }
+
+    .navbar > ul {
+        display: none !important;
+    }
+
+    .navbar > ul.mobile-open {
+        display: flex !important;
+        position: absolute !important;
+        top: 90px !important;
+        right: 0 !important;
+        left: auto !important;
+        width: 360px !important;
+        flex-direction: column !important;
+        padding: 30px !important;
+        gap: 22px !important;
+        background: #F1EBE1 !important;
+        z-index: 99999 !important;
+    }
+
+    .navbar > ul.mobile-open a {
+        display: block !important;
+        color: #302C27 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .menu-btn {
+        display: block !important;
+        cursor: pointer !important;
+        position: relative !important;
+        z-index: 100000 !important;
+    }
+}
