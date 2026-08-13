@@ -4470,3 +4470,115 @@ body:not(.light-mode) .highlight-icon {
     pointer-events: none;
     transition: opacity 0.7s ease, visibility 0.7s ease;
 }
+/* =========================================
+   VANDANA VILLA — FINAL SAME THEME
+   DESKTOP + MOBILE
+========================================= */
+
+html,
+body {
+    background: #E8E0D2 !important;
+    color: #302C27 !important;
+}
+
+header {
+    background: rgba(255,253,248,.96) !important;
+    color: #302C27 !important;
+}
+
+.navbar {
+    background: transparent !important;
+}
+
+.navbar ul a,
+.menu-btn {
+    color: #302C27 !important;
+}
+
+/* Main sections */
+.about,
+.amenities,
+.location {
+    background: #E8E0D2 !important;
+}
+
+.highlights,
+.gallery,
+.contact {
+    background: #DCD2C2 !important;
+}
+
+/* Menu — same on mobile + desktop */
+.navbar ul.mobile-open {
+    background: #F1EBE1 !important;
+    z-index: 99999 !important;
+}
+
+.navbar ul.mobile-open a {
+    color: #302C27 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Desktop menu */
+@media (min-width: 993px) {
+
+    .menu-btn {
+        display: block !important;
+        cursor: pointer;
+    }
+
+    .navbar > ul {
+        display: none !important;
+    }
+
+    .navbar ul.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 0;
+        width: 360px;
+        padding: 30px;
+        gap: 22px;
+        background: #F1EBE1 !important;
+        border-radius: 0 0 18px 18px;
+    }
+
+    .navbar ul.mobile-open a {
+        display: block !important;
+        color: #302C27 !important;
+        font-size: 17px;
+    }
+}
+
+/* Mobile menu */
+@media (max-width: 992px) {
+
+    .menu-btn {
+        display: block !important;
+        cursor: pointer;
+    }
+
+    .navbar > ul {
+        display: none !important;
+    }
+
+    .navbar ul.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        gap: 20px;
+        background: #F1EBE1 !important;
+    }
+
+    .navbar ul.mobile-open a {
+        display: block !important;
+        color: #302C27 !important;
+        font-weight: 500;
+    }
+}
