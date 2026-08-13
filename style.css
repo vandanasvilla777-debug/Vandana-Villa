@@ -4582,3 +4582,90 @@ header {
         font-weight: 500;
     }
 }
+/* =========================================
+   VANDANA VILLA — SAME WARM THEME
+   MOBILE + DESKTOP
+   ========================================= */
+
+html,
+body {
+    background: #f8f5ef !important;
+    color: #302d28 !important;
+}
+
+/* Main sections */
+section,
+.about,
+.highlights,
+.amenities,
+.gallery,
+.location,
+.contact {
+    background: #f8f5ef !important;
+}
+
+/* Header */
+header {
+    background: #f8f5ef !important;
+    color: #302d28 !important;
+}
+
+.logo h2 {
+    color: #302d28 !important;
+}
+
+.logo span {
+    color: #6B645B !important;
+}
+
+/* Section headings */
+.section-heading h2,
+.section-title {
+    color: #C49A45 !important;
+}
+
+.section-heading p,
+.about-content p,
+.location-info p,
+.contact-section p {
+    color: #5C554B !important;
+}
+
+/* About heading */
+.about-content h2,
+.about-content h3,
+.location-info h2,
+.location-info h3,
+.contact-section h2,
+.contact-section h3 {
+    color: #302d28 !important;
+}
+
+/* Keep cards premium */
+.amenity,
+.highlight-card {
+    background: #191816 !important;
+    color: #fff !important;
+}
+
+.amenity span,
+.highlight-card h3 {
+    color: #fff !important;
+}
+
+.amenity i {
+    color: #D4AF37 !important;
+}
+
+.highlight-card p {
+    color: #ddd !important;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+    body,
+    section,
+    header {
+        background-color: #f8f5ef !important;
+    }
+}
