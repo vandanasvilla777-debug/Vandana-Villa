@@ -276,43 +276,6 @@ revealElements.forEach(element => {
 // PREMIUM 3D MOUSE TILT
 // =========================================
 
-tiltCards.forEach(card => {
-
-    card.addEventListener("mousemove", (e) => {
-
-        if (window.innerWidth <= 768) return;
-
-        const rect = card.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX =
-            ((y - centerY) / centerY) * -4;
-
-        const rotateY =
-            ((x - centerX) / centerX) * 4;
-
-        card.style.transform = `
-            perspective(900px)
-            rotateX(${rotateX}deg)
-            rotateY(${rotateY}deg)
-            translateY(-8px)
-            scale(1.02)
-        `;
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform = "";
-
-    });
-
-});
 // =========================================
 // PREMIUM HERO 3D PARALLAX
 // =========================================
