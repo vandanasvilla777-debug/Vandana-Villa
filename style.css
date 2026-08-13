@@ -106,7 +106,165 @@ max-width:700px;
 
 margin:auto;
 }
+/*==========================
+LOADER
+==========================*/
+/* =========================================
+   VANDANA VILLA — PREMIUM 3D LOADER
+========================================= */
 
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #2a251d 0%,
+            #171512 45%,
+            #0b0a09 100%
+        );
+
+    overflow: hidden;
+
+    transition:
+        opacity .7s ease,
+        visibility .7s ease;
+}
+
+#loader::before {
+    content: "";
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: rgba(212,175,55,.12);
+
+    filter: blur(60px);
+
+    animation: loaderGlow 3s ease-in-out infinite alternate;
+}
+
+#loader img {
+    position: relative;
+    z-index: 2;
+
+    width: 120px;
+    height: 120px;
+
+    object-fit: contain;
+    border-radius: 50%;
+
+    filter:
+        drop-shadow(0 15px 30px rgba(0,0,0,.5))
+        drop-shadow(0 0 25px rgba(212,175,55,.25));
+
+    animation: loaderLogo 2.5s ease-in-out infinite;
+}
+
+#loader h2 {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 28px;
+
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: #D4AF37;
+
+    text-shadow:
+        0 4px 15px rgba(0,0,0,.5);
+}
+
+#loader p {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 8px;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    color: #d8d1c6;
+}
+
+@keyframes loaderLogo {
+
+    0% {
+        transform:
+            perspective(700px)
+            rotateY(-8deg)
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            perspective(700px)
+            rotateY(8deg)
+            translateY(-10px)
+            scale(1.04);
+    }
+
+    100% {
+        transform:
+            perspective(700px)
+            rotateY(-8deg)
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes loaderGlow {
+
+    from {
+        transform: scale(.85);
+        opacity: .5;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #loader img {
+        width: 95px;
+        height: 95px;
+    }
+
+    #loader h2 {
+        font-size: 25px;
+        margin-top: 22px;
+    }
+
+    #loader p {
+        font-size: 11px;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #loader img,
+    #loader::before {
+        animation: none;
+    }
+}
 /*==========================
 NAVBAR
 ==========================*/
