@@ -1,2846 +1,319 @@
-/*==================================================
-VANDANA VILLA
-Premium Luxury Theme
-==================================================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-:root{
-
---primary:#D4AF37;
---secondary:#ffffff;
---dark:#0b0b0b;
---dark2:#151515;
---light:#f8f8f8;
---text:#d9d9d9;
---radius:18px;
---transition:.35s ease;
-
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-
-font-family:'Poppins',sans-serif;
-
-background:var(--dark);
-
-color:#fff;
-
-overflow-x:hidden;
-
-line-height:1.7;
-
-}
-
-img{
-
-max-width:100%;
-
-display:block;
-
-}
-
-a{
-
-text-decoration:none;
-
-color:inherit;
-
-}
-
-ul{
-
-list-style:none;
-
-}
-
-.container{
-
-width:min(1200px,92%);
-
-margin:auto;
-
-}
-
-section{
-
-padding:100px 0;
-
-}
-
-.section-heading{
-
-text-align:center;
-
-margin-bottom:60px;
-
-}
-
-.section-heading h2{
-
-font-size:46px;
-
-color:var(--primary);
-
-margin-bottom:15px;
-
-}
-
-.section-heading p{
-
-color:var(--text);
-
-font-size:18px;
-
-max-width:700px;
-
-margin:auto;
-}
-/*==========================
-LOADER
-==========================*/
 /* =========================================
-   VANDANA VILLA — PREMIUM 3D LOADER
-========================================= */
+   VANDANA VILLA — LOGO MATCH THEME
+   PART 1: BASE + HEADER + HERO
+   ========================================= */
 
-#loader {
-    position: fixed;
-    inset: 0;
-    z-index: 999999;
+:root {
+    --gold: #c9a45c;
+    --gold-light: #e2c98f;
+    --ivory: #f4efe3;
+    --olive: #7b8060;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    --bg: #0c0b09;
+    --bg2: #14120e;
+    --card: #181612;
 
+    --text: #f4efe3;
+    --muted: #c4bdae;
+
+    --border: rgba(201, 164, 92, 0.18);
+
+    --radius: 24px;
+    --transition: 0.35s cubic-bezier(.2,.8,.2,1);
+}
+
+/* ---------- BASE ---------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text);
+}
+
+p {
+    color: var(--muted);
+}
+
+a {
+    color: inherit;
+}
+
+::selection {
+    background: var(--gold);
+    color: #17130d;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    background: rgba(8, 7, 5, 0.92) !important;
+    border-bottom: 1px solid rgba(201, 164, 92, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.logo h2 {
+    color: var(--ivory) !important;
+}
+
+.logo span {
+    color: #8b846f !important;
+}
+
+#menu a {
+    color: #eee8dc !important;
+    transition: var(--transition);
+}
+
+#menu a:hover {
+    color: var(--gold-light) !important;
+}
+
+.menu-btn {
+    color: var(--ivory) !important;
+    border-color: rgba(201, 164, 92, 0.25) !important;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 6, 5, 0.91),
+            rgba(7, 6, 5, 0.66)
+        ),
+        url("hero.jpg") center/cover no-repeat !important;
+}
+
+.hero h1 {
+    color: var(--ivory) !important;
+}
+
+.hero p {
+    color: #d5d0c4 !important;
+}
+
+.hero-overlay {
     background:
         radial-gradient(
-            circle at center,
-            #2a251d 0%,
-            #171512 45%,
-            #0b0a09 100%
-        );
-
-    overflow: hidden;
-
-    transition:
-        opacity .7s ease,
-        visibility .7s ease;
+            circle at 70% 40%,
+            rgba(201, 164, 92, 0.12),
+            transparent 42%
+        ) !important;
 }
 
-#loader::before {
-    content: "";
-    position: absolute;
+/* ---------- BUTTONS ---------- */
 
-    width: 320px;
-    height: 320px;
-
-    border-radius: 50%;
-
-    background: rgba(212,175,55,.12);
-
-    filter: blur(60px);
-
-    animation: loaderGlow 3s ease-in-out infinite alternate;
+.btn-primary,
+.btn-primary:hover {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: #17130d !important;
 }
 
-#loader img {
-    position: relative;
-    z-index: 2;
+.btn-secondary {
+    color: var(--ivory) !important;
+    border-color: var(--ivory) !important;
+}
 
-    width: 120px;
-    height: 120px;
+.btn-secondary:hover {
+    background: var(--ivory) !important;
+    color: #17130d !important;
+}
 
-    object-fit: contain;
-    border-radius: 50%;
+/* ---------- LOADER ---------- */
 
-    filter:
-        drop-shadow(0 15px 30px rgba(0,0,0,.5))
-        drop-shadow(0 0 25px rgba(212,175,55,.25));
-
-    animation: loaderLogo 2.5s ease-in-out infinite;
+#loader {
+    background: #0c0b09 !important;
 }
 
 #loader h2 {
-    position: relative;
-    z-index: 2;
-
-    margin-top: 28px;
-
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-    color: #D4AF37;
-
-    text-shadow:
-        0 4px 15px rgba(0,0,0,.5);
+    color: var(--ivory) !important;
 }
 
 #loader p {
-    position: relative;
-    z-index: 2;
-
-    margin-top: 8px;
-
-    font-size: 13px;
-    letter-spacing: 1px;
-
-    color: #d8d1c6;
-}
-
-@keyframes loaderLogo {
-
-    0% {
-        transform:
-            perspective(700px)
-            rotateY(-8deg)
-            translateY(0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            perspective(700px)
-            rotateY(8deg)
-            translateY(-10px)
-            scale(1.04);
-    }
-
-    100% {
-        transform:
-            perspective(700px)
-            rotateY(-8deg)
-            translateY(0)
-            scale(1);
-    }
-}
-
-@keyframes loaderGlow {
-
-    from {
-        transform: scale(.85);
-        opacity: .5;
-    }
-
-    to {
-        transform: scale(1.15);
-        opacity: 1;
-    }
-}
-
-@media (max-width: 768px) {
-
-    #loader img {
-        width: 95px;
-        height: 95px;
-    }
-
-    #loader h2 {
-        font-size: 25px;
-        margin-top: 22px;
-    }
-
-    #loader p {
-        font-size: 11px;
-        text-align: center;
-        padding: 0 20px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    #loader img,
-    #loader::before {
-        animation: none;
-    }
-}
-/*==========================
-NAVBAR
-==========================*/
-
-header{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-z-index:9999;
-
-transition:.4s;
-
-}
-
-.navbar{
-
-height:90px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-width:min(1300px,92%);
-
-margin:auto;
-
-}
-
-.logo{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-}
-
-.logo img{
-
-width:60px;
-
-height:60px;
-
-border-radius:50%;
-
-}
-
-.logo h2{
-
-font-size:24px;
-
-}
-
-.logo span{
-
-font-size:13px;
-
-color:#ccc;
-
-display:block;
-
-}
-
-.navbar ul{
-
-display:flex;
-
-gap:35px;
-
-}
-
-.navbar ul a{
-
-font-weight:500;
-
-transition:.3s;
-
-}
-
-.navbar ul a:hover{
-
-color:var(--primary);
-
-}
-
-.menu-btn{
-
-display:none;
-
-font-size:28px;
-
-cursor:pointer;
-
-}
-
-header.scrolled{
-
-background:rgba(0,0,0,.92);
-
-backdrop-filter:blur(18px);
-
-box-shadow:0 10px 25px rgba(0,0,0,.3);
-
-}
-/*========================================
-HERO SECTION
-========================================*/
-
-.hero{
-
-height:100vh;
-
-background:url("hero.jpg") center center/cover no-repeat;
-
-position:relative;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-overflow:hidden;
-
-}
-
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,.65);
-
-z-index:1;
-
-}
-
-.hero-overlay{
-
-display:none;
-
-}
-
-.hero-content{
-
-position:relative;
-
-z-index:2;
-
-max-width:900px;
-
-padding:20px;
-
-}
-
-.tag{
-
-display:inline-block;
-
-padding:10px 24px;
-
-background:rgba(212,175,55,.15);
-
-border:1px solid rgba(212,175,55,.4);
-
-border-radius:50px;
-
-color:var(--primary);
-
-font-size:14px;
-
-margin-bottom:25px;
-
-backdrop-filter:blur(10px);
-
-}
-
-.hero h1{
-
-font-size:68px;
-
-line-height:1.15;
-
-margin-bottom:20px;
-
-font-weight:800;
-
-}
-
-.hero p{
-
-font-size:20px;
-
-color:#ddd;
-
-max-width:720px;
-
-margin:auto;
-
-margin-bottom:40px;
-
-}
-/*========================================
-BUTTONS
-========================================*/
-
-.hero-buttons{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
-
-.btn-primary{
-
-padding:16px 38px;
-
-background:var(--primary);
-
-color:#111;
-
-font-weight:700;
-
-border-radius:50px;
-
-transition:var(--transition);
-
-}
-
-.btn-primary:hover{
-
-transform:translateY(-5px);
-
-}
-
-.btn-secondary{
-
-padding:16px 38px;
-
-border:2px solid white;
-
-border-radius:50px;
-
-transition:var(--transition);
-
-}
-
-.btn-secondary:hover{
-
-background:white;
-
-color:#111;
-
-}
-/*========================================
-FLOATING BUTTONS
-========================================*/
-
-.floating-buttons{
-
-position:fixed;
-
-right:25px;
-
-bottom:30px;
-
-display:flex;
-
-flex-direction:column;
-
-gap:15px;
-
-z-index:999;
-
-}
-
-.whatsapp,
-.call{
-
-width:60px;
-
-height:60px;
-
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:26px;
-
-color:white;
-
-box-shadow:0 10px 25px rgba(0,0,0,.35);
-
-transition:.3s;
-
-}
-
-.whatsapp{
-
-background:#25D366;
-
-}
-
-.call{
-
-background:#D4AF37;
-
-color:#111;
-
-}
-
-.whatsapp:hover,
-.call:hover{
-
-transform:translateY(-5px);
-
-}
-/*========================================
-SCROLL DOWN
-========================================*/
-
-.scroll-down{
-
-position:absolute;
-
-bottom:30px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-font-size:34px;
-
-color:white;
-
-z-index:2;
-
-animation:scrollDown 2s infinite;
-
-}
-
-@keyframes scrollDown{
-
-0%{
-
-transform:translate(-50%,0);
-
-}
-
-50%{
-
-transform:translate(-50%,12px);
-
-}
-
-100%{
-
-transform:translate(-50%,0);
-
-}
-
-}
-/*========================================
-ABOUT
-========================================*/
-
-.about{
-
-background:#111;
-
-}
-
-.about .container{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:70px;
-
-align-items:center;
-
-}
-
-.about-image img{
-
-border-radius:25px;
-
-box-shadow:0 20px 40px rgba(0,0,0,.35);
-
-}
-
-.section-subtitle{
-
-display:inline-block;
-
-color:var(--primary);
-
-margin-bottom:15px;
-
-font-weight:600;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
-}
-
-.about-content h2{
-
-font-size:42px;
-
-margin-bottom:20px;
-
-}
-
-.about-content p{
-
-color:#ccc;
-
-margin-bottom:18px;
-
-}
-
-.about-buttons{
-
-display:flex;
-
-gap:20px;
-
-margin-top:35px;
-
-flex-wrap:wrap;
-
-}
-/*========================================
-HIGHLIGHTS
-========================================*/
-
-.highlights{
-background:#0d0d0d;
-}
-
-.highlight-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.highlight-card{
-background:#181818;
-padding:35px 25px;
-border-radius:20px;
-text-align:center;
-transition:.35s;
-border:1px solid rgba(255,255,255,.05);
-}
-
-.highlight-card:hover{
-transform:translateY(-10px);
-border-color:var(--primary);
-box-shadow:0 15px 30px rgba(212,175,55,.15);
-}
-
-.highlight-card i{
-font-size:42px;
-color:var(--primary);
-margin-bottom:20px;
-}
-
-.highlight-card h3{
-margin-bottom:15px;
-font-size:22px;
-}
-
-.highlight-card p{
-color:#cfcfcf;
-}
-
-
-/*========================================
-AMENITIES
-========================================*/
-
-.amenities{
-background:#111;
-}
-
-.amenities-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.amenity{
-background:#181818;
-padding:30px;
-border-radius:18px;
-display:flex;
-align-items:center;
-gap:15px;
-transition:.35s;
-}
-
-.amenity:hover{
-background:#222;
-transform:translateY(-8px);
-}
-
-.amenity i{
-font-size:28px;
-color:var(--primary);
-min-width:35px;
-}
-
-.amenity span{
-font-size:18px;
-}
-
-
-/*========================================
-GALLERY
-========================================*/
-
-.gallery{
-background:#0d0d0d;
-}
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.gallery-grid img{
-width:100%;
-height:280px;
-object-fit:cover;
-border-radius:20px;
-cursor:pointer;
-transition:.4s;
-}
-
-.gallery-grid img:hover{
-transform:scale(1.05);
-box-shadow:0 15px 30px rgba(0,0,0,.4);
-}
-
-
-/*========================================
-LOCATION
-========================================*/
-
-.location{
-background:#111;
-}
-
-.location-content{
-display:grid;
-grid-template-columns:1fr 1.2fr;
-gap:40px;
-align-items:center;
-}
-
-.location-info h3{
-font-size:28px;
-color:var(--primary);
-margin-bottom:20px;
-}
-
-.location-info{
-    padding: 0 20px;
-}
-
-.location-info h3{
-    font-size:28px;
-    color:var(--primary);
-    margin-bottom:20px;
-}
-
-.location-info p{
-    color:#ddd;
-    margin-bottom:25px;
-    line-height:1.8;
-    text-align:left;
-}
-
-.location-buttons{
-margin-top:20px;
-}
-
-.map iframe{
-width:100%;
-height:450px;
-border:0;
-border-radius:20px;
-}
-
-
-/*========================================
-CONTACT
-========================================*/
-
-.contact{
-background:#0d0d0d;
-}
-
-.contact-form{
-max-width:750px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:20px;
-}
-
-.contact-form input,
-.contact-form textarea{
-background:#181818;
-border:1px solid #2b2b2b;
-padding:18px;
-border-radius:12px;
-color:#fff;
-font-size:16px;
-outline:none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-border-color:var(--primary);
-}
-
-.contact-form button{
-padding:18px;
-border:none;
-background:var(--primary);
-color:#111;
-font-size:18px;
-font-weight:700;
-border-radius:50px;
-cursor:pointer;
-transition:.3s;
-}
-
-.contact-form button:hover{
-transform:translateY(-4px);
-}
-
-
-/*========================================
-FOOTER
-========================================*/
-
-footer{
-background:#050505;
-padding:70px 0 25px;
-}
-
-.footer-container{
-width:min(1200px,92%);
-margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
-}
-
-.footer-about img{
-width:90px;
-margin-bottom:20px;
-}
-
-.footer-about p{
-color:#bbb;
-margin-top:15px;
-}
-
-.footer-links{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-.footer-links h3,
-.footer-contact h3{
-margin-bottom:15px;
-color:var(--primary);
-}
-
-.footer-links a{
-transition:.3s;
-}
-
-.footer-links a:hover{
-color:var(--primary);
-}
-
-.footer-contact p{
-margin-bottom:12px;
-color:#ccc;
-}
-
-.social-icons{
-display:flex;
-gap:15px;
-margin-top:20px;
-}
-
-.social-icons a{
-width:45px;
-height:45px;
-background:#181818;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-transition:.3s;
-}
-
-.social-icons a:hover{
-background:var(--primary);
-color:#111;
-}
-
-.copyright{
-text-align:center;
-margin-top:50px;
-padding-top:20px;
-border-top:1px solid #222;
-color:#888;
-}
-
-
-/*========================================
-RESPONSIVE
-========================================*/
-
-@media(max-width:992px){
-
-.hero h1{
-font-size:46px;
-}
-
-.about .container,
-.location-content{
-grid-template-columns:1fr;
-}
-
-.navbar ul{
-display:none;
-}
-
-.menu-btn{
-display:block;
-}
-
-}
-
-@media(max-width:768px){
-
-.hero{
-padding:120px 20px;
-}
-
-.hero h1{
-font-size:36px;
-}
-
-.hero p{
-font-size:17px;
-}
-
-.hero-buttons,
-.about-buttons{
-flex-direction:column;
-}
-
-.section-heading h2{
-font-size:34px;
-}
-
-.gallery-grid{
-grid-template-columns:1fr;
-}
-
-.highlight-grid,
-.amenities-grid{
-grid-template-columns:1fr;
-}
-
-.floating-buttons{
-right:15px;
-bottom:20px;
-}
-
-.whatsapp,
-.call{
-width:55px;
-height:55px;
-}
-
-/* ===== SOCIAL BRAND COLORS ===== */
-
-.social-links a[href*="instagram"]{
-    color:#E4405F !important;
-}
-
-.social-links a[href*="facebook"]{
-    color:#1877F2 !important;
-}
-
-.social-links a[href*="whatsapp"]{
-    color:#25D366 !important;
-}
-
-.social-links a[href*="youtube"]{
-    color:#FF0000 !important;
-}
-
-.social-links a[href*="twitter"],
-.social-links a[href*="x.com"]{
-    color:#000000 !important;
-}
-
-.social-links a[href*="linkedin"]{
-    color:#0A66C2 !important;
-}
-
-/* Hover */
-.social-links a:hover{
-    transform:translateY(-3px) scale(1.08);
-    filter:brightness(1.15);
-}
-/* ===== REAL SOCIAL MEDIA COLORS ===== */
-
-.social-icons a:nth-child(1) {
-    color: #E4405F !important; /* Instagram */
-}
-
-.social-icons a:nth-child(2) {
-    color: #1877F2 !important; /* Facebook */
-}
-
-.social-icons a:nth-child(3) {
-    color: #25D366 !important; /* WhatsApp */
-}
-
-/* Hover effect */
-.social-icons a:hover {
-    transform: translateY(-3px) scale(1.1);
-    transition: 0.3s ease;
+    color: #c4bdae !important;
 }
 /* =========================================
-   VANDANA VILLA — PREMIUM 3D EFFECTS
-========================================= */
+   VANDANA VILLA — PART 2
+   SECTIONS + 3D CARDS + GALLERY
+   ========================================= */
 
-/* 3D foundation */
-.highlight-card,
-.amenity,
-.gallery-grid img,
-.btn-primary,
-.btn-secondary {
-    transform-style: preserve-3d;
-    will-change: transform;
+/* ---------- SECTION HEADINGS ---------- */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
 }
-
-/* 3D Highlight Cards */
-.highlight-card {
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-.highlight-card:hover {
-    transform: perspective(900px)
-               rotateX(4deg)
-               rotateY(-4deg)
-               translateY(-10px)
-               scale(1.02);
-
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.18);
-}
-
-/* 3D Amenity Cards */
-.amenity {
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.amenity:hover {
-    transform: perspective(800px)
-               rotateX(3deg)
-               rotateY(-3deg)
-               translateY(-6px);
-
-    box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* 3D Gallery */
-.gallery-grid img {
-    transition:
-        transform 0.45s ease,
-        box-shadow 0.45s ease;
-}
-
-.gallery-grid img:hover {
-    transform:
-        perspective(900px)
-        translateZ(25px)
-        scale(1.04);
-
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.25);
-}
-
-/* Premium 3D Buttons */
-.btn-primary,
-.btn-secondary {
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.btn-primary:hover,
-.btn-secondary:hover {
-    transform: translateY(-4px);
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.18);
-}
-
-.btn-primary:active,
-.btn-secondary:active {
-    transform: translateY(1px);
-}
-
-/* Mobile — keep effects lighter */
-@media (max-width: 768px) {
-
-    .highlight-card:hover {
-        transform: translateY(-5px) scale(1.01);
-    }
-
-    .amenity:hover {
-        transform: translateY(-4px);
-    }
-
-    .gallery-grid img:hover {
-        transform: scale(1.02);
-    }
-
-}
-/* =========================================
-   PREMIUM 3D GALLERY LIGHTBOX
-========================================= */
-
-.premium-lightbox{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.94);
-
-    backdrop-filter:blur(12px);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:999999;
-
-    padding:30px;
-
-    animation:lightboxFade .3s ease;
-
-}
-
-@keyframes lightboxFade{
-
-    from{
-        opacity:0;
-    }
-
-    to{
-        opacity:1;
-    }
-
-}
-
-.lightbox-content{
-
-    position:relative;
-
-    max-width:90vw;
-
-    max-height:85vh;
-
-    perspective:1200px;
-
-}
-
-.lightbox-content img{
-
-    max-width:90vw;
-
-    max-height:82vh;
-
-    object-fit:contain;
-
-    border-radius:18px;
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.7),
-        0 0 40px rgba(212,175,55,.12);
-
-    transform:
-        perspective(1200px)
-        rotateX(1deg)
-        rotateY(-1deg)
-        translateZ(20px);
-
-    transition:
-        opacity .25s ease,
-        transform .35s ease;
-
-}
-
-.lightbox-content img:hover{
-
-    transform:
-        perspective(1200px)
-        rotateX(0deg)
-        rotateY(0deg)
-        scale(1.015)
-        translateZ(35px);
-
-}
-
-.lightbox-close,
-.lightbox-prev,
-.lightbox-next{
-
-    position:fixed;
-
-    border:none;
-
-    cursor:pointer;
-
-    color:white;
-
-    background:rgba(255,255,255,.1);
-
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,.15);
-
-    transition:.3s ease;
-
-    z-index:1000000;
-
-}
-
-.lightbox-close{
-
-    top:25px;
-
-    right:30px;
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:50%;
-
-    font-size:32px;
-
-}
-
-.lightbox-prev,
-.lightbox-next{
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    width:55px;
-
-    height:55px;
-
-    border-radius:50%;
-
-    font-size:24px;
-
-}
-
-.lightbox-prev{
-
-    left:25px;
-
-}
-
-.lightbox-next{
-
-    right:25px;
-
-}
-
-.lightbox-close:hover,
-.lightbox-prev:hover,
-.lightbox-next:hover{
-
-    background:var(--primary);
-
-    color:#111;
-
-    transform:
-        translateY(-50%)
-        scale(1.08);
-
-}
-
-.lightbox-close:hover{
-
-    transform:scale(1.08);
-
-}
-
-.lightbox-counter{
-
-    position:absolute;
-
-    bottom:15px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    background:rgba(0,0,0,.65);
-
-    padding:6px 15px;
-
-    border-radius:30px;
-
-    font-size:13px;
-
-    color:#fff;
-
-    backdrop-filter:blur(8px);
-
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .premium-lightbox{
-
-        padding:15px;
-
-    }
-
-    .lightbox-content img{
-
-        max-width:94vw;
-
-        max-height:75vh;
-
-        border-radius:14px;
-
-    }
-
-    .lightbox-prev,
-    .lightbox-next{
-
-        width:45px;
-
-        height:45px;
-
-        font-size:18px;
-
-    }
-
-    .lightbox-prev{
-
-        left:10px;
-
-    }
-
-    .lightbox-next{
-
-        right:10px;
-
-    }
-
-    .lightbox-close{
-
-        top:15px;
-
-        right:15px;
-
-        width:44px;
-
-        height:44px;
-
-        font-size:28px;
-
-    }
-
-}
-/* =========================================
-   HERO 3D DEPTH
-========================================= */
-
-.hero-content{
-
-    transition:
-        transform .25s ease-out;
-
-    will-change:transform;
-
-}
-
-.hero::before{
-
-    transition:
-        background .4s ease;
-
-}
-/* =========================================
-   PREMIUM SCROLL REVEAL
-========================================= */
-
-.reveal-element{
-
-    opacity:0;
-
-    transform:
-        translateY(35px)
-        scale(.98);
-
-    transition:
-        opacity .7s ease,
-        transform .7s cubic-bezier(.2,.65,.3,1);
-
-}
-
-.reveal-visible{
-
-    opacity:1;
-
-    transform:
-        translateY(0)
-        scale(1);
-
-}
-
-/* Respect reduced-motion preference */
-
-@media (prefers-reduced-motion: reduce){
-
-    .reveal-element{
-
-        opacity:1;
-
-        transform:none;
-
-        transition:none;
-
-    }
-
-}
-/* =========================================
-   PREMIUM MOBILE POLISH
-========================================= */
-
-@media (max-width: 768px) {
-
-    .hero-content {
-        transition: transform .3s ease;
-    }
-
-    .highlight-card,
-    .amenity {
-        transform-style: flat;
-    }
-
-    .highlight-card:hover,
-    .amenity:hover,
-    .gallery-grid img:hover {
-        transform: none;
-    }
-
-    .btn-primary:hover,
-    .btn-secondary:hover {
-        transform: translateY(-2px);
-    }
-
-    .section-heading {
-        margin-bottom: 40px;
-    }
-
-    section {
-        padding: 75px 0;
-    }
-
-}
-
-/* Touch devices */
-
-@media (hover: none) and (pointer: coarse) {
-
-    .highlight-card:hover,
-    .amenity:hover,
-    .gallery-grid img:hover,
-    .btn-primary:hover,
-    .btn-secondary:hover {
-        transform: none;
-    }
-
-}
-/* =========================================
-   PREMIUM MOBILE NAVBAR
-========================================= */
-
-@media (max-width: 992px) {
-
-    .navbar {
-        position:relative;
-    }
-
-    .navbar ul {
-        display:none;
-    }
-
-    .navbar ul.mobile-open {
-
-        display:flex;
-
-        flex-direction:column;
-
-        position:absolute;
-
-        top:90px;
-
-        left:0;
-
-        width:100%;
-
-        padding:25px;
-
-        gap:20px;
-
-        background:rgba(10,10,10,.97);
-
-        backdrop-filter:blur(18px);
-
-        border-top:1px solid rgba(212,175,55,.2);
-
-        box-shadow:
-            0 20px 40px rgba(0,0,0,.35);
-
-        animation:
-            mobileMenuIn .3s ease;
-
-    }
-
-    .navbar ul.mobile-open a {
-
-        display:block;
-
-        padding:8px 5px;
-
-    }
-
-    .menu-btn {
-
-        display:block;
-
-        margin-left:10px;
-
-        transition:.3s ease;
-
-    }
-
-    .menu-btn.active {
-
-        color:var(--primary);
-
-        transform:rotate(90deg);
-
-    }
-
-}
-
-@keyframes mobileMenuIn {
-
-    from {
-
-        opacity:0;
-
-        transform:translateY(-10px);
-
-    }
-
-    to {
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* Theme button + menu alignment */
-
-.navbar > .theme-toggle {
-
-    margin-left:auto;
-
-}
-
-@media (max-width: 992px) {
-
-    .navbar > .theme-toggle {
-
-        margin-left:auto;
-
-    }
-
-}
-/* =========================================
-   PREMIUM LIGHT MODE POLISH
-========================================= */
-
-body.light-mode .hero::before {
-    background:rgba(0,0,0,.45);
-}
-
-body.light-mode .hero p {
-    color:#f1f1f1;
-}
-
-body.light-mode .section-heading p,
-body.light-mode .highlight-card p,
-body.light-mode .about-content p,
-body.light-mode .location-info p,
-body.light-mode .footer-about p,
-body.light-mode .footer-contact p {
-    color:#555;
-}
-
-body.light-mode .highlight-card,
-body.light-mode .amenity {
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
-}
-
-body.light-mode .gallery-grid img {
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-body.light-mode .social-icons a {
-    background:#f1f1f1;
-}
-
-body.light-mode .social-icons a:hover {
-    background:#e5e5e5;
-}
-
-body.light-mode header.scrolled {
-    background:rgba(255,255,255,.94);
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
-}
-
-@media (max-width:992px) {
-
-    body.light-mode .navbar ul.mobile-open {
-        background:rgba(255,255,255,.97);
-        border-top:1px solid rgba(212,175,55,.25);
-    }
-
-    body.light-mode .navbar ul.mobile-open a {
-        color:#111;
-    }
-
-}
-/* =========================================
-   VANDANA VILLA — LUXURY RESORT THEME
-   STEP 1
-========================================= */
-
-:root {
-
-    --primary: #C9A44C;
-    --secondary: #ffffff;
-
-    --dark: #F7F3EA;
-    --dark2: #EFE8DA;
-
-    --light: #FFFDF8;
-
-    --text: #5F5A50;
-
-    --espresso: #2D2924;
-    --cream: #F7F3EA;
-    --ivory: #FFFDF8;
-    --sand: #EDE3D2;
-    --sage: #7A8063;
-
-    --radius: 20px;
-
-    --transition: .35s ease;
-}
-
-
-/* =========================================
-   MAIN BODY
-========================================= */
-
-body {
-
-    background:
-        linear-gradient(
-            135deg,
-            #FFFDF8 0%,
-            #F7F3EA 50%,
-            #EFE8DA 100%
-        );
-
-    color: var(--espresso);
-
-}
-
-
-/* =========================================
-   SECTION BACKGROUNDS
-========================================= */
-
-.about,
-.amenities,
-.location {
-
-    background:
-        linear-gradient(
-            135deg,
-            #FFFDF8,
-            #F5EFE4
-        );
-
-}
-
-
-.highlights,
-.gallery,
-.contact {
-
-    background:
-        linear-gradient(
-            135deg,
-            #F1E9DC,
-            #FBF8F2
-        );
-
-}
-
-
-footer {
-
-    background:
-        linear-gradient(
-            135deg,
-            #302B25,
-            #201D19
-        );
-
-}
-
-
-/* =========================================
-   TEXT
-========================================= */
 
 .section-heading h2 {
-
-    color: var(--primary);
-
+    color: var(--gold) !important;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 800;
 }
 
 .section-heading p {
-
-    color: #686257;
-
-}
-
-.about-content h2 {
-
-    color: var(--espresso);
-
-}
-
-.about-content p {
-
-    color: #625D54;
-
-}
-
-.highlight-card h3,
-.amenity span {
-
-    color: var(--espresso);
-
-}
-
-.highlight-card p {
-
-    color: #6B665D;
-
-}
-
-.location-info p {
-
-    color: #625D54;
-
+    color: var(--muted) !important;
+    max-width: 650px;
+    margin: 12px auto 0;
 }
 
 
-/* =========================================
-   HIGHLIGHT CARDS
-========================================= */
-
-.highlight-card {
-
-    background:
-        rgba(255,255,255,.75);
-
-    border:
-        1px solid rgba(201,164,76,.18);
-
-    box-shadow:
-        0 15px 40px rgba(80,65,40,.08);
-
-    backdrop-filter:
-        blur(12px);
-
-}
-
-
-.highlight-card:hover {
-
-    border-color:
-        rgba(201,164,76,.55);
-
-    box-shadow:
-        0 25px 55px rgba(80,65,40,.14);
-
-}
-
-
-/* =========================================
-   AMENITY CARDS
-========================================= */
-
-.amenity {
-
-    background:
-        rgba(255,255,255,.72);
-
-    border:
-        1px solid rgba(201,164,76,.15);
-
-    box-shadow:
-        0 12px 35px rgba(80,65,40,.07);
-
-}
-
-
-.amenity:hover {
-
-    background:
-        rgba(255,255,255,.95);
-
-}
-
-
-/* =========================================
-   GALLERY
-========================================= */
-
-.gallery-grid img {
-
-    box-shadow:
-        0 15px 35px rgba(50,40,25,.12);
-
-}
-
-
-/* =========================================
-   CONTACT FORM
-========================================= */
-
-.contact-form input,
-.contact-form textarea {
-
-    background:
-        rgba(255,255,255,.85);
-
-    color:
-        var(--espresso);
-
-    border:
-        1px solid #DED5C5;
-
-    box-shadow:
-        0 8px 25px rgba(70,55,35,.05);
-
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-
-    color:
-        #8A8479;
-
-}
-
-
-/* =========================================
-   BUTTONS
-========================================= */
-
-.btn-primary {
-
-    background:
-        linear-gradient(
-            135deg,
-            #D8B85A,
-            #B99132
-        );
-
-    color:
-        #211E19;
-
-    box-shadow:
-        0 10px 25px rgba(185,145,50,.18);
-
-}
-
-
-.btn-secondary {
-
-    border-color:
-        var(--espresso);
-
-    color:
-        var(--espresso);
-
-}
-
-
-.btn-secondary:hover {
-
-    background:
-        var(--espresso);
-
-    color:
-        #fff;
-
-}
-
-
-/* =========================================
-   NAVBAR
-========================================= */
-
-header.scrolled {
-
-    background:
-        rgba(255,253,248,.90);
-
-    box-shadow:
-        0 10px 35px rgba(70,55,35,.12);
-
-}
-
-
-.navbar ul a {
-
-    color:
-        var(--espresso);
-
-}
-
-
-.navbar ul a:hover {
-
-    color:
-        var(--primary);
-
-}
-
-
-/* =========================================
-   THEME BUTTON
-========================================= */
-
-.theme-toggle {
-
-    background:
-        rgba(255,255,255,.75);
-
-    color:
-        var(--espresso);
-
-    border:
-        1px solid rgba(201,164,76,.25);
-
-    box-shadow:
-        0 8px 20px rgba(70,55,35,.08);
-
-}
-
-
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-@media (max-width:992px) {
-
-    .navbar ul.mobile-open {
-
-        background:
-            rgba(255,253,248,.97);
-
-        box-shadow:
-            0 20px 45px rgba(60,50,35,.15);
-
-    }
-
-    .navbar ul.mobile-open a {
-
-        color:
-            var(--espresso);
-
-    }
-
-}
-
-
-/* =========================================
-   FOOTER TEXT
-========================================= */
-
-.footer-about p,
-.footer-contact p {
-
-    color:
-        #D0C9BD;
-
-}
-
-.footer-links a {
-
-    color:
-        #E8E2D8;
-
-}
-
-.footer-links a:hover {
-
-    color:
-        #D8B85A;
-
-}
-
-.footer-links h3,
-.footer-contact h3 {
-
-    color:
-        #D8B85A;
-
-}
-
-.copyright {
-
-    border-color:
-        rgba(255,255,255,.12);
-
-    color:
-        #9D968B;
-
-}
-/* =========================================
-   VANDANA VILLA — WARM LUXURY OVERRIDE
-========================================= */
-
-:root {
-    --dark: #E8E0D2;
-    --dark2: #DCD2C2;
-    --light: #F1EBE1;
-
-    --text: #5C554B;
-
-    --espresso: #302C27;
-    --cream: #E8E0D2;
-    --ivory: #F1EBE1;
-    --sand: #DCD2C2;
-    --sage: #73785E;
-
-    --primary: #C5A15A;
-}
-
-body {
-    background:
-        linear-gradient(
-            135deg,
-            #E8E0D2,
-            #DED5C7
-        );
-
-    color: #302C27;
-}
+/* ---------- SECTION BACKGROUNDS ---------- */
 
 .about,
-.amenities,
-.location {
-    background: #E8E0D2;
+.location,
+.contact {
+    background: var(--bg) !important;
+    color: var(--text);
 }
 
 .highlights,
-.gallery,
-.contact {
-    background: #DCD2C2;
-}
-
-.highlight-card,
-.amenity {
-    background: rgba(241,235,225,.88);
-}
-
-.section-heading p,
-.about-content p,
-.highlight-card p,
-.location-info p {
-    color: #5C554B;
-}
-
-footer {
-    background:
-        linear-gradient(
-            135deg,
-            #302C27,
-            #24211D
-        );
-}
-/* =========================================
-   VANDANA VILLA — 3D LIGHTING SYSTEM
-========================================= */
-
-.highlight-card,
-.amenity {
-
-    position: relative;
-    overflow: hidden;
-
-    transform-style: preserve-3d;
-
-    --mouse-x: 50%;
-    --mouse-y: 50%;
-
+.amenities,
+.gallery {
+    background: var(--bg2) !important;
+    color: var(--text);
 }
 
 
-/* Moving light */
+/* ---------- 3D GRIDS ---------- */
 
-.highlight-card::before,
-.amenity::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    left: var(--mouse-x);
-    top: var(--mouse-y);
-
-    transform:
-        translate(-50%, -50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.42) 0%,
-            rgba(201,164,76,.12) 35%,
-            transparent 70%
-        );
-
-    pointer-events: none;
-
-    opacity: 0;
-
-    transition:
-        opacity .25s ease;
-
-    z-index: 0;
-
+.highlights-grid,
+.amenities-grid,
+.gallery-grid {
+    perspective: 1400px;
 }
 
 
-/* Light appears on interaction */
-
-.highlight-card:hover::before,
-.amenity:hover::before {
-
-    opacity: 1;
-
-}
-
-
-/* Keep content above light */
-
-.highlight-card > *,
-.amenity > * {
-
-    position: relative;
-
-    z-index: 1;
-
-}
-/* =========================================
-   MAGNETIC BUTTON POLISH
-========================================= */
-
-.btn-primary,
-.btn-secondary {
-
-    will-change: transform;
-
-    transition:
-        transform .25s cubic-bezier(.2,.8,.2,1),
-        box-shadow .25s ease,
-        background .3s ease,
-        color .3s ease;
-
-}
-/* =========================================
-   VANDANA VILLA — LUXURY HERO PARTICLES
-========================================= */
-
-.hero {
-    isolation: isolate;
-}
-
-.hero-particles {
-
-    position: absolute;
-
-    inset: 0;
-
-    overflow: hidden;
-
-    pointer-events: none;
-
-    z-index: 1;
-
-}
-
-.hero-particles span {
-
-    position: absolute;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background: rgba(197,161,90,.65);
-
-    box-shadow:
-        0 0 12px rgba(197,161,90,.45);
-
-    animation:
-        villaFloat 8s ease-in-out infinite;
-
-}
-
-
-/* Different positions */
-
-.hero-particles span:nth-child(1) {
-    left: 10%;
-    top: 25%;
-    animation-delay: 0s;
-}
-
-.hero-particles span:nth-child(2) {
-    left: 22%;
-    top: 70%;
-    animation-delay: 1.5s;
-}
-
-.hero-particles span:nth-child(3) {
-    left: 38%;
-    top: 35%;
-    animation-delay: 3s;
-}
-
-.hero-particles span:nth-child(4) {
-    left: 52%;
-    top: 75%;
-    animation-delay: 2s;
-}
-
-.hero-particles span:nth-child(5) {
-    left: 67%;
-    top: 28%;
-    animation-delay: 4s;
-}
-
-.hero-particles span:nth-child(6) {
-    left: 78%;
-    top: 60%;
-    animation-delay: 1s;
-}
-
-.hero-particles span:nth-child(7) {
-    left: 88%;
-    top: 32%;
-    animation-delay: 3.5s;
-}
-
-.hero-particles span:nth-child(8) {
-    left: 92%;
-    top: 78%;
-    animation-delay: 5s;
-}
-
-
-@keyframes villaFloat {
-
-    0% {
-        transform:
-            translate3d(0, 0, 0)
-            scale(.8);
-
-        opacity: .25;
-    }
-
-    50% {
-        transform:
-            translate3d(15px, -35px, 0)
-            scale(1.15);
-
-        opacity: .8;
-    }
-
-    100% {
-        transform:
-            translate3d(-10px, -70px, 0)
-            scale(.7);
-
-        opacity: 0;
-    }
-
-}
-
-
-/* Mobile — even more subtle */
-
-@media (max-width:768px) {
-
-    .hero-particles span {
-
-        width: 3px;
-        height: 3px;
-
-        animation-duration: 10s;
-
-    }
-
-}
-/* =========================================
-   VANDANA VILLA — 3D ABOUT SECTION
-========================================= */
-
-.about-image {
-    position: relative;
-    perspective: 1000px;
-}
-
-.about-image::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 75%;
-    height: 75%;
-
-    right: -25px;
-    bottom: -25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(197,161,90,.35),
-            rgba(115,120,94,.18)
-        );
-
-    border-radius: 28px;
-
-    transform:
-        rotate(5deg)
-        translateZ(-30px);
-
-    z-index: 0;
-
-}
-
-.about-image img {
-
-    position: relative;
-
-    z-index: 1;
-
-    transform-style: preserve-3d;
-
-    transition:
-        transform .5s cubic-bezier(.2,.7,.2,1),
-        box-shadow .5s ease;
-
-}
-
-.about-image:hover img {
-
-    transform:
-        perspective(1000px)
-        rotateY(-4deg)
-        rotateX(2deg)
-        translateZ(18px)
-        scale(1.015);
-
-    box-shadow:
-        25px 30px 55px rgba(70,55,35,.20);
-
-}
-
-
-/* Decorative luxury frame */
-
-.about-image::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 14px;
-
-    border:
-        1px solid rgba(197,161,90,.35);
-
-    border-radius: 22px;
-
-    pointer-events: none;
-
-    z-index: 2;
-
-    transition:
-        transform .5s ease;
-
-}
-
-.about-image:hover::after {
-
-    transform:
-        translateZ(25px);
-
-}
-
-
-/* About content depth */
-
-.about-content {
-
-    position: relative;
-
-    z-index: 3;
-
-}
-
-.about-content h2 {
-
-    transition:
-        transform .4s ease;
-
-}
-
-.about-content:hover h2 {
-
-    transform:
-        translateX(5px);
-
-}
-/* =========================================
-   VANDANA VILLA — PLAYFUL 3D AMENITIES
-========================================= */
-
-.amenity {
-
-    position: relative;
-
-    overflow: hidden;
-
-    transform-style: preserve-3d;
-
-}
-
-
-/* Soft ambient glow */
-
-.amenity::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 120px;
-    height: 120px;
-
-    right: -45px;
-    top: -45px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(197,161,90,.20),
-            transparent 70%
-        );
-
-    pointer-events: none;
-
-    transition:
-        transform .5s ease,
-        opacity .5s ease;
-
-}
-
-
-/* Icon becomes a floating object */
-
-.amenity i {
-
-    transition:
-        transform .4s cubic-bezier(.2,.8,.2,1),
-        text-shadow .4s ease;
-
-    transform-style: preserve-3d;
-
-}
-
-
-/* Hover interaction */
-
-.amenity:hover i {
-
-    transform:
-        translateZ(25px)
-        translateY(-4px)
-        rotate(-6deg)
-        scale(1.15);
-
-    text-shadow:
-        0 8px 18px rgba(197,161,90,.25);
-
-}
-
-.amenity:hover::after {
-
-    transform:
-        scale(1.5);
-
-}
-
-
-/* Text depth */
-
-.amenity span {
-
-    transition:
-        transform .35s ease;
-
-}
-
-.amenity:hover span {
-
-    transform:
-        translateZ(10px)
-        translateX(3px);
-
-}
-@keyframes amenityFloat {
-
-    0% {
-        transform:
-            translateZ(25px)
-            translateY(0)
-            rotate(0)
-            scale(1.15);
-    }
-
-    40% {
-        transform:
-            translateZ(35px)
-            translateY(-8px)
-            rotate(6deg)
-            scale(1.2);
-    }
-
-    100% {
-        transform:
-            translateZ(25px)
-            translateY(-4px)
-            rotate(-6deg)
-            scale(1.15);
-    }
-
-}
-/* =========================================
-   VANDANA VILLA — EXPERIENCE CARDS
-========================================= */
-
-.highlights {
-    position: relative;
-    overflow: hidden;
-}
+/* ---------- HIGHLIGHT CARDS ---------- */
 
 .highlight-card {
     position: relative;
     overflow: hidden;
-    min-height: 330px;
-    padding: 38px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
+
     background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(201, 164, 92, 0.09),
+            transparent 32%
+        ),
         linear-gradient(
             145deg,
-            rgba(255,255,255,.72),
-            rgba(235,228,213,.55)
-        );
-    border: 1px solid rgba(197,161,90,.20);
-    box-shadow:
-        0 15px 35px rgba(70,55,35,.08);
-}
+            #1a1712,
+            #11100d
+        ) !important;
 
-/* Large decorative number */
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius);
 
-.highlight-number {
-    position: absolute;
-    top: 12px;
-    right: 20px;
-
-    font-size: 70px;
-    line-height: 1;
-
-    font-weight: 800;
-
-    color: rgba(197,161,90,.10);
-
-    pointer-events: none;
-}
-
-/* Floating icon */
-
-.highlight-icon {
-    width: 62px;
-    height: 62px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 25px;
-
-    border-radius: 18px;
-
-    background: rgba(197,161,90,.12);
-
-    color: #b08b3c;
-
-    font-size: 25px;
+    color: var(--text);
 
     box-shadow:
-        0 10px 25px rgba(70,55,35,.08);
+        0 20px 60px rgba(0, 0, 0, 0.38);
 
-    transform: translateZ(25px);
+    transform-style: preserve-3d;
 
     transition:
-        transform .4s ease,
-        box-shadow .4s ease;
+        transform 0.18s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    will-change: transform;
 }
 
-.highlight-card:hover .highlight-icon {
-    transform:
-        translateZ(35px)
-        translateY(-6px)
-        rotate(-5deg)
-        scale(1.08);
+.highlight-card:hover {
+    border-color: rgba(201, 164, 92, 0.5) !important;
 
     box-shadow:
-        0 15px 30px rgba(197,161,90,.20);
+        0 28px 70px rgba(0, 0, 0, 0.55),
+        0 0 35px rgba(201, 164, 92, 0.08);
 }
 
 .highlight-card h3 {
-    color: #2b2925;
-    font-size: 24px;
-    margin-bottom: 12px;
+    color: var(--ivory) !important;
 }
 
 .highlight-card p {
-    color: #68635a;
-    line-height: 1.7;
-    margin-bottom: 20px;
+    color: var(--muted) !important;
 }
 
-.highlight-label {
-    display: inline-block;
 
-    color: #9a7731;
+/* ---------- CARD ICONS ---------- */
 
-    font-size: 12px;
-    font-weight: 600;
-
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
+.card-icon,
+.highlight-card i {
+    color: var(--gold-light) !important;
 }
 
-/* Decorative glow */
 
-.highlight-card::after {
+/* ---------- AMENITY CARDS ---------- */
+
+.amenity {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(201, 164, 92, 0.08),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #1a1712,
+            #11100d
+        ) !important;
+
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius);
+
+    color: var(--text);
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    will-change: transform;
+}
+
+.amenity:hover {
+    border-color: rgba(201, 164, 92, 0.5) !important;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(201, 164, 92, 0.08);
+}
+
+.amenity i {
+    color: var(--gold-light) !important;
+}
+
+.amenity span,
+.amenity p {
+    color: var(--ivory) !important;
+}
+
+
+/* ---------- 3D LIGHT EFFECT ---------- */
+
+.highlight-card::after,
+.amenity::after {
     content: "";
 
     position: absolute;
@@ -2849,734 +322,206 @@ footer {
     height: 180px;
 
     right: -90px;
-    bottom: -90px;
+    top: -90px;
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(197,161,90,.18),
-            transparent 70%
-        );
+    background: rgba(201, 164, 92, 0.10);
+
+    filter: blur(20px);
 
     pointer-events: none;
-
-    transition:
-        transform .5s ease;
 }
 
-.highlight-card:hover::after {
-    transform: scale(1.5);
+
+/* ---------- ABOUT IMAGE ---------- */
+
+.about-image {
+    perspective: 1000px;
 }
 
-/* Dark mode */
-
-body:not(.light-mode) .highlight-card {
-    background:
-        linear-gradient(
-            145deg,
-            #211f1b,
-            #171614
-        );
-
-    border-color: rgba(197,161,90,.16);
-}
-
-body:not(.light-mode) .highlight-card h3 {
-    color: #f5f1e8;
-}
-
-body:not(.light-mode) .highlight-card p {
-    color: #c6c0b5;
-}
-
-/* Mobile */
-
-@media (max-width: 768px) {
-
-    .highlight-card {
-        min-height: 290px;
-        padding: 30px 25px;
-    }
-
-    .highlight-number {
-        font-size: 55px;
-    }
-
-}
-/* =========================================
-   VANDANA VILLA — PREMIUM AMENITY GRID
-========================================= */
-
-.amenities {
-    position: relative;
-    overflow: hidden;
-}
-
-.amenities-grid {
-    perspective: 1200px;
-}
-
-.amenity {
-    min-height: 88px;
-    cursor: default;
-
-    border: 1px solid rgba(197,161,90,.12);
-
-    box-shadow:
-        0 10px 25px rgba(50,40,25,.06);
-
+.about-image img {
     transform-style: preserve-3d;
 
     transition:
-        transform .35s cubic-bezier(.2,.8,.2,1),
-        box-shadow .35s ease,
-        border-color .35s ease,
-        background .35s ease;
+        transform 0.25s ease,
+        filter 0.35s ease;
+
+    will-change: transform;
 }
 
-.amenity:hover {
-    border-color: rgba(197,161,90,.45);
+.about-image:hover img {
+    filter: brightness(1.04);
+}
+
+
+/* ---------- GALLERY ---------- */
+
+.gallery-grid {
+    display: grid;
+    gap: 22px;
+}
+
+.gallery-grid img {
+    width: 100%;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(201, 164, 92, 0.12);
 
     box-shadow:
-        0 18px 35px rgba(50,40,25,.12);
-}
-
-/* Icon container */
-
-.amenity i {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 14px;
-
-    background: rgba(197,161,90,.10);
-
-    transform: translateZ(20px);
+        0 18px 45px rgba(0, 0, 0, 0.35);
 
     transition:
-        transform .35s ease,
-        background .35s ease;
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        filter 0.45s ease,
+        box-shadow 0.45s ease;
+
+    transform: translateZ(0);
 }
 
-.amenity:hover i {
-    background: rgba(197,161,90,.18);
-
+.gallery-grid img:hover {
     transform:
-        translateZ(35px)
-        scale(1.08)
-        rotate(-4deg);
+        translateY(-8px)
+        scale(1.025);
+
+    filter: brightness(1.06) saturate(1.05);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.55),
+        0 0 25px rgba(201, 164, 92, 0.08);
 }
 
-.amenity span {
-    transform: translateZ(12px);
 
-    font-weight: 500;
+/* ---------- LOCATION MAP ---------- */
 
+.map iframe,
+.location iframe {
+    border-radius: 24px !important;
+
+    border: 1px solid rgba(201, 164, 92, 0.18) !important;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.contact-form {
+    background: #14120f !important;
+
+    border: 1px solid var(--border) !important;
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: #0e0d0b !important;
+
+    color: var(--ivory) !important;
+
+    border: 1px solid rgba(201, 164, 92, 0.16) !important;
+
+    border-radius: 12px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--gold) !important;
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px rgba(201, 164, 92, 0.08);
+}
+
+
+/* ---------- FLOATING BUTTONS ---------- */
+
+.floating-buttons a {
     transition:
-        transform .35s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.amenity:hover span {
+.floating-buttons a:hover {
     transform:
-        translateZ(20px)
-        translateX(3px);
+        translateY(-5px)
+        scale(1.06);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.45);
 }
 
-/* Dark theme */
 
-body:not(.light-mode) .amenity {
-    background:
-        linear-gradient(
-            145deg,
-            #211f1b,
-            #181715
-        );
+/* ---------- FOOTER ---------- */
+
+footer {
+    background: #080706 !important;
+    color: var(--text);
 }
 
-/* Mobile */
+footer p,
+footer a {
+    color: var(--muted) !important;
+}
 
-@media (max-width:768px) {
+footer a:hover {
+    color: var(--gold-light) !important;
+   }
+/* =========================================
+   VANDANA VILLA — PART 3
+   MOBILE + DESKTOP + FINAL UI
+   ========================================= */
 
+/* ---------- DESKTOP 3D ---------- */
+
+@media (min-width: 769px) {
+
+    .highlight-card,
     .amenity {
-        min-height: 78px;
+        cursor: default;
     }
 
-}
-/* =========================================
-   DARK MODE — TEXT VISIBILITY FIX
-========================================= */
-
-body:not(.light-mode) .hero h1 {
-    color: #ffffff;
-}
-
-body:not(.light-mode) .hero p {
-    color: #e5e5e5;
-}
-
-body:not(.light-mode) .hero .tag {
-    color: #e0bd62;
-}
-
-body:not(.light-mode) .section-heading h2 {
-    color: #e0bd62;
-}
-
-body:not(.light-mode) .section-heading p {
-    color: #d6d6d6;
-}
-
-body:not(.light-mode) .amenity span {
-    color: #f2f2f2;
-}
-
-body:not(.light-mode) .amenity i {
-    color: #e0bd62;
-}
-
-body:not(.light-mode) .highlight-card h3 {
-    color: #ffffff;
-}
-
-body:not(.light-mode) .highlight-card p {
-    color: #d0d0d0;
-}
-
-body:not(.light-mode) .highlight-label {
-    color: #e0bd62;
-}
-
-body:not(.light-mode) .about-content h2 {
-    color: #ffffff;
-}
-
-body:not(.light-mode) .about-content p {
-    color: #d0d0d0;
-}
-
-body:not(.light-mode) .section-subtitle {
-    color: #e0bd62;
-}
-/* =========================================
-   FINAL DARK MODE VISIBILITY FIX
-========================================= */
-
-body:not(.light-mode) .hero-content h1,
-body:not(.light-mode) .hero-content p,
-body:not(.light-mode) .hero-content .tag {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-body:not(.light-mode) .hero-content h1 {
-    color: #ffffff !important;
-    text-shadow: 0 3px 18px rgba(0,0,0,.65);
-}
-
-body:not(.light-mode) .hero-content p {
-    color: #f0f0f0 !important;
-}
-
-body:not(.light-mode) .hero-content .tag {
-    color: #e0bd62 !important;
-}
-
-
-/* SECTION HEADINGS */
-
-body:not(.light-mode) .section-heading h2 {
-    color: #e0bd62 !important;
-}
-
-body:not(.light-mode) .section-heading p {
-    color: #dddddd !important;
-}
-
-
-/* AMENITIES */
-
-body:not(.light-mode) .amenity {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .amenity span {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .amenity i {
-    color: #e0bd62 !important;
-}
-
-
-/* HIGHLIGHTS */
-
-body:not(.light-mode) .highlight-card h3 {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .highlight-card p {
-    color: #d8d8d8 !important;
-}
-
-
-/* ABOUT */
-
-body:not(.light-mode) .about-content h2 {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .about-content p {
-    color: #d5d5d5 !important;
-}
-
-
-/* NAVBAR */
-
-body:not(.light-mode) .logo h2,
-body:not(.light-mode) .navbar ul a {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .logo span {
-    color: #cccccc !important;
-}
-
-
-/* LOCATION */
-
-body:not(.light-mode) .location-info p {
-    color: #dddddd !important;
-}
-
-
-/* FOOTER */
-
-body:not(.light-mode) footer p,
-body:not(.light-mode) footer a {
-    color: #cccccc !important;
-}
-/* =========================================
-   LIGHT THEME — FINAL TEXT CONTRAST FIX
-========================================= */
-
-/* HERO */
-
-body.light-mode .hero h1 {
-    color: #ffffff !important;
-    text-shadow: 0 4px 18px rgba(0,0,0,.75) !important;
-}
-
-body.light-mode .hero p {
-    color: #f5f5f5 !important;
-    text-shadow: 0 2px 10px rgba(0,0,0,.7) !important;
-}
-
-body.light-mode .hero .tag {
-    color: #f0c95c !important;
-}
-
-body.light-mode .hero .btn-secondary {
-    color: #ffffff !important;
-    border-color: #ffffff !important;
-}
-
-
-/* AMENITIES */
-
-body.light-mode .amenity {
-    background: #1d1b18 !important;
-    color: #ffffff !important;
-}
-
-body.light-mode .amenity span {
-    color: #ffffff !important;
-}
-
-body.light-mode .amenity i {
-    color: #e0b84f !important;
-}
-
-body.light-mode .amenity:hover span {
-    color: #ffffff !important;
-}
-
-
-/* AMENITY SECTION TEXT */
-
-body.light-mode .amenities .section-heading h2 {
-    color: #c49a45 !important;
-}
-
-body.light-mode .amenities .section-heading p {
-    color: #4a4640 !important;
-}
-
-
-/* HIGHLIGHTS */
-
-body.light-mode .highlight-card h3 {
-    color: #ffffff !important;
-}
-
-body.light-mode .highlight-card p {
-    color: #dddddd !important;
-}
-
-
-/* ABOUT */
-
-body.light-mode .about-content h2 {
-    color: #222222 !important;
-}
-
-body.light-mode .about-content p {
-    color: #444444 !important;
-}
-
-
-/* LOCATION */
-
-body.light-mode .location-info p {
-    color: #444444 !important;
-}
-/* =========================================
-   FINAL THEME TEXT FIX
-   ========================================= */
-
-/* ---------- LIGHT MODE ---------- */
-
-body.light-mode {
-    color: #302d28;
-}
-
-/* Main headings */
-body.light-mode h1,
-body.light-mode h2,
-body.light-mode h3,
-body.light-mode h4,
-body.light-mode h5,
-body.light-mode h6 {
-    color: #302d28;
-}
-
-/* Paragraphs */
-body.light-mode p {
-    color: #5f5a52;
-}
-
-/* Section headings */
-body.light-mode .section-heading,
-body.light-mode .section-title,
-body.light-mode .section-heading h2,
-body.light-mode .section-heading p {
-    color: #302d28;
-}
-
-/* About section */
-body.light-mode .about-content,
-body.light-mode .about-content h2,
-body.light-mode .about-content h3,
-body.light-mode .about-content p {
-    color: #302d28;
-}
-
-/* Amenities */
-body.light-mode .amenity,
-body.light-mode .amenity h3,
-body.light-mode .amenity p,
-body.light-mode .amenity span {
-    color: #302d28;
-}
-
-/* Highlights */
-body.light-mode .highlight-card,
-body.light-mode .highlight-card h3,
-body.light-mode .highlight-card p,
-body.light-mode .highlight-card span {
-    color: #302d28;
-}
-
-/* Location */
-body.light-mode .location-info,
-body.light-mode .location-info h3,
-body.light-mode .location-info p,
-body.light-mode .location-info span {
-    color: #302d28;
-}
-
-/* Contact */
-body.light-mode .contact-form,
-body.light-mode .contact-form h2,
-body.light-mode .contact-form p {
-    color: #302d28;
-}
-
-/* Form placeholders */
-body.light-mode .contact-form input::placeholder,
-body.light-mode .contact-form textarea::placeholder {
-    color: #77716a;
-}
-
-/* Header */
-body.light-mode header .logo-text,
-body.light-mode header h1,
-body.light-mode header h2,
-body.light-mode header p {
-    color: #302d28;
-}
-
-/* Navigation */
-body.light-mode #menu a {
-    color: #302d28;
-}
-
-/* ---------- DARK MODE ---------- */
-
-body:not(.light-mode) {
-    color: #f5f1e8;
-}
-
-body:not(.light-mode) h1,
-body:not(.light-mode) h2,
-body:not(.light-mode) h3,
-body:not(.light-mode) h4,
-body:not(.light-mode) h5,
-body:not(.light-mode) h6 {
-    color: #f5f1e8;
-}
-
-body:not(.light-mode) p {
-    color: #d8d2c7;
-}
-
-body:not(.light-mode) .amenity,
-body:not(.light-mode) .highlight-card {
-    color: #f5f1e8;
-}
-
-body:not(.light-mode) .amenity h3,
-body:not(.light-mode) .highlight-card h3 {
-    color: #f5f1e8;
-}
-
-body:not(.light-mode) .amenity p,
-body:not(.light-mode) .highlight-card p {
-    color: #d8d2c7;
-}
-/* =========================================
-   FINAL THEME TEXT VISIBILITY FIX
-   ========================================= */
-
-/* ---------- DEFAULT / DARK THEME ---------- */
-
-body:not(.light-mode) {
-    color: #f5f1e8;
-}
-
-body:not(.light-mode) p,
-body:not(.light-mode) li,
-body:not(.light-mode) .about-content p,
-body:not(.light-mode) .location-info p,
-body:not(.light-mode) .section-subtitle,
-body:not(.light-mode) .contact-section p {
-    color: #e8e3d8 !important;
-}
-
-body:not(.light-mode) h1,
-body:not(.light-mode) h2,
-body:not(.light-mode) h3,
-body:not(.light-mode) h4 {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .section-heading,
-body:not(.light-mode) .section-title {
-    color: #d8ad45 !important;
-}
-
-
-/* ---------- AMENITIES ---------- */
-
-body:not(.light-mode) .amenity {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .amenity h3,
-body:not(.light-mode) .amenity h4,
-body:not(.light-mode) .amenity span,
-body:not(.light-mode) .amenity p {
-    color: #ffffff !important;
-}
-
-
-/* ---------- HIGHLIGHTS ---------- */
-
-body:not(.light-mode) .highlight-card {
-    color: #ffffff !important;
-}
+    .about-image,
+    .highlight-card,
+    .amenity {
+        transform-style: preserve-3d;
+    }
 
-body:not(.light-mode) .highlight-card h3,
-body:not(.light-mode) .highlight-card p,
-body:not(.light-mode) .highlight-card span {
-    color: #ffffff !important;
-}
-
-
-/* ---------- ABOUT ---------- */
-
-body:not(.light-mode) .about-content h2,
-body:not(.light-mode) .about-content h3 {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .about-content p {
-    color: #e8e3d8 !important;
-}
-
-
-/* ---------- LOCATION ---------- */
-
-body:not(.light-mode) .location-info h2,
-body:not(.light-mode) .location-info h3 {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .location-info p {
-    color: #e8e3d8 !important;
-}
-
-
-/* ---------- ENQUIRY ---------- */
-
-body:not(.light-mode) .contact-section h2,
-body:not(.light-mode) .contact-section h3 {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .contact-section p {
-    color: #e8e3d8 !important;
-}
-
-body:not(.light-mode) .contact-form input,
-body:not(.light-mode) .contact-form textarea {
-    color: #222222 !important;
-    background: #ffffff !important;
-}
-
-body:not(.light-mode) .contact-form input::placeholder,
-body:not(.light-mode) .contact-form textarea::placeholder {
-    color: #777777 !important;
-}
-
-
-/* ---------- HERO ---------- */
-
-body:not(.light-mode) .hero h1,
-body:not(.light-mode) .hero h2,
-body:not(.light-mode) .hero p {
-    color: #ffffff !important;
-}
-
-
-/* =========================================
-   LIGHT THEME
-   ========================================= */
+    .card-icon,
+    .amenity i {
+        transform: translateZ(30px);
+    }
 
-body.light-mode {
-    color: #29251f;
+    .highlight-card h3,
+    .highlight-card p,
+    .amenity span {
+        transform: translateZ(18px);
+    }
 }
 
-body.light-mode h1,
-body.light-mode h2,
-body.light-mode h3,
-body.light-mode h4 {
-    color: #29251f !important;
-}
-
-body.light-mode p,
-body.light-mode li,
-body.light-mode .about-content p,
-body.light-mode .location-info p,
-body.light-mode .section-subtitle,
-body.light-mode .contact-section p {
-    color: #5b554d !important;
-}
-
-body.light-mode .section-heading,
-body.light-mode .section-title {
-    color: #b98b32 !important;
-}
-
-
-/* ---------- LIGHT AMENITIES ---------- */
-
-body.light-mode .amenity h3,
-body.light-mode .amenity h4,
-body.light-mode .amenity span,
-body.light-mode .amenity p {
-    color: #29251f !important;
-}
-
-
-/* ---------- LIGHT HIGHLIGHTS ---------- */
-
-body.light-mode .highlight-card h3,
-body.light-mode .highlight-card p,
-body.light-mode .highlight-card span {
-    color: #29251f !important;
-}
-
 
-/* ---------- LIGHT ABOUT ---------- */
+/* ---------- TABLET ---------- */
 
-body.light-mode .about-content h2,
-body.light-mode .about-content h3 {
-    color: #29251f !important;
-}
-
-body.light-mode .about-content p {
-    color: #5b554d !important;
-}
-
-
-/* ---------- LIGHT LOCATION ---------- */
-
-body.light-mode .location-info h2,
-body.light-mode .location-info h3 {
-    color: #29251f !important;
-}
-
-body.light-mode .location-info p {
-    color: #5b554d !important;
-}
-
-
-/* ---------- LIGHT ENQUIRY ---------- */
-
-body.light-mode .contact-section h2,
-body.light-mode .contact-section h3 {
-    color: #29251f !important;
-}
-
-body.light-mode .contact-section p {
-    color: #5b554d !important;
-}
+@media (max-width: 1000px) {
 
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-/* ---------- HEADER ---------- */
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-body.light-mode header h1,
-body.light-mode header h2,
-body.light-mode header p,
-body.light-mode header .logo-text,
-body.light-mode header .tagline {
-    color: #29251f !important;
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 
@@ -3584,1254 +529,328 @@ body.light-mode header .tagline {
 
 @media (max-width: 768px) {
 
-    body.light-mode .amenity h3,
-    body.light-mode .highlight-card h3 {
-        color: #29251f !important;
-    }
-
-    body.light-mode .amenity p,
-    body.light-mode .highlight-card p {
-        color: #5b554d !important;
-    }
-
-    body:not(.light-mode) .amenity h3,
-    body:not(.light-mode) .highlight-card h3 {
-        color: #ffffff !important;
-    }
-
-    body:not(.light-mode) .amenity p,
-    body:not(.light-mode) .highlight-card p {
-        color: #e8e3d8 !important;
-    }
-}
-/* =========================================
-   DARK THEME — TEXT VISIBILITY ONLY
-========================================= */
-
-/* Home / Hero */
-.hero h1 {
-    color: #ffffff !important;
-}
-
-.hero p {
-    color: #eeeeee !important;
-}
-
-/* Section headings */
-.section-heading h2 {
-    color: #D4AF37 !important;
-}
-
-.section-heading p {
-    color: #dddddd !important;
-}
-
-/* About */
-.about-content h2 {
-    color: #ffffff !important;
-}
-
-.about-content p {
-    color: #dddddd !important;
-}
-
-/* Highlights */
-.highlight-card h3 {
-    color: #ffffff !important;
-}
-
-.highlight-card p {
-    color: #dddddd !important;
-}
-
-.highlight-label {
-    color: #c8c8c8 !important;
-}
-
-/* Amenities */
-.amenity span {
-    color: #ffffff !important;
-}
-
-.amenity i {
-    color: #D4AF37 !important;
-}
-
-/* Location */
-.location-info h3 {
-    color: #D4AF37 !important;
-}
-
-.location-info p {
-    color: #dddddd !important;
-}
-
-/* Contact */
-.contact-form input,
-.contact-form textarea {
-    color: #ffffff !important;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #999999 !important;
-}
-
-/* Navbar */
-.logo h2,
-.navbar ul a {
-    color: #ffffff !important;
-}
-
-.logo span {
-    color: #cccccc !important;
-}
-
-/* Footer */
-.footer-about p,
-.footer-contact p,
-.footer-links a {
-    color: #cccccc !important;
-}
-/* =========================================
-   VANDANA VILLA — FINAL TEXT VISIBILITY FIX
-   KEEP CURRENT WARM LUXURY THEME
-========================================= */
-
-/* Main warm-theme text */
-body:not(.light-mode) {
-    color: #302d28;
-}
-
-/* Normal section headings */
-body:not(.light-mode) .section-heading h2,
-body:not(.light-mode) .section-title {
-    color: #C49A45 !important;
-}
-
-/* Section descriptions */
-body:not(.light-mode) .section-heading p {
-    color: #5C554B !important;
-}
-
-/* About / Experience */
-body:not(.light-mode) .about-content h2,
-body:not(.light-mode) .about-content h3 {
-    color: #302d28 !important;
-}
-
-body:not(.light-mode) .about-content p {
-    color: #5C554B !important;
-}
-
-/* Location */
-body:not(.light-mode) .location-info h2,
-body:not(.light-mode) .location-info h3 {
-    color: #302d28 !important;
-}
-
-body:not(.light-mode) .location-info p {
-    color: #5C554B !important;
-}
-
-/* Enquiry / Contact */
-body:not(.light-mode) .contact-section h2,
-body:not(.light-mode) .contact-section h3 {
-    color: #302d28 !important;
-}
-
-body:not(.light-mode) .contact-section p {
-    color: #5C554B !important;
-}
-
-/* Header on beige background */
-body:not(.light-mode) .logo h2 {
-    color: #302d28 !important;
-}
-
-body:not(.light-mode) .logo span {
-    color: #6B645B !important;
-}
-
-/* Keep dark amenity/highlight cards looking premium */
-body:not(.light-mode) .amenity,
-body:not(.light-mode) .highlight-card {
-    color: #ffffff;
-}
-
-body:not(.light-mode) .amenity span,
-body:not(.light-mode) .highlight-card h3 {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .amenity i {
-    color: #D4AF37 !important;
-}
-
-body:not(.light-mode) .highlight-card p {
-    color: #dddddd !important;
-}
-
-/* Hero stays exactly as it is */
-body:not(.light-mode) .hero h1 {
-    color: #ffffff !important;
-}
-
-body:not(.light-mode) .hero p {
-    color: #eeeeee !important;
-}
-
-body:not(.light-mode) .hero .tag {
-    color: #D4AF37 !important;
-}
-/* =========================================
-   VANDANA VILLA — HOME PAGE FINAL TEXT
-   SAME LUXURY THEME ON DESKTOP + MOBILE
-========================================= */
-
-/* Home Hero */
-.hero .hero-content h1,
-.hero .hero-content p {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-.hero .hero-content h1 {
-    color: #ffffff !important;
-}
-
-.hero .hero-content p {
-    color: #ffffff !important;
-}
-
-.hero .hero-content .tag {
-    color: #D8B85A !important;
-}
-
-/* Hero secondary button */
-.hero .hero-content .btn-secondary {
-    color: #ffffff !important;
-    border-color: rgba(255,255,255,.65) !important;
-}
-
-/* Keep same text appearance on desktop + mobile */
-@media (max-width: 768px) {
-
-    .hero .hero-content h1 {
-        color: #ffffff !important;
-    }
-
-    .hero .hero-content p {
-        color: #ffffff !important;
-    }
-
-    .hero .hero-content .tag {
-        color: #D8B85A !important;
-    }
-
-}
-/* =========================================
-   HOME PAGE TEXT ONLY — FINAL FIX
-   KEEP EXISTING THEME EXACTLY SAME
-========================================= */
-
-/* About section text */
-.about .about-content .section-subtitle {
-    color: #C49A45 !important;
-}
-
-.about .about-content h2 {
-    color: #302D28 !important;
-}
-
-.about .about-content p {
-    color: #5C554B !important;
-}
-
-/* Home page experience/section headings */
-.highlights .section-heading .section-subtitle {
-    color: #302D28 !important;
-}
-
-.highlights .section-heading h2 {
-    color: #C49A45 !important;
-}
-
-.highlights .section-heading p {
-    color: #5C554B !important;
-}
-
-/* Keep the same colors on mobile */
-@media (max-width: 768px) {
-
-    .about .about-content .section-subtitle {
-        color: #C49A45 !important;
-    }
-
-    .about .about-content h2 {
-        color: #302D28 !important;
-    }
-
-    .about .about-content p {
-        color: #5C554B !important;
-    }
-
-    .highlights .section-heading .section-subtitle {
-        color: #302D28 !important;
-    }
-
-    .highlights .section-heading h2 {
-        color: #C49A45 !important;
-    }
-
-    .highlights .section-heading p {
-        color: #5C554B !important;
-    }
-}
-/* =========================================
-   FINAL NAV MENU FIX
-   SAME WARM LUXURY THEME — MOBILE + DESKTOP
-========================================= */
-
-/* Menu button */
-.menu-btn {
-    cursor: pointer;
-    color: #302C27 !important;
-    z-index: 10001;
-}
-
-/* Menu links — force readable colour */
-.navbar ul.mobile-open a {
-    color: #302C27 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* Open menu */
-.navbar ul.mobile-open {
-    background: #F1EBE1 !important;
-    border: 1px solid rgba(197,161,90,.25);
-    box-shadow: 0 20px 45px rgba(60,50,35,.18);
-    z-index: 10000;
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-@media (max-width: 992px) {
-
-    .menu-btn {
-        display: block !important;
-    }
-
-    .navbar ul {
-        display: none !important;
-    }
-
-    .navbar ul.mobile-open {
-        display: flex !important;
-        flex-direction: column;
-        position: absolute;
-        top: 90px;
-        left: 0;
-        width: 100%;
-        padding: 25px;
-        gap: 20px;
-    }
-
-    .navbar ul.mobile-open a {
-        display: block !important;
-        padding: 8px 5px;
-        color: #302C27 !important;
-        font-weight: 500;
-    }
-}
-
-/* =========================================
-   DESKTOP
-========================================= */
-@media (min-width: 993px) {
-
-    .menu-btn {
-        display: block !important;
-    }
-
-    .navbar > ul {
-        display: none !important;
-    }
-
-    .navbar ul.mobile-open {
-        display: flex !important;
-        flex-direction: column;
-        position: absolute;
-        top: 90px;
-        right: 0;
-        left: auto;
-        width: 360px;
-        padding: 30px;
-        gap: 22px;
-        background: #F1EBE1 !important;
-        border: 1px solid rgba(197,161,90,.25);
-        border-radius: 0 0 18px 18px;
-        box-shadow: 0 20px 45px rgba(60,50,35,.18);
-    }
-
-    .navbar ul.mobile-open a {
-        display: block !important;
-        padding: 8px 5px;
-        color: #302C27 !important;
-        font-size: 17px;
-    }
-}
-/* =========================================================
-   VANDANA VILLA — FINAL WARM LUXURY THEME
-   SAME ON MOBILE + DESKTOP
-   ========================================================= */
-
-/* MAIN PAGE */
-html,
-body {
-    background: #E8E0D2 !important;
-    color: #302C27 !important;
-}
-
-/* ALL NORMAL SECTIONS */
-.about,
-.amenities,
-.location {
-    background: #E8E0D2 !important;
-    color: #302C27 !important;
-}
-
-.highlights,
-.gallery,
-.contact {
-    background: #DCD2C2 !important;
-    color: #302C27 !important;
-}
-
-/* SECTION HEADINGS */
-.section-heading h2 {
-    color: #C49A45 !important;
-}
-
-.section-heading p {
-    color: #5C554B !important;
-}
-
-/* ABOUT */
-.about-content h2 {
-    color: #302C27 !important;
-}
-
-.about-content p {
-    color: #5C554B !important;
-}
-
-.section-subtitle {
-    color: #C49A45 !important;
-}
-
-/* =========================================================
-   EXPERIENCE CARDS
-   ========================================================= */
-
-.highlight-card {
-    background:
-        linear-gradient(
-            145deg,
-            #211F1B,
-            #181715
-        ) !important;
-
-    border: 1px solid rgba(197,161,90,.22) !important;
-
-    box-shadow:
-        0 15px 35px rgba(50,40,25,.15) !important;
-}
-
-.highlight-card h3 {
-    color: #FFFFFF !important;
-}
-
-.highlight-card p {
-    color: #D8D2C8 !important;
-}
-
-.highlight-label {
-    color: #D8AD45 !important;
-}
-
-.highlight-icon {
-    color: #D8AD45 !important;
-    background: rgba(197,161,90,.12) !important;
-}
-
-.highlight-number {
-    color: rgba(216,173,69,.12) !important;
-}
-
-/* =========================================================
-   AMENITIES
-   ========================================================= */
-
-.amenity {
-    background:
-        linear-gradient(
-            145deg,
-            #211F1B,
-            #181715
-        ) !important;
-
-    color: #FFFFFF !important;
-
-    border: 1px solid rgba(197,161,90,.18) !important;
-
-    box-shadow:
-        0 12px 30px rgba(50,40,25,.14) !important;
-}
-
-.amenity span {
-    color: #FFFFFF !important;
-}
-
-.amenity i {
-    color: #D8AD45 !important;
-}
-
-.amenity:hover {
-    background:
-        linear-gradient(
-            145deg,
-            #292722,
-            #1B1917
-        ) !important;
-}
-
-/* =========================================================
-   LOCATION
-   ========================================================= */
-
-.location-info h3 {
-    color: #C49A45 !important;
-}
-
-.location-info p {
-    color: #5C554B !important;
-}
-
-/* =========================================================
-   CONTACT / ENQUIRY
-   ========================================================= */
-
-.contact .section-heading h2 {
-    color: #C49A45 !important;
-}
-
-.contact .section-heading p {
-    color: #5C554B !important;
-}
-
-.contact-form input,
-.contact-form textarea {
-    background: #FFFFFF !important;
-    color: #302C27 !important;
-    border: 1px solid #D3C7B5 !important;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #77716A !important;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #C49A45 !important;
-}
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
-.logo h2 {
-    color: #302C27 !important;
-}
-
-.logo span {
-    color: #6B645B !important;
-}
-
-.navbar ul a {
-    color: #302C27 !important;
-}
-
-.menu-btn {
-    color: #302C27 !important;
-}
-
-/* SCROLLED HEADER */
-header.scrolled {
-    background: rgba(255,253,248,.95) !important;
-    backdrop-filter: blur(18px);
-    box-shadow: 0 10px 30px rgba(60,50,35,.12) !important;
-}
-
-/* =========================================================
-   MOBILE + DESKTOP MENU
-   ========================================================= */
-
-.navbar ul.mobile-open {
-    background: #F1EBE1 !important;
-    border: 1px solid rgba(197,161,90,.25) !important;
-    box-shadow: 0 20px 45px rgba(60,50,35,.18) !important;
-}
-
-.navbar ul.mobile-open a {
-    color: #302C27 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-    background:
-        linear-gradient(
-            135deg,
-            #302C27,
-            #24211D
-        ) !important;
-}
-
-.footer-about p,
-.footer-contact p,
-.footer-links a {
-    color: #D8D2C8 !important;
-}
-
-/* SOCIAL ICON BACKGROUND */
-.social-icons a {
-    background: #3A352E !important;
-}
-
-/* =========================================================
-   IMPORTANT — STOP OLD DARK MODE FROM OVERRIDING THE THEME
-   ========================================================= */
-
-body:not(.light-mode) .about,
-body:not(.light-mode) .amenities,
-body:not(.light-mode) .location,
-body:not(.light-mode) .highlights,
-body:not(.light-mode) .gallery,
-body:not(.light-mode) .contact {
-    background: #E8E0D2 !important;
-}
-
-body:not(.light-mode) .highlights,
-body:not(.light-mode) .gallery,
-body:not(.light-mode) .contact {
-    background: #DCD2C2 !important;
-}
-
-/* Keep experience + amenities cards dark */
-body:not(.light-mode) .highlight-card {
-    background:
-        linear-gradient(
-            145deg,
-            #211F1B,
-            #181715
-        ) !important;
-}
-
-body:not(.light-mode) .amenity {
-    background:
-        linear-gradient(
-            145deg,
-            #211F1B,
-            #181715
-        ) !important;
-}
-
-/* Readable warm-theme text */
-body:not(.light-mode) .about-content h2,
-body:not(.light-mode) .location-info h3 {
-    color: #302C27 !important;
-}
-
-body:not(.light-mode) .about-content p,
-body:not(.light-mode) .location-info p,
-body:not(.light-mode) .section-heading p {
-    color: #5C554B !important;
-}
-
-/* Cards stay white text */
-body:not(.light-mode) .highlight-card h3,
-body:not(.light-mode) .highlight-card p,
-body:not(.light-mode) .highlight-card span,
-body:not(.light-mode) .amenity span {
-    color: #FFFFFF !important;
-}
-
-body:not(.light-mode) .highlight-card p {
-    color: #D8D2C8 !important;
-}
-
-body:not(.light-mode) .highlight-label,
-body:not(.light-mode) .amenity i,
-body:not(.light-mode) .highlight-icon {
-    color: #D8AD45 !important;
-}
-
-/* =========================================================
-   SAME RESULT ON DESKTOP
-   ========================================================= */
-
-@media (min-width: 993px) {
-
     body {
-        background: #E8E0D2 !important;
+        overflow-x: hidden;
     }
-
-    .about,
-    .amenities,
-    .location {
-        background: #E8E0D2 !important;
-    }
-
-    .highlights,
-    .gallery,
-    .contact {
-        background: #DCD2C2 !important;
-    }
-
-    .highlight-card,
-    .amenity {
-        background:
-            linear-gradient(
-                145deg,
-                #211F1B,
-                #181715
-            ) !important;
-    }
-
-    .highlight-card h3,
-    .highlight-card p,
-    .highlight-card span,
-    .amenity span {
-        color: #FFFFFF !important;
-    }
-
-    .about-content h2,
-    .location-info h3 {
-        color: #302C27 !important;
-    }
-
-    .about-content p,
-    .location-info p,
-    .section-heading p {
-        color: #5C554B !important;
-    }
-/* =========================================
-   VANDANA VILLA — SUBTLE 3D LOADER
-   SAME THEME • DESKTOP + MOBILE
-========================================= */
-
-/* =========================================
-   3D FLOAT
-========================================= */
-
-@keyframes loaderFloat{
-
-    0%{
-        transform:
-            perspective(800px)
-            rotateY(-5deg)
-            rotateX(3deg)
-            translateY(0)
-            translateZ(0);
-    }
-
-    50%{
-        transform:
-            perspective(800px)
-            rotateY(5deg)
-            rotateX(-3deg)
-            translateY(-10px)
-            translateZ(20px);
-    }
-
-    100%{
-        transform:
-            perspective(800px)
-            rotateY(-5deg)
-            rotateX(3deg)
-            translateY(0)
-            translateZ(0);
-    }
-
-}
-
-
-/* =========================================
-   3D RING
-========================================= */
-
-@keyframes loaderRing{
-
-    0%{
-        transform:
-            rotateX(65deg)
-            rotateZ(0deg);
-    }
-
-    100%{
-        transform:
-            rotateX(65deg)
-            rotateZ(360deg);
-    }
-
-}
-
-
-/* =========================================
-   SOFT GLOW
-========================================= */
-
-@keyframes loaderGlow{
-
-    0%,
-    100%{
-        transform:scale(.85);
-        opacity:.5;
-    }
-
-    50%{
-        transform:scale(1.15);
-        opacity:.9;
-    }
-
-}
-
-
-/* =========================================
-   TEXT
-========================================= */
-
-@keyframes loaderText{
-
-    from{
-        opacity:0;
-        transform:
-            translateY(12px)
-            translateZ(-10px);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            translateY(0)
-            translateZ(0);
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-   SAME DESIGN — ONLY SIZE ADJUSTMENT
-========================================= */
-
-@media(max-width:768px){
-
-    #loader img{
-        width:105px;
-        height:105px;
-    }
-
-    #loader::after{
-        width:140px;
-        height:140px;
-    }
-
-    #loader h2{
-        font-size:27px;
-    }
-
-    #loader p{
-        font-size:12px;
-    }
-
-}
-#loader.loader-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.7s ease, visibility 0.7s ease;
-}
-/* =========================================
-   VANDANA VILLA — FINAL SAME THEME
-   DESKTOP + MOBILE
-========================================= */
-
-html,
-body {
-    background: #E8E0D2 !important;
-    color: #302C27 !important;
-}
-
-header {
-    background: rgba(255,253,248,.96) !important;
-    color: #302C27 !important;
-}
-
-.navbar {
-    background: transparent !important;
-}
-
-.navbar ul a,
-.menu-btn {
-    color: #302C27 !important;
-}
-
-/* Main sections */
-.about,
-.amenities,
-.location {
-    background: #E8E0D2 !important;
-}
-
-.highlights,
-.gallery,
-.contact {
-    background: #DCD2C2 !important;
-}
-
-/* Menu — same on mobile + desktop */
-.navbar ul.mobile-open {
-    background: #F1EBE1 !important;
-    z-index: 99999 !important;
-}
-
-.navbar ul.mobile-open a {
-    color: #302C27 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-/* Desktop menu */
-@media (min-width: 993px) {
-
-    .menu-btn {
-        display: block !important;
-        cursor: pointer;
-    }
-
-    .navbar > ul {
-        display: none !important;
-    }
-
-    .navbar ul.mobile-open {
-        display: flex !important;
-        flex-direction: column;
-        position: absolute;
-        top: 90px;
-        right: 0;
-        width: 360px;
-        padding: 30px;
-        gap: 22px;
-        background: #F1EBE1 !important;
-        border-radius: 0 0 18px 18px;
-    }
-
-    .navbar ul.mobile-open a {
-        display: block !important;
-        color: #302C27 !important;
-        font-size: 17px;
-    }
-}
-
-/* Mobile menu */
-@media (max-width: 992px) {
-
-    .menu-btn {
-        display: block !important;
-        cursor: pointer;
-    }
-
-    .navbar > ul {
-        display: none !important;
-    }
-
-    .navbar ul.mobile-open {
-        display: flex !important;
-        flex-direction: column;
-        position: absolute;
-        top: 90px;
-        left: 0;
-        width: 100%;
-        padding: 25px;
-        gap: 20px;
-        background: #F1EBE1 !important;
-    }
-
-    .navbar ul.mobile-open a {
-        display: block !important;
-        color: #302C27 !important;
-        font-weight: 500;
-    }
-}
-/* =========================================
-   VANDANA VILLA — SAME WARM THEME
-   MOBILE + DESKTOP
-   ========================================= */
-
-html,
-body {
-    background: #f8f5ef !important;
-    color: #302d28 !important;
-}
-
-/* Main sections */
-section,
-.about,
-.highlights,
-.amenities,
-.gallery,
-.location,
-.contact {
-    background: #f8f5ef !important;
-}
-
-/* Header */
-header {
-    background: #f8f5ef !important;
-    color: #302d28 !important;
-}
-
-.logo h2 {
-    color: #302d28 !important;
-}
-
-.logo span {
-    color: #6B645B !important;
-}
-
-/* Section headings */
-.section-heading h2,
-.section-title {
-    color: #C49A45 !important;
-}
-
-.section-heading p,
-.about-content p,
-.location-info p,
-.contact-section p {
-    color: #5C554B !important;
-}
-
-/* About heading */
-.about-content h2,
-.about-content h3,
-.location-info h2,
-.location-info h3,
-.contact-section h2,
-.contact-section h3 {
-    color: #302d28 !important;
-}
-
-/* Keep cards premium */
-.amenity,
-.highlight-card {
-    background: #191816 !important;
-    color: #fff !important;
-}
-
-.amenity span,
-.highlight-card h3 {
-    color: #fff !important;
-}
-
-.amenity i {
-    color: #D4AF37 !important;
-}
-
-.highlight-card p {
-    color: #ddd !important;
-}
-
-/* Desktop */
-@media (min-width: 769px) {
-    body,
-    section,
-    header {
-        background-color: #f8f5ef !important;
-    }
-}
-/* =========================================
-   VANDANA VILLA — FINAL LIGHT THEME
-   SAME ON MOBILE + DESKTOP
-========================================= */
-
-body.light-mode {
-    background: #E8E0D2 !important;
-    color: #302C27 !important;
-}
-
-/* Main sections */
-body.light-mode .about,
-body.light-mode .highlights,
-body.light-mode .amenities,
-body.light-mode .gallery,
-body.light-mode .location,
-body.light-mode .contact,
-body.light-mode footer {
-    background: #E8E0D2 !important;
-    color: #302C27 !important;
-}
-
-/* Cards */
-body.light-mode .highlight-card,
-body.light-mode .amenity {
-    background: #F1EBE1 !important;
-    color: #302C27 !important;
-    border-color: rgba(197,161,90,.25) !important;
-}
-
-/* Text */
-body.light-mode h1,
-body.light-mode h2,
-body.light-mode h3,
-body.light-mode h4,
-body.light-mode p,
-body.light-mode span,
-body.light-mode li {
-    color: #302C27 !important;
-}
-
-/* Gold headings */
-body.light-mode .section-heading h2,
-body.light-mode .section-title,
-body.light-mode .section-subtitle {
-    color: #B98B32 !important;
-}
-
-/* Header */
-body.light-mode header {
-    background: #F1EBE1 !important;
-}
-
-body.light-mode .logo h2 {
-    color: #302C27 !important;
-}
-
-body.light-mode .logo span {
-    color: #6B645B !important;
-}
-
-/* Menu icon */
-body.light-mode .menu-btn {
-    color: #302C27 !important;
-}
-
-/* Navigation */
-body.light-mode #menu a {
-    color: #302C27 !important;
-}
-
-/* Hero */
-body.light-mode .hero {
-    background-color: #E8E0D2 !important;
-}
-
-/* Keep hero image readable */
-body.light-mode .hero-overlay {
-    background: rgba(0,0,0,.30) !important;
-}
-
-/* Buttons */
-body.light-mode .btn-primary {
-    background: #D4AF37 !important;
-    color: #1f1b15 !important;
-}
-
-body.light-mode .btn-secondary {
-    color: #302C27 !important;
-    border-color: #302C27 !important;
-}
-
-/* Gallery images */
-body.light-mode .gallery-grid img {
-    box-shadow: 0 12px 30px rgba(60,50,35,.15);
-}
-
-/* Contact form */
-body.light-mode .contact-form input,
-body.light-mode .contact-form textarea {
-    background: #F8F4EC !important;
-    color: #302C27 !important;
-    border-color: rgba(80,65,45,.25) !important;
-}
-
-/* Footer */
-body.light-mode footer {
-    background: #DED5C7 !important;
-}
-
-body.light-mode footer p,
-body.light-mode footer a {
-    color: #5C554B !important;
-}
-
-/* Mobile + Desktop SAME */
-@media (max-width: 992px) {
-    body.light-mode .navbar {
-        background: #F1EBE1 !important;
-    }
-}
-
-@media (min-width: 993px) {
-    body.light-mode .navbar {
-        background: #F1EBE1 !important;
-    }
-}
-/* FINAL DESKTOP MENU FIX */
-@media (min-width: 993px) {
 
     .navbar {
-        position: relative !important;
+        min-height: 68px;
     }
 
-    .navbar > ul {
-        display: none !important;
+    .logo img {
+        width: 44px;
+        height: 44px;
     }
 
-    .navbar > ul.mobile-open {
-        display: flex !important;
-        position: absolute !important;
-        top: 90px !important;
-        right: 0 !important;
-        left: auto !important;
-        width: 360px !important;
-        flex-direction: column !important;
-        padding: 30px !important;
-        gap: 22px !important;
-        background: #F1EBE1 !important;
-        z-index: 99999 !important;
+    .logo h2 {
+        font-size: 16px;
     }
 
-    .navbar > ul.mobile-open a {
-        display: block !important;
-        color: #302C27 !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+    .logo span {
+        font-size: 9px;
     }
+
+
+    /* MOBILE MENU */
 
     .menu-btn {
-        display: block !important;
-        cursor: pointer !important;
-        position: relative !important;
-        z-index: 100000 !important;
+        display: flex !important;
+
+        width: 44px;
+        height: 44px;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 13px;
+
+        background: transparent;
+
+        cursor: pointer;
+    }
+
+    #menu {
+        position: absolute;
+
+        top: 68px;
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 12px 5%;
+
+        gap: 0;
+
+        background: #0c0b09 !important;
+
+        border-bottom:
+            1px solid rgba(201,164,92,.18);
+
+        box-shadow:
+            0 20px 40px rgba(0,0,0,.45);
+
+        z-index: 9999;
+    }
+
+    #menu.mobile-open {
+        display: flex !important;
+    }
+
+    #menu li {
+        width: 100%;
+    }
+
+    #menu li a {
+        display: block;
+
+        padding: 14px 8px;
+
+        color: var(--ivory) !important;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.05);
+    }
+
+    #menu li:last-child a {
+        border-bottom: none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 620px;
+
+        padding:
+            80px 0
+            70px;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(34px, 10vw, 52px);
+    }
+
+    .hero p {
+        font-size: 14px;
+
+        max-width: 95%;
+    }
+
+
+    /* BUTTONS */
+
+    .btn {
+        min-height: 46px;
+
+        padding:
+            11px 18px;
+
+        font-size: 13px;
+    }
+
+    .btn-secondary {
+        margin-left: 5px;
+    }
+
+
+    /* SECTIONS */
+
+    .about,
+    .highlights,
+    .amenities,
+    .gallery,
+    .location,
+    .contact {
+        padding:
+            70px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 34px;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .section-heading p {
+        font-size: 14px;
+    }
+
+
+    /* ONE COLUMN */
+
+    .highlights-grid,
+    .amenities-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CARDS */
+
+    .highlight-card {
+        min-height: 250px;
+
+        padding: 26px;
+    }
+
+    .amenity {
+        min-height: 92px;
+
+        padding: 20px;
+    }
+
+
+    /* IMPORTANT:
+       Don't run heavy 3D transforms
+       on touch screens.
+    */
+
+    .highlight-card,
+    .amenity,
+    .about-image img {
+        transform: none !important;
+
+        transition:
+            box-shadow .3s ease,
+            border-color .3s ease;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-grid img {
+        border-radius: 16px;
+
+        transform: none !important;
+    }
+
+
+    /* LOCATION */
+
+    .location iframe {
+        min-height: 320px;
+
+        border-radius: 18px !important;
+    }
+
+
+    /* CONTACT */
+
+    .contact-form {
+        padding: 20px !important;
+    }
+
+
+    /* FLOATING BUTTONS */
+
+    .floating-buttons {
+        right: 14px;
+        bottom: 14px;
+
+        gap: 9px;
+    }
+
+    .floating-buttons a {
+        width: 50px;
+        height: 50px;
+
+        font-size: 21px;
+    }
+
+
+    /* SCROLL TOP */
+
+    #scrollTop {
+        right: 16px;
+        bottom: 135px;
+
+        width: 42px;
+        height: 42px;
     }
 }
+
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 420px) {
+
+    .container,
+    section > .container {
+        width: 90%;
+    }
+
+    .logo h2 {
+        font-size: 14px;
+    }
+
+    .logo span {
+        font-size: 8px;
+    }
+
+    .hero {
+        padding-top: 65px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .btn {
+        padding:
+            10px 15px;
+
+        font-size: 12px;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* ---------- SCROLL REVEAL ---------- */
+
+.reveal {
+    opacity: 0;
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* ---------- ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+       }
