@@ -733,3 +733,136 @@ footer {
         width: min(1200px, calc(100% - 80px));
     }
 }
+/* =========================================
+   VANDANA VILLA — 3D CARD EFFECTS
+   ========================================= */
+
+.highlight-grid,
+.amenities-grid,
+.gallery-grid {
+    perspective: 1400px;
+}
+
+/* Highlight cards */
+.highlight-card {
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition:
+        transform .2s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.85);
+    box-shadow: 0 15px 40px rgba(55,48,35,.10);
+}
+
+.highlight-card:hover {
+    box-shadow:
+        0 28px 60px rgba(55,48,35,.18);
+}
+
+.highlight-icon {
+    transform: translateZ(30px);
+    color: var(--gold);
+}
+
+.highlight-number {
+    transform: translateZ(20px);
+    color: var(--gold);
+}
+
+.highlight-card h3,
+.highlight-card p {
+    transform: translateZ(15px);
+}
+
+
+/* Amenities */
+.amenity-card {
+    transform-style: preserve-3d;
+
+    transition:
+        transform .2s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    background: rgba(255,255,255,.9);
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 12px 35px rgba(55,48,35,.09);
+}
+
+.amenity-card:hover {
+    box-shadow:
+        0 25px 55px rgba(55,48,35,.16);
+}
+
+.amenity-card i {
+    transform: translateZ(25px);
+    color: var(--gold);
+}
+
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--border);
+
+    transform:
+        translateZ(0);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        filter .4s ease;
+}
+
+.gallery-grid img:hover {
+    transform:
+        translateY(-8px)
+        scale(1.025);
+
+    box-shadow:
+        0 25px 55px rgba(55,48,35,.18);
+
+    filter:
+        brightness(1.04);
+}
+
+
+/* Mobile — no aggressive 3D */
+@media (max-width: 768px) {
+
+    .highlight-card,
+    .amenity-card {
+        transform: none !important;
+    }
+
+    .highlight-grid,
+    .amenities-grid,
+    .gallery-grid {
+        perspective: none;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: auto;
+        transform: none !important;
+    }
+}
