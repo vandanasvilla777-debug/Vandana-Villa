@@ -282,14 +282,54 @@ revealElements.forEach(element => {
     revealObserver.observe(element);
 
 });
+// =========================================
+// VANDANA VILLA — CLEAN 3D EFFECTS
+// =========================================
 
-// =========================================
-// PREMIUM 3D MOUSE TILT
-// =========================================
+// ---------- 3D CARD TILT ----------
 
-// =========================================
-// PREMIUM HERO 3D PARALLAX
-// =========================================
+const tiltCards = document.querySelectorAll(
+    ".highlight-card, .amenity"
+);
+
+tiltCards.forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        if (window.innerWidth <= 768) return;
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX =
+            ((y - centerY) / centerY) * -4;
+
+        const rotateY =
+            ((x - centerX) / centerX) * 4;
+
+        card.style.transform = `
+            perspective(900px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            translateY(-8px)
+            scale(1.02)
+        `;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+    });
+
+});
+
+
+// ---------- HERO 3D PARALLAX ----------
 
 const hero = document.querySelector(".hero");
 const heroContent = document.querySelector(".hero-content");
@@ -305,47 +345,30 @@ if (hero && heroContent) {
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
-        const moveX = (x / rect.width - 0.5) * 12;
-        const moveY = (y / rect.height - 0.5) * 8;
+        const moveX =
+            (x / rect.width - 0.5) * 12;
 
-        heroContent.style.transform = `
-            translate3d(${moveX}px, ${moveY}px, 0)
-        `;
+        const moveY =
+            (y / rect.height - 0.5) * 8;
+
+        heroContent.style.transform =
+            `translate3d(${moveX}px, ${moveY}px, 0)`;
+
+        const bgX =
+            (x / rect.width - 0.5) * 10;
+
+        const bgY =
+            (y / rect.height - 0.5) * 6;
+
+        hero.style.backgroundPosition =
+            `calc(50% + ${bgX}px) calc(50% + ${bgY}px)`;
 
     });
 
     hero.addEventListener("mouseleave", () => {
 
         heroContent.style.transform =
-            "translate3d(0, 0, 0)";
-
-    });
-
-}
-// =========================================
-// CINEMATIC HERO BACKGROUND PARALLAX
-// =========================================
-
-if (hero) {
-
-    hero.addEventListener("mousemove", (e) => {
-
-        if (window.innerWidth <= 768) return;
-
-        const rect = hero.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const moveX = (x / rect.width - 0.5) * 10;
-        const moveY = (y / rect.height - 0.5) * 6;
-
-        hero.style.backgroundPosition =
-            `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
-
-    });
-
-    hero.addEventListener("mouseleave", () => {
+            "translate3d(0,0,0)";
 
         hero.style.backgroundPosition =
             "center center";
@@ -353,41 +376,9 @@ if (hero) {
     });
 
 }
-// =========================================
-// PREMIUM 3D CURSOR LIGHT
-// =========================================
 
-const lightCards = document.querySelectorAll(
-    ".highlight-card, .amenity"
-);
 
-lightCards.forEach(card => {
-
-    card.addEventListener("mousemove", (e) => {
-
-        if (window.innerWidth <= 768) return;
-
-        const rect = card.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        card.style.setProperty(
-            "--mouse-x",
-            `${x}px`
-        );
-
-        card.style.setProperty(
-            "--mouse-y",
-            `${y}px`
-        );
-
-    });
-
-});
-// =========================================
-// PREMIUM MAGNETIC BUTTONS
-// =========================================
+// ---------- MAGNETIC BUTTONS ----------
 
 const magneticButtons = document.querySelectorAll(
     ".btn-primary, .btn-secondary"
@@ -401,31 +392,33 @@ magneticButtons.forEach(button => {
 
         const rect = button.getBoundingClientRect();
 
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
+        const x =
+            e.clientX - rect.left - rect.width / 2;
 
-        const moveX = x * 0.18;
-        const moveY = y * 0.18;
+        const y =
+            e.clientY - rect.top - rect.height / 2;
 
         button.style.transform =
-            `translate(${moveX}px, ${moveY}px)`;
+            `translate(${x * 0.18}px, ${y * 0.18}px)`;
 
     });
 
     button.addEventListener("mouseleave", () => {
-
         button.style.transform = "";
-
     });
 
 });
-// =========================================
-// ABOUT IMAGE 3D PARALLAX
-// =========================================
 
-const aboutImage = document.querySelector(".about-image");
+
+// ---------- ABOUT IMAGE 3D ----------
+
+const aboutImage =
+    document.querySelector(".about-image");
 
 if (aboutImage) {
+
+    const image =
+        aboutImage.querySelector("img");
 
     aboutImage.addEventListener("mousemove", (e) => {
 
@@ -446,9 +439,6 @@ if (aboutImage) {
         const rotateX =
             ((y / rect.height) - 0.5) * -6;
 
-        const image =
-            aboutImage.querySelector("img");
-
         image.style.transform = `
             perspective(1000px)
             rotateX(${rotateX}deg)
@@ -460,12 +450,7 @@ if (aboutImage) {
     });
 
     aboutImage.addEventListener("mouseleave", () => {
-
-        const image =
-            aboutImage.querySelector("img");
-
         image.style.transform = "";
-
     });
 
 }
