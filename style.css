@@ -866,3 +866,252 @@ footer {
         transform: none !important;
     }
 }
+/* =========================================
+   NEARBY BEACHES & ATTRACTIONS
+   ========================================= */
+
+.nearby {
+    padding: 100px 0;
+    background: var(--cream-soft);
+}
+
+.nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    perspective: 1200px;
+}
+
+.nearby-card {
+    position: relative;
+    padding: 28px 24px;
+    min-height: 270px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(255,255,255,.9);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 14px 40px rgba(55,48,35,.09);
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform .2s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    overflow: hidden;
+}
+
+.nearby-card::before {
+    content: "";
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -75px;
+    right: -75px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(201,164,92,.12);
+
+    pointer-events: none;
+}
+
+.nearby-card:hover {
+    border-color: rgba(201,164,92,.55);
+
+    box-shadow:
+        0 28px 60px rgba(55,48,35,.17);
+}
+
+.nearby-icon {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(201,164,92,.13);
+
+    color: var(--gold);
+
+    font-size: 23px;
+
+    transform: translateZ(30px);
+}
+
+.nearby-card h3 {
+    margin-bottom: 10px;
+
+    color: var(--text);
+
+    font-size: 19px;
+
+    transform: translateZ(20px);
+}
+
+.nearby-card p {
+    margin-bottom: 18px;
+
+    font-size: 14px;
+
+    transform: translateZ(12px);
+}
+
+.nearby-card a {
+    margin-top: auto;
+
+    color: var(--olive-dark);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+.nearby-card a:hover {
+    color: var(--gold);
+}
+
+
+/* =========================================
+   HOW TO REACH
+   ========================================= */
+
+.how-to-reach {
+    padding: 100px 0;
+
+    background: var(--cream);
+}
+
+.route-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+.route-card {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    background: rgba(255,255,255,.82);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 35px rgba(55,48,35,.08);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.route-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(201,164,92,.5);
+
+    box-shadow:
+        0 22px 50px rgba(55,48,35,.14);
+}
+
+.route-card > i {
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background:
+        rgba(122,128,95,.12);
+
+    color: var(--olive);
+
+    font-size: 20px;
+}
+
+.route-card h3 {
+    margin-bottom: 7px;
+
+    color: var(--text);
+
+    font-size: 18px;
+}
+
+.route-card p {
+    font-size: 14px;
+}
+
+.reach-button-wrap {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 35px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .nearby-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nearby,
+    .how-to-reach {
+        padding: 70px 0;
+    }
+
+    .nearby-grid,
+    .route-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nearby-card {
+        min-height: auto;
+    }
+
+    .nearby-card,
+    .route-card {
+        transform: none !important;
+    }
+}
