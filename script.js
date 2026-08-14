@@ -1,481 +1,337 @@
-// ==============================
-// LOADER — SAFE VERSION
-// ==============================
-function hideLoader() {
+/* =========================================
+   VANDANA VILLA — SAFE FINAL JS
+   3D • SCROLL TOP • MENU • LOADER
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =========================
+       LOADER
+    ========================= */
+
     const loader = document.getElementById("loader");
 
-    if (!loader) return;
+    if (loader) {
 
-    loader.style.transition = "opacity 0.6s ease, visibility 0.6s ease";
-    loader.style.opacity = "0";
-    loader.style.visibility = "hidden";
-    loader.style.pointerEvents = "none";
+        document.body.classList.add("no-scroll");
 
-    setTimeout(() => {
-        loader.style.display = "none";
-    }, 700);
-}
+        const hideLoader = () => {
+            loader.classList.add("loaded");
+            document.body.classList.remove("no-scroll");
+        };
 
-window.addEventListener("load", () => {
-    setTimeout(hideLoader, 800);
-});
+        window.addEventListener("load", () => {
+            setTimeout(hideLoader, 350);
+        }, { once: true });
 
-// Safety fallback — loader kabhi permanently stuck nahi hoga
-setTimeout(hideLoader, 5000);
-// ==============================
-// STICKY HEADER
-// ==============================
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 80) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
+        /* Safety fallback */
+        setTimeout(hideLoader, 3000);
     }
-});
 
-// ==============================
-// MOBILE MENU
-// ==============================
 
-const menuBtn = document.querySelector(".menu-btn");
-const menu = document.getElementById("menu");
+    /* =========================
+       MOBILE MENU
+    ========================= */
 
-menuBtn.addEventListener("click", () => {
+    const menuBtn = document.querySelector(".menu-btn");
+    const menu = document.getElementById("menu");
 
-    menu.classList.toggle("mobile-open");
+    if (menuBtn && menu) {
 
-    menuBtn.classList.toggle("active");
+        menuBtn.addEventListener("click", (e) => {
 
-});
+            e.preventDefault();
 
-// ==============================
-// CLOSE MENU AFTER CLICK
-// ==============================
+            menu.classList.toggle("mobile-open");
+            menuBtn.classList.toggle("active");
 
-document.querySelectorAll("#menu a").forEach(link => {
+        });
 
-    link.addEventListener("click", () => {
+        menu.querySelectorAll("a").forEach(link => {
 
-        menu.classList.remove("mobile-open");
-        menuBtn.classList.remove("active");
+            link.addEventListener("click", () => {
+
+                menu.classList.remove("mobile-open");
+                menuBtn.classList.remove("active");
+
+            });
+
+        });
+    }
+
+
+    /* =========================
+       HEADER SCROLL
+    ========================= */
+
+    const header = document.querySelector("header");
+
+    const updateHeader = () => {
+
+        if (!header) return;
+
+        header.classList.toggle(
+            "scrolled",
+            window.scrollY > 30
+        );
+
+    };
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive: true }
+    );
+
+    updateHeader();
+
+
+    /* =========================
+       3D CARD EFFECT
+       DESKTOP ONLY
+    ========================= */
+
+    const cards = document.querySelectorAll(
+        ".highlight-card, .amenity-card, .nearby-card"
+    );
+
+    cards.forEach(card => {
+
+        card.addEventListener("pointermove", (event) => {
+
+            if (window.innerWidth <= 768) return;
+
+            const rect =
+                card.getBoundingClientRect();
+
+            const x =
+                (event.clientX - rect.left) /
+                rect.width;
+
+            const y =
+                (event.clientY - rect.top) /
+                rect.height;
+
+            const rotateX =
+                (0.5 - y) * 7;
+
+            const rotateY =
+                (x - 0.5) * 7;
+
+            card.style.transform =
+                `perspective(900px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateZ(5px)`;
+
+        });
+
+        card.addEventListener(
+            "pointerleave",
+            () => {
+
+                card.style.transform = "";
+
+            }
+        );
 
     });
 
-});
 
-// ==============================
-// SMOOTH SCROLL
-// ==============================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-        e.preventDefault();
+    /* =========================
+       SCROLL TO TOP
+    ========================= */
 
-        const target = document.querySelector(this.getAttribute("href"));
+    let scrollTop =
+        document.getElementById("scrollTop");
 
-        if (target) {
-            target.scrollIntoView({
+    if (!scrollTop) {
+
+        scrollTop =
+            document.createElement("button");
+
+        scrollTop.id = "scrollTop";
+
+        scrollTop.type = "button";
+
+        scrollTop.setAttribute(
+            "aria-label",
+            "Scroll to top"
+        );
+
+        scrollTop.innerHTML =
+            '<i class="fas fa-arrow-up"></i>';
+
+        document.body.appendChild(scrollTop);
+    }
+
+
+    const updateScrollButton = () => {
+
+        scrollTop.classList.toggle(
+            "show",
+            window.scrollY > 500
+        );
+
+    };
+
+    window.addEventListener(
+        "scroll",
+        updateScrollButton,
+        { passive: true }
+    );
+
+    updateScrollButton();
+
+
+    scrollTop.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+                top: 0,
                 behavior: "smooth"
             });
+
         }
-    });
-});
+    );
 
-// ==============================
-// PREMIUM 3D GALLERY LIGHTBOX
-// ==============================
 
-const galleryImages = document.querySelectorAll(".gallery-grid img");
+    /* =========================
+       SMOOTH ANCHOR SCROLL
+    ========================= */
 
-let currentImage = 0;
+    document.querySelectorAll(
+        'a[href^="#"]'
+    ).forEach(link => {
 
-galleryImages.forEach((img, index) => {
+        link.addEventListener("click", function(e) {
 
-    img.addEventListener("click", () => {
+            const id =
+                this.getAttribute("href");
 
-        currentImage = index;
+            if (!id || id === "#") return;
 
-        const lightbox = document.createElement("div");
-        lightbox.className = "premium-lightbox";
+            const target =
+                document.querySelector(id);
 
-        lightbox.innerHTML = `
-            <button class="lightbox-close">&times;</button>
+            if (!target) return;
 
-            <button class="lightbox-prev">&#10094;</button>
+            e.preventDefault();
 
-            <div class="lightbox-content">
+            const headerHeight =
+                header
+                    ? header.offsetHeight
+                    : 0;
 
-                <img src="${galleryImages[currentImage].src}"
-                     alt="Vandana Villa Gallery">
+            const position =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight -
+                10;
 
-                <div class="lightbox-counter">
-                    ${currentImage + 1} / ${galleryImages.length}
-                </div>
-
-            </div>
-
-            <button class="lightbox-next">&#10095;</button>
-        `;
-
-        document.body.appendChild(lightbox);
-
-        document.body.style.overflow = "hidden";
-
-        const lightboxImage =
-            lightbox.querySelector(".lightbox-content img");
-
-        const counter =
-            lightbox.querySelector(".lightbox-counter");
-
-        function showImage(index) {
-
-            currentImage =
-                (index + galleryImages.length) %
-                galleryImages.length;
-
-            lightboxImage.style.opacity = "0";
-
-            setTimeout(() => {
-
-                lightboxImage.src =
-                    galleryImages[currentImage].src;
-
-                counter.textContent =
-                    `${currentImage + 1} / ${galleryImages.length}`;
-
-                lightboxImage.style.opacity = "1";
-
-            }, 150);
-        }
-
-        lightbox
-            .querySelector(".lightbox-next")
-            .addEventListener("click", (e) => {
-
-                e.stopPropagation();
-
-                showImage(currentImage + 1);
-
+            window.scrollTo({
+                top: position,
+                behavior: "smooth"
             });
-
-        lightbox
-            .querySelector(".lightbox-prev")
-            .addEventListener("click", (e) => {
-
-                e.stopPropagation();
-
-                showImage(currentImage - 1);
-
-            });
-
-        lightbox
-            .querySelector(".lightbox-close")
-            .addEventListener("click", () => {
-
-                lightbox.remove();
-
-                document.body.style.overflow = "";
-
-            });
-
-        lightbox.addEventListener("click", (e) => {
-
-            if (e.target === lightbox) {
-
-                lightbox.remove();
-
-                document.body.style.overflow = "";
-
-            }
-
-        });
-
-        document.addEventListener("keydown", function keyboardHandler(e) {
-
-            if (!document.body.contains(lightbox)) {
-
-                document.removeEventListener(
-                    "keydown",
-                    keyboardHandler
-                );
-
-                return;
-
-            }
-
-            if (e.key === "Escape") {
-
-                lightbox.remove();
-
-                document.body.style.overflow = "";
-
-            }
-
-            if (e.key === "ArrowRight") {
-
-                showImage(currentImage + 1);
-
-            }
-
-            if (e.key === "ArrowLeft") {
-
-                showImage(currentImage - 1);
-
-            }
 
         });
 
     });
 
 });
+/* =========================================
+   SCROLL TO TOP — 3D GOLD / OLIVE BUTTON
+   ========================================= */
 
-// ==============================
-// CONTACT FORM
-// ==============================
-const form = document.querySelector(".contact-form");
+#scrollTop {
+    position: fixed;
 
-if (form) {
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
+    right: 22px;
+    bottom: 22px;
 
-        alert("Thank you! Your enquiry has been sent.");
+    width: 52px;
+    height: 52px;
 
-        form.reset();
-    });
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(201,164,92,.55);
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--gold),
+            var(--olive)
+        );
+
+    color: #fff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(20px)
+        scale(.85);
+
+    box-shadow:
+        0 12px 30px rgba(55,48,35,.20),
+        inset 0 1px 0 rgba(255,255,255,.35);
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    z-index: 9998;
 }
-// ==============================
-// PREMIUM SCROLL REVEAL
-// ==============================
 
-const revealElements = document.querySelectorAll(
-    ".section-heading, .highlight-card, .amenity, .gallery-grid img, .about-image, .about-content, .location-info, .map, .contact-form"
-);
+#scrollTop.show {
+    opacity: 1;
+    visibility: visible;
 
-revealElements.forEach((element, index) => {
+    transform:
+        translateY(0)
+        scale(1);
+}
 
-    element.classList.add("reveal-element");
+#scrollTop:hover {
+    transform:
+        translateY(-5px)
+        scale(1.06);
 
-});
+    box-shadow:
+        0 20px 40px rgba(55,48,35,.25),
+        inset 0 1px 0 rgba(255,255,255,.45);
+}
 
-const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
+#scrollTop:active {
+    transform:
+        translateY(-1px)
+        scale(.97);
+}
 
-        entries.forEach(entry => {
 
-            if (!entry.isIntersecting) return;
+/* =========================================
+   MOBILE
+   ========================================= */
 
-            entry.target.classList.add("reveal-visible");
+@media (max-width: 768px) {
 
-            observer.unobserve(entry.target);
+    #scrollTop {
+        right: 15px;
+        bottom: 15px;
 
-        });
+        width: 48px;
+        height: 48px;
 
-    },
-    {
-        threshold: 0.12
+        border-radius: 15px;
     }
-);
-
-revealElements.forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-// =========================================
-// VANDANA VILLA — CLEAN 3D EFFECTS
-// =========================================
-
-// ---------- 3D CARD TILT ----------
-
-const tiltCards = document.querySelectorAll(
-    ".highlight-card, .amenity"
-);
-
-tiltCards.forEach(card => {
-
-    card.addEventListener("mousemove", (e) => {
-
-        if (window.innerWidth <= 768) return;
-
-        const rect = card.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX =
-            ((y - centerY) / centerY) * -4;
-
-        const rotateY =
-            ((x - centerX) / centerX) * 4;
-
-        card.style.transform = `
-            perspective(900px)
-            rotateX(${rotateX}deg)
-            rotateY(${rotateY}deg)
-            translateY(-8px)
-            scale(1.02)
-        `;
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "";
-    });
-
-});
-
-
-// ---------- HERO 3D PARALLAX ----------
-
-const hero = document.querySelector(".hero");
-const heroContent = document.querySelector(".hero-content");
-
-if (hero && heroContent) {
-
-    hero.addEventListener("mousemove", (e) => {
-
-        if (window.innerWidth <= 768) return;
-
-        const rect = hero.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const moveX =
-            (x / rect.width - 0.5) * 12;
-
-        const moveY =
-            (y / rect.height - 0.5) * 8;
-
-        heroContent.style.transform =
-            `translate3d(${moveX}px, ${moveY}px, 0)`;
-
-        const bgX =
-            (x / rect.width - 0.5) * 10;
-
-        const bgY =
-            (y / rect.height - 0.5) * 6;
-
-        hero.style.backgroundPosition =
-            `calc(50% + ${bgX}px) calc(50% + ${bgY}px)`;
-
-    });
-
-    hero.addEventListener("mouseleave", () => {
-
-        heroContent.style.transform =
-            "translate3d(0,0,0)";
-
-        hero.style.backgroundPosition =
-            "center center";
-
-    });
-
 }
-
-
-// ---------- MAGNETIC BUTTONS ----------
-
-const magneticButtons = document.querySelectorAll(
-    ".btn-primary, .btn-secondary"
-);
-
-magneticButtons.forEach(button => {
-
-    button.addEventListener("mousemove", (e) => {
-
-        if (window.innerWidth <= 768) return;
-
-        const rect = button.getBoundingClientRect();
-
-        const x =
-            e.clientX - rect.left - rect.width / 2;
-
-        const y =
-            e.clientY - rect.top - rect.height / 2;
-
-        button.style.transform =
-            `translate(${x * 0.18}px, ${y * 0.18}px)`;
-
-    });
-
-    button.addEventListener("mouseleave", () => {
-        button.style.transform = "";
-    });
-
-});
-
-
-// ---------- ABOUT IMAGE 3D ----------
-
-const aboutImage =
-    document.querySelector(".about-image");
-
-if (aboutImage) {
-
-    const image =
-        aboutImage.querySelector("img");
-
-    aboutImage.addEventListener("mousemove", (e) => {
-
-        if (window.innerWidth <= 768) return;
-
-        const rect =
-            aboutImage.getBoundingClientRect();
-
-        const x =
-            e.clientX - rect.left;
-
-        const y =
-            e.clientY - rect.top;
-
-        const rotateY =
-            ((x / rect.width) - 0.5) * 8;
-
-        const rotateX =
-            ((y / rect.height) - 0.5) * -6;
-
-        image.style.transform = `
-            perspective(1000px)
-            rotateX(${rotateX}deg)
-            rotateY(${rotateY}deg)
-            translateZ(18px)
-            scale(1.015)
-        `;
-
-    });
-
-    aboutImage.addEventListener("mouseleave", () => {
-        image.style.transform = "";
-    });
-
-}
-// =========================================
-// PLAYFUL AMENITY FLOAT
-// =========================================
-
-const amenityIcons =
-    document.querySelectorAll(".amenity i");
-
-amenityIcons.forEach(icon => {
-
-    icon.addEventListener("mouseenter", () => {
-
-        if (window.innerWidth <= 768) return;
-
-        icon.style.animation =
-            "amenityFloat .7s ease";
-
-    });
-
-    icon.addEventListener("animationend", () => {
-
-        icon.style.animation = "";
-
-    });
-
-});
