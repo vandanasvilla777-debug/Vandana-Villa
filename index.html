@@ -1,863 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Vandana Villa is a private luxury villa in Gorai, Mumbai, offering spacious rooms, a private pool, modern amenities and a relaxing stay near Gorai's beaches.">
 
-<title>Vandana Villa | Luxury Villa in Gorai</title>
+    <meta name="keywords"
+          content="Vandana Villa, luxury villa in Gorai, villa in Gorai Mumbai, private villa Gorai, Gorai villa, villa near Gorai beach">
 
-<meta
-name="description"
-content="Vandana Villa is a premium private villa in Gorai, Mumbai. Explore our villa, amenities, gallery and send an enquiry.">
+    <meta name="author" content="Vandana Villa">
 
-<meta
-name="keywords"
-content="villa in gorai, gorai villa, private villa, vandana villa, luxury villa mumbai">
+    <meta name="theme-color" content="#0d0d0d">
 
-<meta
-name="author"
-content="Vandana Villa">
+    <meta property="og:title"
+          content="Vandana Villa | Private Luxury Villa in Gorai">
 
-<link 
-rel="icon"
-href="logo.png">
+    <meta property="og:description"
+          content="A private luxury villa in Gorai, Mumbai, designed for peaceful getaways with family and friends.">
 
-<link
-rel="stylesheet"
-href="style.css">
+    <meta property="og:image"
+          content="images/hero.jpg">
 
-<link
-rel="preconnect"
-href="https://fonts.googleapis.com">
+    <meta property="og:type" content="website">
 
-<link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+    <title>Vandana Villa | Private Luxury Villa in Gorai, Mumbai</title>
 
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="light-mode">
-<!-- ===========================
-LOADER
-=========================== -->
+<body>
 
-<div id="loader">
-    <img src="logo.png" alt="Vandana Villa Logo">
-    <h2>Vandana Villa</h2>
-    <p>Luxury Private Villa • Gorai, Mumbai</p>
-</div>
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
-<!-- ===========================
-HEADER
-=========================== -->
+    <header class="navbar" id="navbar">
 
-<header>
+        <div class="nav-container">
 
-    <nav class="navbar">
+            <a href="#home" class="logo-link">
+                <img src="images/logo.png"
+                     alt="Vandana Villa logo"
+                     class="logo">
+            </a>
 
-        <a href="#" class="logo">
+            <nav class="nav-menu" id="navMenu">
 
-           <img src="logo.png" alt="Logo"> 
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#spaces">Spaces</a>
+                <a href="#amenities">Amenities</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#location">Location</a>
+                <a href="#contact">Contact</a>
 
-            <div>
-                <h2>Vandana Villa</h2>
-                <span>Luxury Private Villa</span>
-            </div>
+            </nav>
 
-        </a>
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
 
-        <ul id="menu">
+                <span></span>
+                <span></span>
+                <span></span>
 
-            <li><a href="#home">Home</a></li>
-
-            <li><a href="#about">About</a></li>
-
-            <li><a href="#amenities">Amenities</a></li>
-
-            <li><a href="#gallery">Gallery</a></li>
-
-            <li><a href="#location">Location</a></li>
-
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-            <div class="menu-btn">
-
-            <i class="fas fa-bars"></i>
+            </button>
 
         </div>
 
-    </nav>
+    </header>
 
-</header>
 
-<!-- ===========================
-HERO
-=========================== -->
+    <main>
 
-<section class="hero" id="home">
+        <!-- =========================
+             HERO
+        ========================== -->
 
-    <div class="hero-overlay"></div>
-    <div class="hero-particles" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-    
-    <div class="hero-content">
+        <section class="hero" id="home">
 
-        <span class="tag">
-            Welcome to Vandana Villa
-        </span>
+            <div class="hero-background"></div>
 
-        <h1>
-            Luxury Stay in the Heart of Gorai
-        </h1>
+            <div class="hero-overlay"></div>
 
-        <p>
+            <div class="hero-content">
 
-            Discover comfort, elegance, and peaceful surroundings at
-            Vandana Villa. Designed for families and groups seeking
-            unforgettable moments.
+                <p class="hero-label">
+                    PRIVATE LUXURY VILLA • GORAI
+                </p>
 
-        </p>
+                <h1>
+                    A Private Luxury Stay
+                    <span>in Gorai, Mumbai</span>
+                </h1>
 
-        <div class="hero-buttons">
+                <p class="hero-description">
+                    Experience a peaceful private villa in Gorai,
+                    Mumbai, with spacious living areas, comfortable
+                    bedrooms, a private pool and modern amenities —
+                    thoughtfully designed for memorable getaways.
+                </p>
 
-            <a href="#contact" class="btn-primary">
+                <a href="#spaces"
+                   class="btn btn-primary">
+                    Explore Villa
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
 
-                Enquire Now
+            </div>
+
+            <a href="#about"
+               class="scroll-indicator"
+               aria-label="Scroll to introduction">
+
+                <span>Scroll</span>
+                <i class="fa-solid fa-chevron-down"></i>
 
             </a>
 
-            <a href="#gallery" class="btn-secondary">
+        </section>
 
-                View Gallery
 
-            </a>
+        <!-- =========================
+             ABOUT / INTRODUCTION
+        ========================== -->
 
-        </div>
+        <section class="about section-padding"
+                 id="about">
 
-    </div>
+            <div class="container">
 
-    <div class="scroll-down">
+                <div class="about-grid">
 
-        <i class="fas fa-angle-down"></i>
+                    <div class="about-image reveal-3d">
 
-    </div>
+                        <img src="images/about.jpg"
+                             alt="Vandana Villa in Gorai, Mumbai"
+                             loading="lazy">
 
-</section>
+                        <div class="image-frame"></div>
 
-<!-- ===========================
-FLOATING BUTTONS
-=========================== -->
+                    </div>
 
-<div class="floating-buttons">
 
-<a
-href="https://wa.me/919769602777"
-target="_blank"
-class="whatsapp">
+                    <div class="about-content">
 
-<i class="fab fa-whatsapp"></i>
+                        <p class="section-label">
+                            WELCOME TO VANDANA VILLA
+                        </p>
 
-</a>
+                        <h2>
+                            Your Private Space
+                            <span>to Unwind</span>
+                        </h2>
 
-<a
-href="tel:+919769602777"
-class="call">
+                        <p>
+                            Vandana Villa is a private getaway in
+                            Gorai, Mumbai, created for comfortable
+                            stays with family and friends. With
+                            spacious interiors, multiple living spaces,
+                            a private pool and convenient amenities,
+                            the villa offers the freedom and privacy
+                            of your own holiday home.
+                        </p>
 
-<i class="fas fa-phone"></i>
+                        <p>
+                            Whether you want to spend time by the pool,
+                            relax indoors or explore the beaches around
+                            Gorai, Vandana Villa gives you a peaceful
+                            space to slow down and enjoy your stay.
+                        </p>
 
-</a>
 
-</div>
-    <!-- ===========================
-ABOUT
-=========================== -->
+                        <div class="property-stats">
 
-<section class="about" id="about">
+                            <div class="stat-card">
+                                <strong>04</strong>
+                                <span>Bedrooms</span>
+                            </div>
 
-<div class="container">
+                            <div class="stat-card">
+                                <strong>02</strong>
+                                <span>Living Areas</span>
+                            </div>
 
-<div class="about-image">
+                            <div class="stat-card">
+                                <strong>02</strong>
+                                <span>Kitchens</span>
+                            </div>
 
-<img src="about.jpg" alt="About Vandana Villa">
+                            <div class="stat-card">
+                                <strong>01</strong>
+                                <span>Private Pool</span>
+                            </div>
 
-</div>
+                        </div>
 
-<div class="about-content">
+                    </div>
 
-<span class="section-subtitle">
-About Us
-</span>
-
-<h2>Experience Comfort, Luxury & Peace</h2>
-
-<p>
-
-Vandana Villa is a beautifully designed private villa located in
-Gorai, Mumbai. Created for families and groups, it offers a peaceful
-escape with modern amenities and spacious interiors.
-
-</p>
-
-<p>
-
-Whether you're planning a relaxing getaway or quality time with loved
-ones, our villa is designed to make every stay comfortable and memorable.
-
-</p>
-
-<div class="about-buttons">
-
-<a href="#gallery" class="btn-primary">
-Explore Gallery
-</a>
-
-<a href="#contact" class="btn-secondary">
-Contact Us
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===========================
-VILLA EXPERIENCE
-=========================== -->
-
-<section class="highlights" id="experience">
-
-    <div class="section-heading">
-
-        <span class="section-subtitle">
-            The Vandana Villa Experience
-        </span>
-
-        <h2>More Than Just a Stay</h2>
-
-        <p>
-            A private space designed for meaningful moments,
-            relaxed days and unforgettable memories.
-        </p>
-
-    </div>
-
-    <div class="highlight-grid">
-
-        <div class="highlight-card">
-
-            <div class="highlight-number">01</div>
-
-            <div class="highlight-icon">
-                <i class="fas fa-leaf"></i>
-            </div>
-
-            <h3>Private Escape</h3>
-
-            <p>
-                Step away from the city's rush and enjoy
-                your own peaceful private space.
-            </p>
-
-            <span class="highlight-label">
-                Relax • Unwind • Recharge
-            </span>
-
-        </div>
-
-
-        <div class="highlight-card">
-
-            <div class="highlight-number">02</div>
-
-            <div class="highlight-icon">
-                <i class="fas fa-water"></i>
-            </div>
-
-            <h3>Poolside Moments</h3>
-
-            <p>
-                Spend quality time together, relax by the pool
-                and create memorable moments.
-            </p>
-
-            <span class="highlight-label">
-                Swim • Relax • Enjoy
-            </span>
-
-        </div>
-
-
-        <div class="highlight-card">
-
-            <div class="highlight-number">03</div>
-
-            <div class="highlight-icon">
-                <i class="fas fa-people-group"></i>
-            </div>
-
-            <h3>Made for Togetherness</h3>
-
-            <p>
-                Spacious living areas and a comfortable setting
-                made for families and groups.
-            </p>
-
-            <span class="highlight-label">
-                Family • Friends • Memories
-            </span>
-
-        </div>
-
-
-        <div class="highlight-card">
-
-            <div class="highlight-number">04</div>
-
-            <div class="highlight-icon">
-                <i class="fas fa-location-dot"></i>
-            </div>
-
-            <h3>Gorai Getaway</h3>
-
-            <p>
-                Enjoy a peaceful villa stay while exploring
-                the relaxed surroundings of Gorai.
-            </p>
-
-            <span class="highlight-label">
-                Explore • Experience • Escape
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===========================
-AMENITIES
-=========================== -->
-
-<section id="amenities" class="amenities">
-
-<div class="section-heading">
-
-<h2>Our Amenities</h2>
-
-<p>Designed to make your stay comfortable.</p>
-
-</div>
-
-<div class="amenities-grid">
-
-<div class="amenity">
-<i class="fas fa-snowflake"></i>
-<span>Air Conditioning</span>
-</div>
-
-<div class="amenity">
-<i class="fas fa-wifi"></i>
-<span>Free WiFi</span>
-</div>
-
-<div class="amenity">
-<i class="fas fa-tv"></i>
-<span>Smart TV</span>
-</div>
-
-<div class="amenity">
-<i class="fas fa-utensils"></i>
-<span>Kitchen</span>
-</div>
-
-<div class="amenity">
-<i class="fas fa-fire"></i>
-<span>BBQ Area</span>
-</div>
-
-<div class="amenity">
-<i class="fas fa-car"></i>
-<span>Parking</span>
-</div>
-
-<div class="amenity">
-<i class="fas fa-water"></i>
-<span>Swimming Pool</span>
-</div>
-
-<div class="amenity">
-<i class="fas fa-users"></i>
-<span>Family Friendly</span>
-</div>
-
-<div class="amenity">
-<i class="fas fa-gamepad"></i>
-<span>Indoor Games</span>
-</div>
-
-</div>
-
-</section>
-    <!-- ===========================
-GALLERY
-=========================== -->
-
-<section id="gallery" class="gallery">
-
-    <div class="section-heading">
-        <h2>Gallery</h2>
-        <p>Take a glimpse of Vandana Villa.</p>
-    </div>
-
-    <div class="gallery-grid">
-
-        <img src="gallery1.jpg" alt="Gallery Image 1">
-        <img src="gallery2.jpg" alt="Gallery Image 2">
-        <img src="gallery3.jpg" alt="Gallery Image 3">
-        <img src="gallery4.jpg" alt="Gallery Image 4">
-        <img src="gallery5.jpg" alt="Gallery Image 5">
-        <img src="gallery6.jpg" alt="Gallery Image 6">
-        <img src="gallery7.jpg" alt="Gallery Image 7">
-        <img src="gallery8.jpg" alt="Gallery Image 8">
-
-    </div>
-
-</section>
-<!-- =========================
-     NEARBY BEACHES & ATTRACTIONS
-========================= -->
-
-<section class="nearby" id="nearby">
-
-    <div class="container">
-
-        <div class="section-heading">
-            <span class="section-subtitle">Explore Gorai</span>
-            <h2>Nearby Beaches & Attractions</h2>
-            <p>
-                Discover beautiful beaches and popular
-                attractions around Vandana Villa.
-            </p>
-        </div>
-
-        <div class="nearby-grid">
-
-            <div class="nearby-card">
-                <div class="nearby-icon">
-                    <i class="fas fa-umbrella-beach"></i>
                 </div>
 
-                <h3>Gorai Beach</h3>
-
-                <p>
-                    Relax by the Arabian Sea and enjoy
-                    the peaceful coastal surroundings.
-                </p>
-
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=Gorai+Beach+Mumbai"
-                    target="_blank"
-                    rel="noopener">
-                    View on Maps →
-                </a>
             </div>
 
-
-            <div class="nearby-card">
-                <div class="nearby-icon">
-                    <i class="fas fa-spa"></i>
-                </div>
-
-                <h3>Global Vipassana Pagoda</h3>
-
-                <p>
-                    A peaceful landmark and one of the
-                    well-known attractions around Gorai.
-                </p>
-
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=Global+Vipassana+Pagoda+Mumbai"
-                    target="_blank"
-                    rel="noopener">
-                    View on Maps →
-                </a>
-            </div>
+        </section>
 
 
-            <div class="nearby-card">
-                <div class="nearby-icon">
-                    <i class="fas fa-water"></i>
-                </div>
+        <!-- =========================
+             SPACES
+        ========================== -->
 
-                <h3>Water Kingdom</h3>
+        <section class="spaces section-padding"
+                 id="spaces">
 
-                <p>
-                    A popular water park and a fun option
-                    for families and groups.
-                </p>
+            <div class="container">
 
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=Water+Kingdom+Gorai+Mumbai"
-                    target="_blank"
-                    rel="noopener">
-                    View on Maps →
-                </a>
-            </div>
+                <div class="section-heading">
 
-
-            <div class="nearby-card">
-                <div class="nearby-icon">
-                    <i class="fas fa-water"></i>
-                </div>
-
-                <h3>Manori Beach</h3>
-
-                <p>
-                    Enjoy the relaxed coastal atmosphere
-                    of the nearby Manori area.
-                </p>
-
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=Manori+Beach+Mumbai"
-                    target="_blank"
-                    rel="noopener">
-                    View on Maps →
-                </a>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     HOW TO REACH
-========================= -->
-
-<section class="how-to-reach" id="how-to-reach">
-
-    <div class="container">
-
-        <div class="section-heading">
-            <span class="section-subtitle">Plan Your Journey</span>
-            <h2>How to Reach</h2>
-            <p>
-                Convenient ways to reach Vandana Villa
-                in Gorai, Mumbai.
-            </p>
-        </div>
-
-        <div class="route-grid">
-
-            <div class="route-card">
-                <i class="fas fa-car"></i>
-
-                <div>
-                    <h3>By Road</h3>
-                    <p>
-                        Reach the Gorai area by car, taxi
-                        or local transport.
+                    <p class="section-label">
+                        THE VILLA
                     </p>
-                </div>
-            </div>
 
+                    <h2>
+                        Spaces Made for
+                        <span>Good Times</span>
+                    </h2>
 
-            <div class="route-card">
-                <i class="fas fa-train"></i>
-
-                <div>
-                    <h3>Via Borivali</h3>
                     <p>
-                        Borivali is a convenient starting
-                        point for travelling towards Gorai.
+                        Discover the spaces that make Vandana Villa
+                        comfortable for relaxed private getaways.
                     </p>
+
                 </div>
+
+
+                <div class="spaces-grid">
+
+                    <article class="space-card reveal-3d">
+
+                        <div class="space-image">
+                            <img src="images/gallery1.jpg"
+                                 alt="Bedroom at Vandana Villa"
+                                 loading="lazy">
+                        </div>
+
+                        <div class="space-content">
+                            <span>01</span>
+                            <h3>Bedrooms</h3>
+                            <p>
+                                Comfortable private spaces designed
+                                for a relaxed stay.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="space-card reveal-3d">
+
+                        <div class="space-image">
+                            <img src="images/gallery2.jpg"
+                                 alt="Living area at Vandana Villa"
+                                 loading="lazy">
+                        </div>
+
+                        <div class="space-content">
+                            <span>02</span>
+                            <h3>Living Areas</h3>
+                            <p>
+                                Spacious areas to sit back, relax
+                                and spend time together.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="space-card reveal-3d">
+
+                        <div class="space-image">
+                            <img src="images/gallery3.jpg"
+                                 alt="Kitchen at Vandana Villa"
+                                 loading="lazy">
+                        </div>
+
+                        <div class="space-content">
+                            <span>03</span>
+                            <h3>Kitchens</h3>
+                            <p>
+                                Convenient kitchen spaces for
+                                comfortable stays.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="space-card reveal-3d">
+
+                        <div class="space-image">
+                            <img src="images/gallery4.jpg"
+                                 alt="Private pool at Vandana Villa"
+                                 loading="lazy">
+                        </div>
+
+                        <div class="space-content">
+                            <span>04</span>
+                            <h3>Private Pool</h3>
+                            <p>
+                                Take a refreshing break and enjoy
+                                your private pool time.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="space-card reveal-3d">
+
+                        <div class="space-image">
+                            <img src="images/gallery5.jpg"
+                                 alt="Indoor games at Vandana Villa"
+                                 loading="lazy">
+                        </div>
+
+                        <div class="space-content">
+                            <span>05</span>
+                            <h3>Indoor Games</h3>
+                            <p>
+                                Enjoy relaxed indoor entertainment
+                                with family and friends.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
             </div>
 
+        </section>
 
-            <div class="route-card">
-                <i class="fas fa-ship"></i>
 
-                <div>
-                    <h3>Ferry</h3>
+        <!-- =========================
+             AMENITIES
+        ========================== -->
+
+        <section class="amenities section-padding"
+                 id="amenities">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        COMFORT & CONVENIENCE
+                    </p>
+
+                    <h2>
+                        Everything You Need
+                        <span>to Feel at Home</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="amenities-grid">
+
+                    <div class="amenity-card reveal-3d">
+                        <i class="fa-solid fa-bed"></i>
+                        <h3>4 Bedrooms</h3>
+                        <p>
+                            Comfortable spaces for a relaxed stay.
+                        </p>
+                    </div>
+
+                    <div class="amenity-card reveal-3d">
+                        <i class="fa-solid fa-couch"></i>
+                        <h3>2 Living Areas</h3>
+                        <p>
+                            Spacious areas to gather and unwind.
+                        </p>
+                    </div>
+
+                    <div class="amenity-card reveal-3d">
+                        <i class="fa-solid fa-utensils"></i>
+                        <h3>2 Kitchens</h3>
+                        <p>
+                            Convenient kitchen facilities.
+                        </p>
+                    </div>
+
+                    <div class="amenity-card reveal-3d">
+                        <i class="fa-solid fa-water-ladder"></i>
+                        <h3>Private Pool</h3>
+                        <p>
+                            Enjoy refreshing private pool time.
+                        </p>
+                    </div>
+
+                    <div class="amenity-card reveal-3d">
+                        <i class="fa-solid fa-wifi"></i>
+                        <h3>Wi-Fi</h3>
+                        <p>
+                            Stay connected during your getaway.
+                        </p>
+                    </div>
+
+                    <div class="amenity-card reveal-3d">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <h3>Indoor Games</h3>
+                        <p>
+                            Entertainment for relaxed evenings.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EXPERIENCE
+        ========================== -->
+
+        <section class="experience section-padding">
+
+            <div class="container">
+
+                <div class="experience-grid">
+
+                    <div class="experience-content">
+
+                        <p class="section-label">
+                            THE VANDANA VILLA EXPERIENCE
+                        </p>
+
+                        <h2>
+                            Designed for
+                            <span>Private Getaways</span>
+                        </h2>
+
+                        <p>
+                            Step away from the everyday and enjoy
+                            quality time in a private setting.
+                            Vandana Villa brings together spacious
+                            interiors, relaxing outdoor moments and
+                            convenient amenities in Gorai.
+                        </p>
+
+                    </div>
+
+
+                    <div class="experience-cards">
+
+                        <div class="experience-card reveal-3d">
+                            <span>01</span>
+                            <h3>Private Escape</h3>
+                            <p>
+                                Enjoy your own space away from
+                                the usual city routine.
+                            </p>
+                        </div>
+
+                        <div class="experience-card reveal-3d">
+                            <span>02</span>
+                            <h3>Relax & Reconnect</h3>
+                            <p>
+                                Spend meaningful time with
+                                family and friends.
+                            </p>
+                        </div>
+
+                        <div class="experience-card reveal-3d">
+                            <span>03</span>
+                            <h3>Poolside Moments</h3>
+                            <p>
+                                Slow down and enjoy peaceful
+                                moments by the pool.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BEACHES
+        ========================== -->
+
+        <section class="beaches section-padding"
+                 id="beaches">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        NEARBY
+                    </p>
+
+                    <h2>
+                        Explore Gorai's
+                        <span>Beaches</span>
+                    </h2>
+
                     <p>
-                        Ferry connectivity may be available
-                        towards Gorai. Check current timings
-                        before travelling.
+                        Spend your getaway exploring the beaches
+                        and coastal surroundings of Gorai.
                     </p>
+
                 </div>
+
+
+                <div class="beaches-grid">
+
+                    <article class="beach-card reveal-3d">
+
+                        <img src="images/gallery6.jpg"
+                             alt="Beach near Gorai, Mumbai"
+                             loading="lazy">
+
+                        <div class="beach-content">
+
+                            <h3>Gorai Beach</h3>
+
+                            <p>
+                                A popular coastal escape known for
+                                its relaxed atmosphere and sunsets.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="beach-card reveal-3d">
+
+                        <img src="images/gallery2.jpg"
+                             alt="Beach destination near Gorai"
+                             loading="lazy">
+
+                        <div class="beach-content">
+
+                            <h3>Nearby Beach</h3>
+
+                            <p>
+                                More nearby beach destinations can
+                                be added here with verified details.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
             </div>
 
+        </section>
 
-            <div class="route-card">
-                <i class="fas fa-location-arrow"></i>
 
-                <div>
-                    <h3>Google Maps</h3>
-                    <p>
-                        Use Google Maps for the most accurate
-                        route from your current location.
+        <!-- =========================
+             HOW TO REACH
+        ========================== -->
+
+        <section class="reach section-padding"
+                 id="reach">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        HOW TO REACH
                     </p>
+
+                    <h2>
+                        Getting to
+                        <span>Vandana Villa</span>
+                    </h2>
+
                 </div>
-            </div>
 
-        </div>
 
-        <div class="reach-button-wrap">
-            <a
-                class="btn-primary"
-                href="https://www.google.com/maps/dir/?api=1&destination=Vandana+Villa+Gorai+Mumbai"
-                target="_blank"
-                rel="noopener">
-                <i class="fas fa-location-arrow"></i>
-                Get Directions
-            </a>
-        </div>
+                <div class="reach-grid">
 
-    </div>
+                    <div class="reach-card reveal-3d">
 
-</section>
-<!-- ===========================
-LOCATION
-=========================== -->
+                        <div class="reach-icon">
+                            <i class="fa-solid fa-train"></i>
+                        </div>
 
-<section id="location" class="location">
+                        <div>
+                            <h3>By Railway</h3>
 
-    <div class="section-heading">
-        <h2>Our Location</h2>
-        <p>Easy to reach and surrounded by nature.</p>
-    </div>
+                            <p>
+                                Railway route information and the
+                                nearest convenient station can be
+                                added here.
+                            </p>
+                        </div>
 
-    <div class="location-content">
+                    </div>
 
-        <div class="location-info">
 
-            <h3>Address</h3>
+                    <div class="reach-card reveal-3d">
 
-            <p>
-                Vandana Villa,<br>
-                Near Rehcruz d Retreat,<br>
-                Culvem Village,<br>
-                Gorai, Mumbai,<br>
-                Maharashtra 400091
-            </p>
+                        <div class="reach-icon">
+                            <i class="fa-solid fa-ferry"></i>
+                        </div>
 
-            <div class="location-buttons">
+                        <div>
+                            <h3>By Ferry</h3>
 
-                <a href="https://maps.app.goo.gl/Wt2DzC3BHUxhALmVA"
-                   target="_blank"
-                   class="btn-primary">
+                            <p>
+                                Ferry route information can be added
+                                here with verified timings and route
+                                details.
+                            </p>
+                        </div>
 
-                    Get Directions
+                    </div>
 
-                </a>
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
-        <div class="map">
 
-            <iframe
-            src="https://www.google.com/maps?q=Vandana's+Villa,+Near+Rehcruz+d+Retreat,+Culvem+Village,+Gorai,+Mumbai,+Maharashtra+400091&output=embed"
-            loading="lazy"
-            allowfullscreen>
-            </iframe>
+        <!-- =========================
+             LOCATION
+        ========================== -->
 
-        </div>
+        <section class="location section-padding"
+                 id="location">
 
-    </div>
-
-</section>
-
-<!-- ===========================
-CONTACT
-=========================== -->
-
-<section id="contact" class="contact">
-
-    <div class="section-heading">
-
-        <h2>Send an Enquiry</h2>
-
-        <p>Have a question? We'd love to hear from you.</p>
-
-    </div>
-
-    <form class="contact-form">
-
-        <input
-        type="text"
-        placeholder="Your Name"
-        required>
-
-        <input
-        type="tel"
-        placeholder="Phone Number"
-        required>
-
-        <input
-        type="email"
-        placeholder="Email Address">
-
-        <textarea
-        placeholder="Write your message..."
-        rows="6"
-        required></textarea>
-
-        <button type="submit">
-
-            Send Enquiry
-
-        </button>
-
-    </form>
-
-</section>
-
-<!-- ===========================
-FOOTER
-=========================== -->
-
-<footer>
-
-<div class="footer-container">
-
-<div class="footer-about">
-
-<img src="logo.png" alt="Logo">
-
-<h3>Vandana Villa</h3>
-
-<p>
-
-Luxury Private Villa in Gorai, Mumbai.
-
-Perfect for family vacations and peaceful getaways.
-
-</p>
-
-</div>
-
-<div class="footer-links">
-
-<h3>Quick Links</h3>
-
-<a href="#home">Home</a>
-
-<a href="#about">About</a>
-
-<a href="#gallery">Gallery</a>
-
-<a href="#location">Location</a>
-
-<a href="#contact">Contact</a>
-
-</div>
-
-<div class="footer-contact">
-
-<h3>Contact</h3>
-
-<p>
-
-📍 Gorai, Mumbai
-
-</p>
-
-<p>
-
-📞 +91 97696 02777
-
-</p>
-
-<p>
-
-✉️ vandanasvilla777@gmail.com
-
-</p>
-
-<div class="social-icons">
-
-<a href="https://www.instagram.com/vandanas_villa"
-target="_blank">
-
-<i class="fab fa-instagram"></i>
-
-</a>
-
-<a href="https://www.facebook.com/profile.php?id=61590875913362"
-target="_blank">
-
-<i class="fab fa-facebook"></i>
-
-</a>
-
-<a href="https://wa.me/919769602777"
-target="_blank">
-
-<i class="fab fa-whatsapp"></i>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="copyright">
-
-© 2026 Vandana Villa • All Rights Reserved.
-
-</div>
-
-</footer>
-<script src="script.js"></script>
-<script>
-window.addEventListener("load", function () {
-    const loader = document.getElementById("loader");
-
-    if (loader) {
-        setTimeout(() => {
-            loader.classList.add("loader-hidden");
-
-            setTimeout(() => {
-                loader.style.display = "none";
-            }, 700);
-        }, 800);
-    }
-});
-</script>
-</body>
-
-</html>
+            <div c
+                
