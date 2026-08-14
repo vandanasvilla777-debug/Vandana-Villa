@@ -561,3 +561,176 @@ section{
 
     font-size:15px;
 }
+/* =====================================================
+   VANDANA VILLA — FINAL RESPONSIVE WIDTH FIX
+   ===================================================== */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 100%;
+}
+
+/* Main page sections */
+main,
+section,
+footer,
+header {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Containers */
+.container,
+.section-container {
+    width: min(1200px, calc(100% - 40px));
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Hero */
+.hero {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+/* Images never overflow their section */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Gallery */
+.gallery,
+.gallery-grid,
+.gallery-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Location / map */
+.location,
+.location-container,
+.map-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+/* Contact */
+.contact,
+.contact-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Form */
+.contact form {
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: auto;
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    .container,
+    .section-container,
+    .gallery,
+    .gallery-grid,
+    .gallery-container,
+    .location,
+    .location-container,
+    .map-container,
+    .contact,
+    .contact-container,
+    .footer-container {
+        width: calc(100% - 30px);
+        max-width: none;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .hero {
+        width: 100%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact form {
+        width: 100%;
+    }
+
+    .contact input,
+    .contact textarea {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   LARGE DESKTOP
+   ===================================================== */
+
+@media (min-width: 769px) {
+
+    .container,
+    .section-container,
+    .gallery-container,
+    .location-container,
+    .contact-container,
+    .footer-container {
+        width: min(1200px, calc(100% - 80px));
+    }
+}
