@@ -1,856 +1,911 @@
-/* =========================================
-   VANDANA VILLA — LOGO MATCH THEME
-   PART 1: BASE + HEADER + HERO
-   ========================================= */
+:root{
+    --primary:#C9A45C;
+    --primary-light:#E3C98F;
+    --cream:#F5F0E6;
+    --cream-2:#EDE5D6;
+    --olive:#7A8062;
+    --olive-light:#929875;
 
-:root {
-    --gold: #c9a45c;
-    --gold-light: #e2c98f;
-    --ivory: #f4efe3;
-    --olive: #7b8060;
+    --text:#29271F;
+    --muted:#6E6A5F;
 
-    --bg: #0c0b09;
-    --bg2: #14120e;
-    --card: #181612;
+    --white:#FFFFFF;
+    --border:rgba(122,128,98,.22);
 
-    --text: #f4efe3;
-    --muted: #c4bdae;
-
-    --border: rgba(201, 164, 92, 0.18);
-
-    --radius: 24px;
-    --transition: 0.35s cubic-bezier(.2,.8,.2,1);
+    --shadow:0 18px 50px rgba(70,62,45,.13);
+    --radius:22px;
+    --transition:.35s cubic-bezier(.2,.8,.2,1);
 }
 
-/* ---------- BASE ---------- */
-
-html {
-    scroll-behavior: smooth;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
+html{
+    scroll-behavior:smooth;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--text);
+body{
+    background:var(--cream);
+    color:var(--text);
+    font-family:Poppins,Arial,sans-serif;
+    line-height:1.65;
+    overflow-x:hidden;
 }
 
-p {
-    color: var(--muted);
+img{
+    max-width:100%;
+    display:block;
 }
 
-a {
-    color: inherit;
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
-::selection {
-    background: var(--gold);
-    color: #17130d;
+button{
+    font:inherit;
 }
 
-/* ---------- HEADER ---------- */
-
-header {
-    background: rgba(8, 7, 5, 0.92) !important;
-    border-bottom: 1px solid rgba(201, 164, 92, 0.12);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+h1,h2,h3,h4,h5,h6{
+    color:var(--text);
+    line-height:1.2;
 }
 
-.logo h2 {
-    color: var(--ivory) !important;
+p{
+    color:var(--muted);
 }
 
-.logo span {
-    color: #8b846f !important;
+::selection{
+    background:var(--primary);
+    color:#fff;
 }
 
-#menu a {
-    color: #eee8dc !important;
-    transition: var(--transition);
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:9999;
+
+    background:rgba(245,240,230,.94);
+    border-bottom:1px solid var(--border);
+
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
 }
 
-#menu a:hover {
-    color: var(--gold-light) !important;
+.navbar{
+    width:min(1180px,92%);
+    min-height:76px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
-.menu-btn {
-    color: var(--ivory) !important;
-    border-color: rgba(201, 164, 92, 0.25) !important;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-/* ---------- HERO ---------- */
+.logo img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    border-radius:50%;
+}
 
-.hero {
+.logo h2{
+    color:var(--text);
+    font-size:18px;
+}
+
+.logo span{
+    display:block;
+    color:var(--olive);
+    font-size:11px;
+}
+
+#menu{
+    list-style:none;
+
+    display:flex;
+    align-items:center;
+    gap:26px;
+}
+
+#menu a{
+    color:var(--text);
+    font-size:14px;
+    font-weight:500;
+
+    transition:var(--transition);
+}
+
+#menu a:hover{
+    color:var(--primary);
+}
+
+
+/* =========================
+   MENU BUTTON
+========================= */
+
+.menu-btn{
+    display:none;
+
+    width:46px;
+    height:46px;
+
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--border);
+    border-radius:14px;
+
+    background:transparent;
+    color:var(--text);
+
+    cursor:pointer;
+}
+
+.menu-btn i{
+    font-size:21px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+
+    min-height:calc(100vh - 76px);
+
+    display:flex;
+    align-items:center;
+
+    padding:100px 0;
+
     background:
         linear-gradient(
             90deg,
-            rgba(7, 6, 5, 0.91),
-            rgba(7, 6, 5, 0.66)
+            rgba(245,240,230,.92),
+            rgba(245,240,230,.62)
         ),
-        url("hero.jpg") center/cover no-repeat !important;
+        url("hero.jpg") center/cover no-repeat;
 }
 
-.hero h1 {
-    color: var(--ivory) !important;
-}
+.hero-overlay{
+    position:absolute;
+    inset:0;
 
-.hero p {
-    color: #d5d0c4 !important;
-}
-
-.hero-overlay {
     background:
         radial-gradient(
-            circle at 70% 40%,
-            rgba(201, 164, 92, 0.12),
-            transparent 42%
-        ) !important;
+            circle at 80% 30%,
+            rgba(201,164,92,.20),
+            transparent 38%
+        );
 }
 
-/* ---------- BUTTONS ---------- */
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    max-width:850px;
+
+    color:var(--text);
+
+    font-size:clamp(38px,6vw,78px);
+    font-weight:800;
+}
+
+.hero p{
+    max-width:720px;
+
+    margin:22px 0;
+
+    color:#555146;
+    font-size:17px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
 
 .btn-primary,
-.btn-primary:hover {
-    background: var(--gold) !important;
-    border-color: var(--gold) !important;
-    color: #17130d !important;
+.btn-secondary{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:48px;
+
+    padding:12px 24px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:var(--transition);
 }
 
-.btn-secondary {
-    color: var(--ivory) !important;
-    border-color: var(--ivory) !important;
+.btn-primary{
+    background:var(--primary);
+    border:1px solid var(--primary);
+    color:#fff;
+
+    box-shadow:
+        0 10px 25px rgba(201,164,92,.20);
 }
 
-.btn-secondary:hover {
-    background: var(--ivory) !important;
-    color: #17130d !important;
+.btn-primary:hover{
+    background:#B58E4A;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 16px 35px rgba(201,164,92,.28);
 }
 
-/* ---------- LOADER ---------- */
+.btn-secondary{
+    margin-left:10px;
 
-#loader {
-    background: #0c0b09 !important;
+    background:rgba(255,255,255,.55);
+
+    border:1px solid var(--olive);
+
+    color:var(--olive);
 }
 
-#loader h2 {
-    color: var(--ivory) !important;
-}
+.btn-secondary:hover{
+    background:var(--olive);
+    color:#fff;
 
-#loader p {
-    color: #c4bdae !important;
-}
-/* =========================================
-   VANDANA VILLA — PART 2
-   SECTIONS + 3D CARDS + GALLERY
-   ========================================= */
-
-/* ---------- SECTION HEADINGS ---------- */
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-heading h2 {
-    color: var(--gold) !important;
-    font-size: clamp(30px, 4vw, 48px);
-    font-weight: 800;
-}
-
-.section-heading p {
-    color: var(--muted) !important;
-    max-width: 650px;
-    margin: 12px auto 0;
+    transform:
+        translateY(-3px);
 }
 
 
-/* ---------- SECTION BACKGROUNDS ---------- */
+/* =========================
+   LOADER
+========================= */
+
+#loader{
+    position:fixed;
+    inset:0;
+
+    z-index:999999;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:14px;
+
+    background:var(--cream);
+}
+
+#loader img{
+    width:125px;
+    height:125px;
+
+    object-fit:contain;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+        0 15px 45px rgba(70,62,45,.15);
+
+    animation:
+        loaderFloat 2.8s ease-in-out infinite;
+}
+
+#loader h2{
+    color:var(--text);
+}
+
+#loader p{
+    color:var(--olive);
+}
+
+#loader.loaded{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    transition:
+        opacity .5s ease,
+        visibility .5s ease;
+}
+
+@keyframes loaderFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotateY(0);
+    }
+
+    50%{
+        transform:
+            translateY(-8px)
+            rotateY(8deg);
+    }
+}
+
+
+/* =========================
+   GLOBAL SECTION BASE
+========================= */
+
+section{
+    position:relative;
+    overflow:hidden;
+}
+
+.container,
+section > .container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+.about,
+.highlights,
+.amenities,
+.gallery,
+.location,
+.contact,
+.nearby,
+.how-to-reach{
+    padding:100px 0;
+}
 
 .about,
 .location,
-.contact {
-    background: var(--bg) !important;
-    color: var(--text);
+.contact,
+.how-to-reach{
+    background:var(--cream);
 }
 
 .highlights,
 .amenities,
-.gallery {
-    background: var(--bg2) !important;
-    color: var(--text);
+.nearby{
+    background:var(--cream-2);
+}
+
+.gallery{
+    background:#F8F4EC;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-heading h2{
+    color:var(--olive);
+
+    font-size:
+        clamp(30px,4vw,48px);
+
+    font-weight:800;
+}
+
+.section-heading p{
+    max-width:650px;
+    margin:12px auto 0;
+
+    color:var(--muted);
+}
+/* =========================================
+   VANDANA VILLA — PART 2
+   CARDS • 3D EFFECT • GALLERY • ABOUT
+   ========================================= */
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:60px;
+}
+
+.about-text h2{
+    color:var(--olive);
+    font-size:clamp(30px,4vw,46px);
+    margin-bottom:18px;
+}
+
+.about-text p{
+    margin-bottom:14px;
+}
+
+.about-image{
+    perspective:1200px;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:var(--radius);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transform-style:preserve-3d;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.about-image img:hover{
+    box-shadow:
+        0 30px 70px rgba(70,62,45,.20);
 }
 
 
-/* ---------- 3D GRIDS ---------- */
+/* =========================
+   HIGHLIGHT GRID
+========================= */
 
-.highlights-grid,
-.amenities-grid,
-.gallery-grid {
-    perspective: 1400px;
+.highlights-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:24px;
+
+    perspective:1400px;
 }
 
 
-/* ---------- HIGHLIGHT CARDS ---------- */
+/* =========================
+   HIGHLIGHT CARD
+========================= */
 
-.highlight-card {
-    position: relative;
-    overflow: hidden;
+.highlight-card{
+    position:relative;
+
+    padding:30px;
+
+    min-height:220px;
+
+    overflow:hidden;
 
     background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(201, 164, 92, 0.09),
-            transparent 32%
-        ),
         linear-gradient(
             145deg,
-            #1a1712,
-            #11100d
-        ) !important;
+            rgba(255,255,255,.96),
+            rgba(237,229,214,.94)
+        );
 
-    border: 1px solid var(--border) !important;
-    border-radius: var(--radius);
+    border:
+        1px solid var(--border);
 
-    color: var(--text);
+    border-radius:var(--radius);
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.38);
+        0 14px 40px rgba(70,62,45,.10);
 
-    transform-style: preserve-3d;
+    transform-style:preserve-3d;
 
     transition:
-        transform 0.18s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
-
-    will-change: transform;
+        transform .18s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
 }
 
-.highlight-card:hover {
-    border-color: rgba(201, 164, 92, 0.5) !important;
+.highlight-card:hover{
+    border-color:
+        rgba(201,164,92,.55);
 
     box-shadow:
-        0 28px 70px rgba(0, 0, 0, 0.55),
-        0 0 35px rgba(201, 164, 92, 0.08);
+        0 28px 65px rgba(70,62,45,.18);
 }
 
-.highlight-card h3 {
-    color: var(--ivory) !important;
-}
+.highlight-card::before{
+    content:"";
 
-.highlight-card p {
-    color: var(--muted) !important;
-}
+    position:absolute;
 
+    width:180px;
+    height:180px;
 
-/* ---------- CARD ICONS ---------- */
+    top:-90px;
+    right:-90px;
 
-.card-icon,
-.highlight-card i {
-    color: var(--gold-light) !important;
-}
-
-
-/* ---------- AMENITY CARDS ---------- */
-
-.amenity {
-    position: relative;
+    border-radius:50%;
 
     background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(201, 164, 92, 0.08),
-            transparent 32%
-        ),
-        linear-gradient(
-            145deg,
-            #1a1712,
-            #11100d
-        ) !important;
+        rgba(201,164,92,.13);
 
-    border: 1px solid var(--border) !important;
-    border-radius: var(--radius);
-
-    color: var(--text);
-
-    transform-style: preserve-3d;
-
-    transition:
-        transform 0.18s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
-
-    will-change: transform;
+    pointer-events:none;
 }
 
-.amenity:hover {
-    border-color: rgba(201, 164, 92, 0.5) !important;
+.highlight-card h3{
+    position:relative;
+
+    color:var(--text);
+
+    margin:
+        18px 0 8px;
+
+    transform:translateZ(25px);
+}
+
+.highlight-card p{
+    position:relative;
+
+    transform:translateZ(15px);
+}
+
+.card-icon{
+    position:relative;
+
+    width:58px;
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:17px;
+
+    background:
+        rgba(122,128,98,.12);
+
+    color:var(--primary);
+
+    font-size:24px;
+
+    transform:translateZ(35px);
+}
+
+
+/* =========================
+   AMENITIES
+========================= */
+
+.amenities-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+
+    perspective:1400px;
+}
+
+.amenity{
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    min-height:100px;
+
+    padding:22px;
+
+    background:
+        rgba(255,255,255,.88);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:20px;
 
     box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(201, 164, 92, 0.08);
-}
+        0 12px 35px rgba(70,62,45,.08);
 
-.amenity i {
-    color: var(--gold-light) !important;
-}
-
-.amenity span,
-.amenity p {
-    color: var(--ivory) !important;
-}
-
-
-/* ---------- 3D LIGHT EFFECT ---------- */
-
-.highlight-card::after,
-.amenity::after {
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    right: -90px;
-    top: -90px;
-
-    border-radius: 50%;
-
-    background: rgba(201, 164, 92, 0.10);
-
-    filter: blur(20px);
-
-    pointer-events: none;
-}
-
-
-/* ---------- ABOUT IMAGE ---------- */
-
-.about-image {
-    perspective: 1000px;
-}
-
-.about-image img {
-    transform-style: preserve-3d;
+    transform-style:preserve-3d;
 
     transition:
-        transform 0.25s ease,
-        filter 0.35s ease;
-
-    will-change: transform;
+        transform .18s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
 }
 
-.about-image:hover img {
-    filter: brightness(1.04);
-}
-
-
-/* ---------- GALLERY ---------- */
-
-.gallery-grid {
-    display: grid;
-    gap: 22px;
-}
-
-.gallery-grid img {
-    width: 100%;
-
-    border-radius: 18px;
-
-    border: 1px solid rgba(201, 164, 92, 0.12);
+.amenity:hover{
+    border-color:
+        rgba(201,164,92,.55);
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.35);
-
-    transition:
-        transform 0.45s cubic-bezier(.2,.8,.2,1),
-        filter 0.45s ease,
-        box-shadow 0.45s ease;
-
-    transform: translateZ(0);
+        0 24px 55px rgba(70,62,45,.16);
 }
 
-.gallery-grid img:hover {
+.amenity::after{
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    right:-50px;
+    bottom:-50px;
+
+    border-radius:50%;
+
+    background:
+        rgba(122,128,98,.08);
+
+    pointer-events:none;
+}
+
+.amenity i{
+    flex-shrink:0;
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+        rgba(201,164,92,.13);
+
+    color:var(--primary);
+
+    font-size:21px;
+
+    transform:translateZ(25px);
+}
+
+.amenity span{
+    color:var(--text);
+
+    font-weight:600;
+
+    transform:translateZ(15px);
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+
+    perspective:1200px;
+}
+
+.gallery-grid a{
+    display:block;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    cursor:pointer;
+}
+
+.gallery-grid img{
+    width:100%;
+
+    aspect-ratio:4/3;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 14px 40px rgba(70,62,45,.10);
+
+    transition:
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        filter .45s ease,
+        box-shadow .45s ease;
+}
+
+.gallery-grid img:hover{
     transform:
-        translateY(-8px)
-        scale(1.025);
+        scale(1.045)
+        translateY(-5px);
 
-    filter: brightness(1.06) saturate(1.05);
+    filter:
+        brightness(1.04)
+        saturate(1.05);
 
     box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.55),
-        0 0 25px rgba(201, 164, 92, 0.08);
+        0 25px 55px rgba(70,62,45,.18);
 }
 
 
-/* ---------- LOCATION MAP ---------- */
+/* =========================
+   LOCATION / MAP
+========================= */
 
-.map iframe,
-.location iframe {
-    border-radius: 24px !important;
+.location-content{
+    display:grid;
 
-    border: 1px solid rgba(201, 164, 92, 0.18) !important;
+    grid-template-columns:
+        1fr 1fr;
 
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.4);
+    gap:35px;
+
+    align-items:center;
+}
+
+.location iframe{
+    width:100%;
+
+    min-height:380px;
+
+    border:0;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
 }
 
 
-/* ---------- CONTACT ---------- */
+/* =========================
+   CONTACT
+========================= */
 
-.contact-form {
-    background: #14120f !important;
+.contact-form{
+    background:
+        rgba(255,255,255,.75);
 
-    border: 1px solid var(--border) !important;
+    border:
+        1px solid var(--border);
 
-    border-radius: var(--radius);
+    border-radius:var(--radius);
+
+    padding:30px;
 
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.35);
+        0 18px 50px rgba(70,62,45,.10);
 }
 
 .contact-form input,
-.contact-form textarea {
-    background: #0e0d0b !important;
+.contact-form textarea{
+    width:100%;
 
-    color: var(--ivory) !important;
+    padding:14px 16px;
 
-    border: 1px solid rgba(201, 164, 92, 0.16) !important;
+    margin-bottom:15px;
 
-    border-radius: 12px;
+    background:#fff;
+
+    color:var(--text);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:13px;
+
+    outline:none;
+
+    transition:var(--transition);
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--gold) !important;
-
-    outline: none;
+.contact-form textarea:focus{
+    border-color:var(--primary);
 
     box-shadow:
-        0 0 0 3px rgba(201, 164, 92, 0.08);
+        0 0 0 4px
+        rgba(201,164,92,.10);
 }
 
 
-/* ---------- FLOATING BUTTONS ---------- */
+/* =========================
+   FLOATING BUTTONS
+========================= */
 
-.floating-buttons a {
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+.floating-buttons{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    z-index:999;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
 }
 
-.floating-buttons a:hover {
+.floating-buttons a{
+    width:52px;
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:var(--olive);
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 12px 30px rgba(70,62,45,.16);
+
+    transition:var(--transition);
+}
+
+.floating-buttons a:hover{
     transform:
         translateY(-5px)
         scale(1.06);
 
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.45);
+    color:var(--primary);
 }
 
 
-/* ---------- FOOTER ---------- */
+/* =========================
+   FOOTER
+========================= */
 
-footer {
-    background: #080706 !important;
-    color: var(--text);
+footer{
+    background:var(--olive);
+
+    color:#fff;
+
+    padding:45px 0;
 }
 
 footer p,
-footer a {
-    color: var(--muted) !important;
+footer a{
+    color:
+        rgba(255,255,255,.82);
 }
 
-footer a:hover {
-    color: var(--gold-light) !important;
+footer a:hover{
+    color:var(--primary-light);
    }
-/* =========================================
-   VANDANA VILLA — PART 3
-   MOBILE + DESKTOP + FINAL UI
-   ========================================= */
-
-/* ---------- DESKTOP 3D ---------- */
-
-@media (min-width: 769px) {
-
-    .highlight-card,
-    .amenity {
-        cursor: default;
-    }
-
-    .about-image,
-    .highlight-card,
-    .amenity {
-        transform-style: preserve-3d;
-    }
-
-    .card-icon,
-    .amenity i {
-        transform: translateZ(30px);
-    }
-
-    .highlight-card h3,
-    .highlight-card p,
-    .amenity span {
-        transform: translateZ(18px);
-    }
-}
-
-
-/* ---------- TABLET ---------- */
-
-@media (max-width: 1000px) {
-
-    .highlights-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .amenities-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 768px) {
-
-    body {
-        overflow-x: hidden;
-    }
-
-    .navbar {
-        min-height: 68px;
-    }
-
-    .logo img {
-        width: 44px;
-        height: 44px;
-    }
-
-    .logo h2 {
-        font-size: 16px;
-    }
-
-    .logo span {
-        font-size: 9px;
-    }
-
-
-    /* MOBILE MENU */
-
-    .menu-btn {
-        display: flex !important;
-
-        width: 44px;
-        height: 44px;
-
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 13px;
-
-        background: transparent;
-
-        cursor: pointer;
-    }
-
-    #menu {
-        position: absolute;
-
-        top: 68px;
-        left: 0;
-        right: 0;
-
-        display: none;
-
-        flex-direction: column;
-
-        padding: 12px 5%;
-
-        gap: 0;
-
-        background: #0c0b09 !important;
-
-        border-bottom:
-            1px solid rgba(201,164,92,.18);
-
-        box-shadow:
-            0 20px 40px rgba(0,0,0,.45);
-
-        z-index: 9999;
-    }
-
-    #menu.mobile-open {
-        display: flex !important;
-    }
-
-    #menu li {
-        width: 100%;
-    }
-
-    #menu li a {
-        display: block;
-
-        padding: 14px 8px;
-
-        color: var(--ivory) !important;
-
-        border-bottom:
-            1px solid rgba(255,255,255,.05);
-    }
-
-    #menu li:last-child a {
-        border-bottom: none;
-    }
-
-
-    /* HERO */
-
-    .hero {
-        min-height: 620px;
-
-        padding:
-            80px 0
-            70px;
-    }
-
-    .hero h1 {
-        font-size:
-            clamp(34px, 10vw, 52px);
-    }
-
-    .hero p {
-        font-size: 14px;
-
-        max-width: 95%;
-    }
-
-
-    /* BUTTONS */
-
-    .btn {
-        min-height: 46px;
-
-        padding:
-            11px 18px;
-
-        font-size: 13px;
-    }
-
-    .btn-secondary {
-        margin-left: 5px;
-    }
-
-
-    /* SECTIONS */
-
-    .about,
-    .highlights,
-    .amenities,
-    .gallery,
-    .location,
-    .contact {
-        padding:
-            70px 0;
-    }
-
-    .section-heading {
-        margin-bottom: 34px;
-    }
-
-    .section-heading h2 {
-        font-size: 31px;
-    }
-
-    .section-heading p {
-        font-size: 14px;
-    }
-
-
-    /* ONE COLUMN */
-
-    .highlights-grid,
-    .amenities-grid,
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* CARDS */
-
-    .highlight-card {
-        min-height: 250px;
-
-        padding: 26px;
-    }
-
-    .amenity {
-        min-height: 92px;
-
-        padding: 20px;
-    }
-
-
-    /* IMPORTANT:
-       Don't run heavy 3D transforms
-       on touch screens.
-    */
-
-    .highlight-card,
-    .amenity,
-    .about-image img {
-        transform: none !important;
-
-        transition:
-            box-shadow .3s ease,
-            border-color .3s ease;
-    }
-
-
-    /* GALLERY */
-
-    .gallery-grid img {
-        border-radius: 16px;
-
-        transform: none !important;
-    }
-
-
-    /* LOCATION */
-
-    .location iframe {
-        min-height: 320px;
-
-        border-radius: 18px !important;
-    }
-
-
-    /* CONTACT */
-
-    .contact-form {
-        padding: 20px !important;
-    }
-
-
-    /* FLOATING BUTTONS */
-
-    .floating-buttons {
-        right: 14px;
-        bottom: 14px;
-
-        gap: 9px;
-    }
-
-    .floating-buttons a {
-        width: 50px;
-        height: 50px;
-
-        font-size: 21px;
-    }
-
-
-    /* SCROLL TOP */
-
-    #scrollTop {
-        right: 16px;
-        bottom: 135px;
-
-        width: 42px;
-        height: 42px;
-    }
-}
-
-
-/* ---------- SMALL PHONES ---------- */
-
-@media (max-width: 420px) {
-
-    .container,
-    section > .container {
-        width: 90%;
-    }
-
-    .logo h2 {
-        font-size: 14px;
-    }
-
-    .logo span {
-        font-size: 8px;
-    }
-
-    .hero {
-        padding-top: 65px;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .hero p {
-        font-size: 13px;
-    }
-
-    .btn {
-        padding:
-            10px 15px;
-
-        font-size: 12px;
-    }
-
-    .section-heading h2 {
-        font-size: 28px;
-    }
-}
-
-
-/* ---------- SCROLL REVEAL ---------- */
-
-.reveal {
-    opacity: 0;
-    transform:
-        translateY(35px);
-
-    transition:
-        opacity .7s ease,
-        transform .7s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* ---------- ACCESSIBILITY ---------- */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-    }
-       }
