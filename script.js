@@ -1,92 +1,80 @@
 /* =========================================
-   VANDANA VILLA — SCRIPT.JS
-   PART 1/2
+   VANDANA VILLA — COMPLETE SCRIPT.JS
 ========================================= */
 
+(function () {
 
-/* =========================================
-   PAGE LOADER
-========================================= */
+    "use strict";
 
-window.addEventListener("load", () => {
+    /* ---------- PAGE LOADER ---------- */
 
-    setTimeout(() => {
-
+    function hideLoader() {
         document.body.classList.add("page-loaded");
-
-    }, 500);
-
-});
-
-
-
-/* =========================================
-   NAVBAR
-========================================= */
-
-const navbar =
-    document.getElementById("navbar");
-
-
-window.addEventListener("scroll", () => {
-
-    if (!navbar) return;
-
-    if (window.scrollY > 40) {
-
-        navbar.classList.add("scrolled");
-
-    } else {
-
-        navbar.classList.remove("scrolled");
-
     }
 
-});
-
-
-
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-
-if (menuButton && mobileMenu) {
-
-    menuButton.addEventListener("click", () => {
-
-        const isOpen =
-            mobileMenu.classList.toggle("active");
-
-        menuButton.classList.toggle(
-            "active",
-            isOpen
-        );
-
-        menuButton.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
-
+    window.addEventListener("load", function () {
+        setTimeout(hideLoader, 400);
     });
 
+    /* Safety: never stay on loader forever */
+    setTimeout(hideLoader, 2500);
 
-    /* Close menu after clicking a link */
 
-    mobileMenu
-        .querySelectorAll("a")
-        .forEach(link => {
+    /* ---------- ELEMENTS ---------- */
 
-            link.addEventListener("click", () => {
+    const navbar = document.getElementById("navbar");
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const scrollTop = document.getElementById("scrollTop");
+
+
+    /* ---------- NAVBAR ---------- */
+
+    window.addEventListener("scroll", function () {
+
+        if (!navbar) return;
+
+        navbar.classList.toggle(
+            "scrolled",
+            window.scrollY > 40
+        );
+
+        if (scrollTop) {
+            scrollTop.classList.toggle(
+                "show",
+                window.scrollY > 600
+            );
+        }
+
+    }, { passive: true });
+
+
+    /* ---------- MOBILE MENU ---------- */
+
+    if (menuButton && mobileMenu) {
+
+        menuButton.addEventListener("click", function () {
+
+            const open =
+                mobileMenu.classList.toggle("active");
+
+            menuButton.classList.toggle(
+                "active",
+                open
+            );
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(open)
+            );
+
+        });
+
+        mobileMenu.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
 
                 mobileMenu.classList.remove("active");
-
                 menuButton.classList.remove("active");
 
                 menuButton.setAttribute(
@@ -98,548 +86,396 @@ if (menuButton && mobileMenu) {
 
         });
 
-}
+    }
 
 
+    /* ---------- SMOOTH SCROLL ---------- */
 
-/* =========================================
-   SCROLL REVEAL
-========================================= */
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
-const revealElements =
-    document.querySelectorAll(".reveal");
+        link.addEventListener("click", function (event) {
 
+            const id = link.getAttribute("href");
 
-const revealObserver =
-    new IntersectionObserver(
-        (entries, observer) => {
+            if (!id || id === "#") return;
 
-            entries.forEach(entry => {
+            const target = document.querySelector(id);
 
-                if (!entry.isIntersecting) return;
+            if (!target) return;
 
-                entry.target.classList.add(
-                    "is-visible"
-                );
+            event.preventDefault();
 
-                observer.unobserve(
-                    entry.target
-                );
+            const offset =
+                navbar ? navbar.offsetHeight : 0;
 
+            window.scrollTo({
+                top:
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    offset,
+                behavior: "smooth"
             });
 
-        },
-        {
-            threshold: 0.12,
-            rootMargin: "0px 0px -60px 0px"
-        }
-    );
+        });
+
+    });
 
 
-revealElements.forEach(element => {
+    /* ---------- SCROLL REVEAL ---------- */
 
-    revealObserver.observe(element);
+    const revealItems =
+        document.querySelectorAll(".reveal");
 
-});
+    if ("IntersectionObserver" in window) {
 
+        const observer =
+            new IntersectionObserver(function (entries, obs) {
 
+                entries.forEach(function (entry) {
 
-/* =========================================
-   SMOOTH ANCHOR SCROLL
-========================================= */
+                    if (!entry.isIntersecting) return;
 
-document
-    .querySelectorAll('a[href^="#"]')
-    .forEach(link => {
+                    entry.target.classList.add("is-visible");
 
-        link.addEventListener(
-            "click",
-            event => {
-
-                const targetId =
-                    link.getAttribute("href");
-
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
-                    return;
-                }
-
-
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
-
-
-                if (!target) return;
-
-
-                event.preventDefault();
-
-
-                const navbarHeight =
-                    navbar
-                        ? navbar.offsetHeight
-                        : 0;
-
-
-                const targetPosition =
-                    target.getBoundingClientRect().top
-                    +
-                    window.scrollY
-                    -
-                    navbarHeight;
-
-
-                window.scrollTo({
-
-                    top: targetPosition,
-
-                    behavior: "smooth"
+                    obs.unobserve(entry.target);
 
                 });
 
+            }, {
+                threshold: 0.1
             });
 
-    });
-
-
-
-/* =========================================
-   GALLERY LIGHTBOX
-========================================= */
-
-const galleryCards =
-    document.querySelectorAll(
-        ".gallery-card"
-    );
-
-const lightbox =
-    document.getElementById("lightbox");
-
-const lightboxImage =
-    document.getElementById(
-        "lightboxImage"
-    );
-
-const lightboxClose =
-    document.getElementById(
-        "lightboxClose"
-    );
-
-
-galleryCards.forEach(card => {
-
-    card.addEventListener("click", () => {
-
-        const image =
-            card.dataset.gallery;
-
-        if (
-            !image ||
-            !lightbox ||
-            !lightboxImage
-        ) {
-            return;
-        }
-
-
-        lightboxImage.src = image;
-
-        lightbox.classList.add(
-            "active"
-        );
-
-        lightbox.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-
-        document.body.style.overflow =
-            "hidden";
-
-    });
-
-});
-
-
-
-/* =========================================
-   CLOSE LIGHTBOX
-========================================= */
-
-function closeLightbox() {
-
-    if (!lightbox) return;
-
-
-    lightbox.classList.remove(
-        "active"
-    );
-
-    lightbox.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-
-    document.body.style.overflow =
-        "";
-
-}
-
-
-if (lightboxClose) {
-
-    lightboxClose.addEventListener(
-        "click",
-        closeLightbox
-    );
-
-}
-
-
-if (lightbox) {
-
-    lightbox.addEventListener(
-        "click",
-        event => {
-
-            if (
-                event.target === lightbox
-            ) {
-
-                closeLightbox();
-
-            }
-
-        }
-    );
-
-}
-
-
-
-/* =========================================
-   ESCAPE KEY
-========================================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            closeLightbox();
-
-        }
-
-    }
-);
-
-
-
-/* =========================================
-   SCROLL TO TOP
-========================================= */
-
-const scrollTop =
-    document.getElementById(
-        "scrollTop"
-    );
-
-
-window.addEventListener("scroll", () => {
-
-    if (!scrollTop) return;
-
-
-    if (window.scrollY > 700) {
-
-        scrollTop.classList.add(
-            "show"
-        );
+        revealItems.forEach(function (item) {
+            observer.observe(item);
+        });
 
     } else {
 
-        scrollTop.classList.remove(
-            "show"
-        );
+        revealItems.forEach(function (item) {
+            item.classList.add("is-visible");
+        });
 
     }
 
-});
 
+    /* ---------- SCROLL TO TOP ---------- */
 
-if (scrollTop) {
+    if (scrollTop) {
 
-    scrollTop.addEventListener(
-        "click",
-        () => {
+        scrollTop.addEventListener("click", function () {
 
             window.scrollTo({
-
                 top: 0,
-
                 behavior: "smooth"
+            });
+
+        });
+
+    }
+
+
+    /* ---------- GALLERY LIGHTBOX ---------- */
+
+    const galleryCards =
+        document.querySelectorAll(".gallery-card");
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const lightboxImage =
+        document.getElementById("lightboxImage");
+
+    const lightboxClose =
+        document.getElementById("lightboxClose");
+
+
+    function closeLightbox() {
+
+        if (!lightbox) return;
+
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    galleryCards.forEach(function (card) {
+
+        card.addEventListener("click", function () {
+
+            if (!lightbox || !lightboxImage) return;
+
+            const image =
+                card.dataset.gallery ||
+                card.querySelector("img")?.src;
+
+            if (!image) return;
+
+            lightboxImage.src = image;
+
+            lightbox.classList.add("active");
+            lightbox.setAttribute("aria-hidden", "false");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    });
+
+
+    if (lightboxClose) {
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+    }
+
+
+    if (lightbox) {
+
+        lightbox.addEventListener("click", function (event) {
+
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+
+        });
+
+    }
+
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+
+    });
+
+
+    /* ---------- 3D EFFECT ---------- */
+
+    const tiltItems =
+        document.querySelectorAll(
+            ".intro-image, .gallery-card, .beach-card, .amenity, .reach-card, .space-card, .experience-card"
+        );
+
+
+    if (window.matchMedia("(hover: hover)").matches) {
+
+        tiltItems.forEach(function (item) {
+
+            item.addEventListener("mousemove", function (event) {
+
+                const rect =
+                    item.getBoundingClientRect();
+
+                const x =
+                    event.clientX - rect.left;
+
+                const y =
+                    event.clientY - rect.top;
+
+                const rotateY =
+                    ((x - rect.width / 2) /
+                    (rect.width / 2)) * 3;
+
+                const rotateX =
+                    ((rect.height / 2 - y) /
+                    (rect.height / 2)) * 3;
+
+                item.style.transform =
+                    "perspective(900px) " +
+                    "rotateX(" + rotateX + "deg) " +
+                    "rotateY(" + rotateY + "deg) " +
+                    "translateZ(6px)";
 
             });
 
-        }
-    );
 
-}
+            item.addEventListener("mouseleave", function () {
 
+                item.style.transform = "";
 
+            });
 
-/* =========================================
-   3D IMAGE TILT
-========================================= */
+        });
 
-const tiltElements =
-    document.querySelectorAll(
-        ".intro-image, .gallery-card, .beach-card, .amenity, .reach-card"
-    );
+    }
 
 
-tiltElements.forEach(element => {
+    /* ---------- HERO PARALLAX ---------- */
 
-    element.addEventListener(
-        "mousemove",
-        event => {
-
-            if (
-                window.innerWidth <= 800
-            ) {
-                return;
-            }
+    const heroImage =
+        document.querySelector(".hero-media img");
 
 
-            const rect =
-                element.getBoundingClientRect();
-
-
-            const x =
-                event.clientX -
-                rect.left;
-
-
-            const y =
-                event.clientY -
-                rect.top;
-
-
-            const centerX =
-                rect.width / 2;
-
-
-            const centerY =
-                rect.height / 2;
-
-
-            const rotateY =
-                ((x - centerX) /
-                    centerX) * 3;
-
-
-            const rotateX =
-                ((centerY - y) /
-                    centerY) * 3;
-
-
-            element.style.transform =
-                `perspective(1000px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateZ(8px)`;
-
-        }
-    );
-
-
-    element.addEventListener(
-        "mouseleave",
-        () => {
-
-            element.style.transform =
-                "";
-
-        }
-    );
-
-});
-
-
-
-/* =========================================
-   HERO PARALLAX
-========================================= */
-
-const heroImage =
-    document.querySelector(
-        ".hero-media img"
-    );
-
-
-window.addEventListener(
-    "scroll",
-    () => {
+    window.addEventListener("scroll", function () {
 
         if (
             !heroImage ||
             window.innerWidth <= 800
-        ) {
-            return;
-        }
+        ) return;
 
-
-        const scrollY =
-            window.scrollY;
-
-
-        if (scrollY > window.innerHeight) {
-            return;
-        }
-
+        if (window.scrollY >
+            window.innerHeight) return;
 
         heroImage.style.transform =
-            `scale(1.03)
-             translateY(${scrollY * 0.12}px)`;
+            "scale(1.03) translateY(" +
+            (window.scrollY * 0.08) +
+            "px)";
 
-    }
-);
-/* =========================================
-   VANDANA VILLA — SCRIPT.JS
-   PART 2/2
-========================================= */
+    }, { passive: true });
 
 
-/* =========================================
-   ENQUIRY FORM
-========================================= */
+    /* ---------- ENQUIRY FORM ---------- */
 
-const enquiryForm =
-    document.getElementById("enquiryForm");
+    const enquiryForm =
+        document.getElementById("enquiryForm");
 
 
-if (enquiryForm) {
+    if (enquiryForm) {
 
-    enquiryForm.addEventListener(
-        "submit",
-        event => {
+        enquiryForm.addEventListener(
+            "submit",
+            function (event) {
 
-            event.preventDefault();
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("name")?.value.trim() || "";
+
+                const phone =
+                    document.getElementById("phone")?.value.trim() || "";
+
+                const email =
+                    document.getElementById("email")?.value.trim() || "";
+
+                const guests =
+                    document.getElementById("guests")?.value.trim() || "";
+
+                const date =
+                    document.getElementById("date")?.value || "";
+
+                const message =
+                    document.getElementById("message")?.value.trim() || "";
 
 
-            const name =
-                document.getElementById("name")?.value.trim() || "";
+                if (!name || !phone) {
 
-            const phone =
-                document.getElementById("phone")?.value.trim() || "";
+                    alert(
+                        "Please enter your name and WhatsApp number."
+                    );
 
-            const email =
-                document.getElementById("email")?.value.trim() || "";
+                    return;
 
-            const guests =
-                document.getElementById("guests")?.value.trim() || "";
-
-            const date =
-                document.getElementById("date")?.value || "";
-
-            const message =
-                document.getElementById("message")?.value.trim() || "";
+                }
 
 
-            /* Basic validation */
+                /*
+                 * ACTUAL WHATSAPP NUMBER
+                 * WILL BE ADDED AFTER LAUNCH.
+                 */
 
-            if (!name || !phone) {
+                const whatsappNumber =
+                    "919XXXXXXXXX";
 
-                showFormMessage(
-                    "Please enter your name and WhatsApp number.",
-                    "error"
+
+                const text =
+                    "Hello Vandana Villa,\n\n" +
+                    "I would like to make an enquiry.\n\n" +
+                    "Name: " + name + "\n" +
+                    "Phone: " + phone + "\n" +
+                    "Email: " + (email || "Not provided") + "\n" +
+                    "Guests: " + (guests || "Not specified") + "\n" +
+                    "Date: " + (date || "Not specified") + "\n" +
+                    "Message: " + (message || "None");
+
+
+                const url =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    encodeURIComponent(text);
+
+
+                window.open(
+                    url,
+                    "_blank",
+                    "noopener"
                 );
 
-                return;
-
             }
+        );
+
+    }
 
 
-            /*
-             * IMPORTANT:
-             * Replace this number with the actual
-             * Vandana Villa WhatsApp number later.
-             *
-             * Format:
-             * 919XXXXXXXXX
-             */
+    /* ---------- CURRENT YEAR ---------- */
 
-            const whatsappNumber =
-                "919XXXXXXXXX";
+    const year =
+        document.getElementById("year");
+
+    if (year) {
+        year.textContent =
+            new Date().getFullYear();
+    }
 
 
-            const enquiryText =
-`Hello Vandana Villa,
+    /* ---------- DATE INPUT ---------- */
 
-I would like to make an enquiry.
+    const dateInput =
+        document.getElementById("date");
 
-Name: ${name}
-Phone / WhatsApp: ${phone}
-Email: ${email || "Not provided"}
-Guests: ${guests || "Not specified"}
-Preferred Date: ${date || "Not specified"}
-Message: ${message || "No additional message"}
+    if (dateInput) {
 
-Thank you.`;
+        const today =
+            new Date();
 
+        const y =
+            today.getFullYear();
 
-            const whatsappURL =
-                `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(enquiryText)}`;
+        const m =
+            String(today.getMonth() + 1)
+                .padStart(2, "0");
 
+        const d =
+            String(today.getDate())
+                .padStart(2, "0");
 
-            /*
-             * Open WhatsApp
-             */
+        dateInput.min =
+            y + "-" + m + "-" + d;
 
-            window.open(
-                whatsappURL,
-                "_blank",
-                "noopener,noreferrer"
-            );
+    }
 
 
-            /*
-             * Reset form after sending
-             */
+    /* ---------- CLOSE MENU ON ESC ---------- */
 
-            enquiryForm.reset();
+    document.addEventListener("keydown", function (event) {
 
+        if (
+            event.key === "Escape" &&
+            mobileMenu &&
+            menuButton
+        ) {
 
-            showFormMessage(
-                "Your enquiry is ready to send on WhatsApp.",
-                "success"
+            mobileMenu.classList.remove("active");
+            menuButton.classList.remove("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
             );
 
         }
-    );
 
-}
-
+    });
 
 
-/* =========================================
-   FORM MESSAGE
-========================================= */
+    /* ---------- JS READY ---------- */
 
-function showFormMessage(
-    message,
-    type = "success"
-) {
+    document.body.classList.add("js-ready");
 
-    let messageBox =
-        document.getElementById(
-            "form
+})();
