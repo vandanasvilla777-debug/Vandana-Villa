@@ -1,337 +1,409 @@
 /* =========================================
-   VANDANA VILLA — SAFE FINAL JS
-   3D • SCROLL TOP • MENU • LOADER
-   ========================================= */
+   VANDANA VILLA — SCRIPT.JS
+   PART 1
+========================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================
-       LOADER
-    ========================= */
+/* ---------- ELEMENTS ---------- */
 
-    const loader = document.getElementById("loader");
+const navbar = document.getElementById("navbar");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+const scrollTop = document.getElementById("scrollTop");
 
-    if (loader) {
 
-        document.body.classList.add("no-scroll");
+/* ---------- STICKY NAVBAR ---------- */
 
-        const hideLoader = () => {
-            loader.classList.add("loaded");
-            document.body.classList.remove("no-scroll");
-        };
+window.addEventListener("scroll", () => {
 
-        window.addEventListener("load", () => {
-            setTimeout(hideLoader, 350);
-        }, { once: true });
-
-        /* Safety fallback */
-        setTimeout(hideLoader, 3000);
+    if (window.scrollY > 40) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
     }
 
-
-    /* =========================
-       MOBILE MENU
-    ========================= */
-
-    const menuBtn = document.querySelector(".menu-btn");
-    const menu = document.getElementById("menu");
-
-    if (menuBtn && menu) {
-
-        menuBtn.addEventListener("click", (e) => {
-
-            e.preventDefault();
-
-            menu.classList.toggle("mobile-open");
-            menuBtn.classList.toggle("active");
-
-        });
-
-        menu.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                menu.classList.remove("mobile-open");
-                menuBtn.classList.remove("active");
-
-            });
-
-        });
-    }
+});
 
 
-    /* =========================
-       HEADER SCROLL
-    ========================= */
+/* ---------- MOBILE MENU ---------- */
 
-    const header = document.querySelector("header");
+if (menuToggle && navMenu) {
 
-    const updateHeader = () => {
+    menuToggle.addEventListener("click", () => {
 
-        if (!header) return;
+        const isOpen =
+            navMenu.classList.toggle("active");
 
-        header.classList.toggle(
-            "scrolled",
-            window.scrollY > 30
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
         );
 
-    };
-
-    window.addEventListener(
-        "scroll",
-        updateHeader,
-        { passive: true }
-    );
-
-    updateHeader();
-
-
-    /* =========================
-       3D CARD EFFECT
-       DESKTOP ONLY
-    ========================= */
-
-    const cards = document.querySelectorAll(
-        ".highlight-card, .amenity-card, .nearby-card"
-    );
-
-    cards.forEach(card => {
-
-        card.addEventListener("pointermove", (event) => {
-
-            if (window.innerWidth <= 768) return;
-
-            const rect =
-                card.getBoundingClientRect();
-
-            const x =
-                (event.clientX - rect.left) /
-                rect.width;
-
-            const y =
-                (event.clientY - rect.top) /
-                rect.height;
-
-            const rotateX =
-                (0.5 - y) * 7;
-
-            const rotateY =
-                (x - 0.5) * 7;
-
-            card.style.transform =
-                `perspective(900px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateZ(5px)`;
-
-        });
-
-        card.addEventListener(
-            "pointerleave",
-            () => {
-
-                card.style.transform = "";
-
-            }
+        menuToggle.classList.toggle(
+            "active",
+            isOpen
         );
 
     });
 
 
-    /* =========================
-       SCROLL TO TOP
-    ========================= */
+    /* Close menu after clicking a link */
 
-    let scrollTop =
-        document.getElementById("scrollTop");
+    navMenu.querySelectorAll("a").forEach(link => {
 
-    if (!scrollTop) {
+        link.addEventListener("click", () => {
 
-        scrollTop =
-            document.createElement("button");
+            navMenu.classList.remove("active");
 
-        scrollTop.id = "scrollTop";
+            menuToggle.classList.remove("active");
 
-        scrollTop.type = "button";
-
-        scrollTop.setAttribute(
-            "aria-label",
-            "Scroll to top"
-        );
-
-        scrollTop.innerHTML =
-            '<i class="fas fa-arrow-up"></i>';
-
-        document.body.appendChild(scrollTop);
-    }
-
-
-    const updateScrollButton = () => {
-
-        scrollTop.classList.toggle(
-            "show",
-            window.scrollY > 500
-        );
-
-    };
-
-    window.addEventListener(
-        "scroll",
-        updateScrollButton,
-        { passive: true }
-    );
-
-    updateScrollButton();
-
-
-    scrollTop.addEventListener(
-        "click",
-        () => {
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        }
-    );
-
-
-    /* =========================
-       SMOOTH ANCHOR SCROLL
-    ========================= */
-
-    document.querySelectorAll(
-        'a[href^="#"]'
-    ).forEach(link => {
-
-        link.addEventListener("click", function(e) {
-
-            const id =
-                this.getAttribute("href");
-
-            if (!id || id === "#") return;
-
-            const target =
-                document.querySelector(id);
-
-            if (!target) return;
-
-            e.preventDefault();
-
-            const headerHeight =
-                header
-                    ? header.offsetHeight
-                    : 0;
-
-            const position =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                headerHeight -
-                10;
-
-            window.scrollTo({
-                top: position,
-                behavior: "smooth"
-            });
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
         });
+
+    });
+
+}
+
+
+/* ---------- SCROLL TO TOP ---------- */
+
+if (scrollTop) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 500) {
+
+            scrollTop.classList.add("show");
+
+        } else {
+
+            scrollTop.classList.remove("show");
+
+        }
+
+    });
+
+
+    scrollTop.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+
+
+/* ---------- CURRENT YEAR ---------- */
+
+const currentYear =
+    document.getElementById("currentYear");
+
+if (currentYear) {
+
+    currentYear.textContent =
+        new Date().getFullYear();
+
+}
+
+
+/* ---------- ESCAPE KEY ---------- */
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        if (navMenu) {
+            navMenu.classList.remove("active");
+        }
+
+        if (menuToggle) {
+
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    }
+
+});
+
+
+/* ---------- PREVENT EMPTY LINKS ---------- */
+
+document.querySelectorAll('a[href="#"]').forEach(link => {
+
+    link.addEventListener("click", (event) => {
+
+        event.preventDefault();
 
     });
 
 });
 /* =========================================
-   SCROLL TO TOP — 3D GOLD / OLIVE BUTTON
-   ========================================= */
+   VANDANA VILLA — SCRIPT.JS
+   PART 2
+========================================= */
 
-#scrollTop {
-    position: fixed;
 
-    right: 22px;
-    bottom: 22px;
+/* ---------- 3D CARD INTERACTION ---------- */
 
-    width: 52px;
-    height: 52px;
+const cards = document.querySelectorAll(
+    ".space-card, .amenity-card, .experience-card, .reach-card, .beach-card"
+);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+const isTouchDevice =
+    window.matchMedia("(hover: none)").matches ||
+    navigator.maxTouchPoints > 0;
 
-    border: 1px solid rgba(201,164,92,.55);
-    border-radius: 17px;
 
-    background:
-        linear-gradient(
-            145deg,
-            var(--gold),
-            var(--olive)
+if (!isTouchDevice) {
+
+    cards.forEach(card => {
+
+        card.addEventListener("mousemove", (event) => {
+
+            const rect = card.getBoundingClientRect();
+
+            const x =
+                event.clientX - rect.left;
+
+            const y =
+                event.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateY =
+                ((x - centerX) / centerX) * 5;
+
+            const rotateX =
+                ((centerY - y) / centerY) * 5;
+
+            card.style.transform =
+                `perspective(1000px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-10px)
+                 translateZ(15px)`;
+
+        });
+
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform = "";
+
+        });
+
+    });
+
+}
+
+
+/* ---------- 3D IMAGE INTERACTION ---------- */
+
+const aboutImage =
+    document.querySelector(".about-image");
+
+if (aboutImage && !isTouchDevice) {
+
+    const image =
+        aboutImage.querySelector("img");
+
+    aboutImage.addEventListener(
+        "mousemove",
+        (event) => {
+
+            const rect =
+                aboutImage.getBoundingClientRect();
+
+            const x =
+                event.clientX - rect.left;
+
+            const y =
+                event.clientY - rect.top;
+
+            const rotateY =
+                ((x - rect.width / 2) /
+                    (rect.width / 2)) * 4;
+
+            const rotateX =
+                ((rect.height / 2 - y) /
+                    (rect.height / 2)) * 4;
+
+            image.style.transform =
+                `perspective(1000px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateZ(20px)`;
+
+        }
+    );
+
+
+    aboutImage.addEventListener(
+        "mouseleave",
+        () => {
+
+            image.style.transform = "";
+
+        }
+    );
+
+}
+
+
+/* ---------- SCROLL REVEAL ---------- */
+
+const revealElements =
+    document.querySelectorAll(".reveal-3d");
+
+
+if ("IntersectionObserver" in window) {
+
+    const revealObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "is-visible"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
         );
 
-    color: #fff;
 
-    font-size: 18px;
+    revealElements.forEach(element => {
 
-    cursor: pointer;
+        revealObserver.observe(element);
 
-    opacity: 0;
-    visibility: hidden;
+    });
 
-    transform:
-        translateY(20px)
-        scale(.85);
+} else {
 
-    box-shadow:
-        0 12px 30px rgba(55,48,35,.20),
-        inset 0 1px 0 rgba(255,255,255,.35);
+    revealElements.forEach(element => {
 
-    transition:
-        opacity .3s ease,
-        visibility .3s ease,
-        transform .3s ease,
-        box-shadow .3s ease;
+        element.classList.add("is-visible");
 
-    z-index: 9998;
-}
+    });
 
-#scrollTop.show {
-    opacity: 1;
-    visibility: visible;
-
-    transform:
-        translateY(0)
-        scale(1);
-}
-
-#scrollTop:hover {
-    transform:
-        translateY(-5px)
-        scale(1.06);
-
-    box-shadow:
-        0 20px 40px rgba(55,48,35,.25),
-        inset 0 1px 0 rgba(255,255,255,.45);
-}
-
-#scrollTop:active {
-    transform:
-        translateY(-1px)
-        scale(.97);
 }
 
 
-/* =========================================
-   MOBILE
-   ========================================= */
+/* ---------- SMOOTH ANCHOR SCROLL ---------- */
 
-@media (max-width: 768px) {
+document.querySelectorAll(
+    'a[href^="#"]:not([href="#"])'
+).forEach(link => {
 
-    #scrollTop {
-        right: 15px;
-        bottom: 15px;
+    link.addEventListener("click", (event) => {
 
-        width: 48px;
-        height: 48px;
+        const targetId =
+            link.getAttribute("href");
 
-        border-radius: 15px;
+        const target =
+            document.querySelector(targetId);
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    });
+
+});
+
+
+/* ---------- PAGE VISIBILITY ---------- */
+
+document.addEventListener(
+    "visibilitychange",
+    () => {
+
+        if (document.hidden) {
+
+            document.title =
+                "Vandana Villa | Gorai";
+
+        } else {
+
+            document.title =
+                "Vandana Villa | Private Luxury Villa in Gorai, Mumbai";
+
+        }
+
     }
-}
+);
+
+
+/* ---------- SAFETY RESET ON RESIZE ---------- */
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        if (window.innerWidth > 768) {
+
+            if (navMenu) {
+                navMenu.classList.remove("active");
+            }
+
+            if (menuToggle) {
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        }
+
+    }
+);
+
+
+/* ---------- PAGE READY ---------- */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        document.body.classList.add(
+            "page-loaded"
+        );
+
+    }
+);
