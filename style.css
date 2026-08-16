@@ -3506,3 +3506,10 @@ button {
 .amenity-card .amenity-image {
     display: none;
 }
+/* =====================================
+   AMENITY PHOTO — CLICK ONLY
+===================================== */
+
+.amenity-card .amenity-image {
+    display: none;
+}
