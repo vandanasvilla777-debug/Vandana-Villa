@@ -3502,3 +3502,7 @@ button {
     }
 
 }
+/* Amenity photos appear only after clicking the card */
+.amenity-card .amenity-image {
+    display: none;
+}
