@@ -172,33 +172,7 @@ button{cursor:pointer}
 .footer-bottom{border-top:1px solid var(--line);padding:18px 20px;text-align:center;color:#777;font-size:.72rem}
 .scroll-top{position:fixed;z-index:900;right:22px;bottom:22px;width:46px;height:46px;border:1px solid var(--gold);border-radius:50%;background:var(--surface);color:var(--gold-light);opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s}
 .scroll-top.show{opacity:1;visibility:visible;transform:none}
-.floating-whatsapp{
-  position:fixed;
-  z-index:850;
-  right:20px;
-  bottom:20px;
-  width:52px;
-  height:52px;
-  border-radius:50%;
-  background:#20b968;
-  color:#fff;
-  display:grid;
-  place-items:center;
-  font-size:1.55rem;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-  transition:transform .25s ease, box-shadow .25s ease;
-}
 
-.floating-whatsapp:hover{
-  transform:translateY(-3px) scale(1.04);
-  box-shadow:0 14px 35px rgba(0,0,0,.32);
-}
-  .desktop-nav{display:none}.menu-button{display:block}.mobile-menu{display:flex;max-height:0;overflow:hidden;flex-direction:column;background:rgba(18,20,22,.98);transition:max-height .3s;padding:0 20px}.mobile-menu.open{max-height:500px;padding:10px 20px 20px}.mobile-menu a{padding:12px 0;border-bottom:1px solid var(--line)}
-  .about-grid,.location-grid,.enquiry-grid{grid-template-columns:1fr}.amenities-grid{grid-template-columns:repeat(2,1fr)}.beach-grid,.reach-grid{grid-template-columns:1fr}.image-frame,.image-frame img{min-height:420px}.enquiry-content{max-width:650px}
-}
 @media(max-width:650px){
   .container{width:min(var(--max),calc(100% - 28px))}.section{padding:78px 0}.nav-container{height:74px;width:calc(100% - 28px)}.brand img{width:52px;height:52px}.hero-content{width:calc(100% - 28px);margin:0;padding-top:50px}.hero h1{font-size:3.4rem}.hero-actions{flex-direction:column;align-items:stretch}.btn{width:100%}.about-facts{grid-template-columns:1fr 1fr}.highlights-grid,.amenities-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr;grid-auto-rows:230px}.gallery-large,.gallery-wide,.gallery-tall{grid-column:auto;grid-row:auto}.footer-container{grid-template-columns:1fr}.enquiry-form{grid-template-columns:1fr}.form-group:last-of-type,.enquiry-submit,.form-message{grid-column:auto}.map-container,.map-container iframe{min-height:340px}.scroll-top{right:15px;bottom:15px}
-.floating-whatsapp{
-  right:15px;
-  bottom:15px;
-}
+
