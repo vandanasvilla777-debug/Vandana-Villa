@@ -124,18 +124,20 @@ button{cursor:pointer}
 .enquiry-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
 .enquiry-content>p{color:var(--muted);margin:20px 0 30px;max-width:500px}
 .enquiry-contact{display:flex;align-items:center;gap:14px}
-.enquiry-icon {
-    width: 52px;
-    height: 52px;
-    min-width: 52px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.enquiry-icon{
+    width:52px;
+    height:52px;
+    min-width:52px;
+    border-radius:50%;
+    background:#20b968;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.enquiry-icon i {
-    font-size: 26px;
+.enquiry-icon i{
+    font-size:26px;
 }
 .enquiry-contact span{display:block;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}
 .enquiry-contact a{font-weight:700}
