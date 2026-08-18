@@ -529,49 +529,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openLightbox(image) {
 
-    createLightbox();
+  createLightbox();
 
+  if (lightboxImage) {
+    lightboxImage.src =
+      image.currentSrc ||
+      image.src;
 
-    if (lightboxImage) {
+    lightboxImage.alt =
+      image.alt ||
+      "Vandana Villa";
+  }
 
-      lightboxImage.src =
-        image.currentSrc ||
-        image.src;
-
-      lightboxImage.alt =
-        image.alt ||
-        "Vandana Villa";
-
-    }
-
-
-    lightbox.classList.add(
-      "active"
-    );
-
-    document.body.classList.add(
-      "modal-open"
-    );
-
+  lightbox.classList.add("active");
   }
 
 
   function closeLightbox() {
 
-    if (!lightbox) {
-      return;
-    }
-
-    lightbox.classList.remove(
-      "active"
-    );
-
-    document.body.classList.remove(
-      "modal-open"
-    );
-
+  if (!lightbox) {
+    return;
   }
 
+  lightbox.classList.remove("active");
+  }
 
   /* Gallery images */
 
