@@ -446,132 +446,109 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* -----------------------------------------
-     GALLERY LIGHTBOX
-  ----------------------------------------- */
+   GALLERY LIGHTBOX
+----------------------------------------- */
 
-  let lightbox = null;
-  let lightboxImage = null;
+let lightbox = null;
+let lightboxImage = null;
 
+function createLightbox() {
 
-  function createLightbox() {
+  if (lightbox) return;
 
-    if (lightbox) {
-      return;
-    }
+  lightbox = document.createElement("div");
+  lightbox.className = "gallery-lightbox";
+  lightbox.setAttribute("aria-hidden", "true");
 
+  lightbox.innerHTML = `
+    <button
+      class="gallery-lightbox-close"
+      type="button"
+      aria-label="Close image"
+    >&times;</button>
 
-    lightbox =
-      document.createElement("div");
+    <img
+      class="gallery-lightbox-image"
+      src=""
+      alt=""
+    >
+  `;
 
-    lightbox.className =
-      "gallery-lightbox";
+  document.body.appendChild(lightbox);
 
+  lightboxImage =
+    lightbox.querySelector(".gallery-lightbox-image");
 
-    lightbox.innerHTML = `
-      <button
-        class="gallery-lightbox-close"
-        type="button"
-        aria-label="Close image"
-      >
-        &times;
-      </button>
+  const closeButton =
+    lightbox.querySelector(".gallery-lightbox-close");
 
-      <img
-        class="gallery-lightbox-image"
-        src=""
-        alt=""
-      >
-    `;
-
-
-    document.body.appendChild(
-      lightbox
-    );
-
-
-    lightboxImage =
-      lightbox.querySelector(
-        ".gallery-lightbox-image"
-      );
-
-
-    const closeButton =
-      lightbox.querySelector(
-        ".gallery-lightbox-close"
-      );
-
-
-    if (closeButton) {
-
-      closeButton.addEventListener(
-        "click",
-        closeLightbox
-      );
-
-    }
-
-
-    lightbox.addEventListener(
-      "click",
-      event => {
-
-        if (
-          event.target === lightbox
-        ) {
-          closeLightbox();
-        }
-
-      }
-    );
-
+  if (closeButton) {
+    closeButton.addEventListener("click", closeLightbox);
   }
 
+  lightbox.addEventListener("click", event => {
 
-  function openLightbox(image) {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+
+  });
+}
+
+
+function openLightbox(image) {
 
   createLightbox();
 
   if (lightboxImage) {
+
     lightboxImage.src =
-      image.currentSrc ||
-      image.src;
+      image.currentSrc || image.src;
 
     lightboxImage.alt =
-      image.alt ||
-      "Vandana Villa";
+      image.alt || "Vandana Villa";
+
   }
 
   lightbox.classList.add("active");
-  }
+  lightbox.setAttribute("aria-hidden", "false");
+
+  document.body.classList.add("modal-open");
+
+}
 
 
-  function closeLightbox() {
+function closeLightbox() {
 
-  if (!lightbox) {
-    return;
-  }
+  if (!lightbox) return;
 
   lightbox.classList.remove("active");
-  }
+  lightbox.setAttribute("aria-hidden", "true");
 
-  /* Gallery images */
+  document.body.classList.remove("modal-open");
 
-  const galleryImages =
-    document.querySelectorAll(
-      ".gallery-item img"
-    );
+}
 
 
-  galleryImages.forEach(image => {
+/* Gallery images */
 
-    image.addEventListener(
-      "click",
-      () => {
-        openLightbox(image);
-      }
-    );
+const galleryImages =
+  document.querySelectorAll(".gallery-item img");
+
+galleryImages.forEach(image => {
+
+  image.addEventListener("click", event => {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    openLightbox(image);
 
   });
+
+});
+
+    
 
 
   /* -----------------------------------------
