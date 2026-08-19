@@ -599,3 +599,104 @@ button{cursor:pointer}
   .fact-card strong{font-size:1.7rem}
   .beach-card{min-height:340px;padding:26px}
 }
+/* ===== FINAL MOBILE FIX ===== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: min(1180px, calc(100% - 28px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 800px) {
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .section-heading {
+    width: 100%;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2.3rem, 11vw, 3.4rem);
+  }
+
+  .section-heading p {
+    font-size: .95rem;
+  }
+
+  .about-grid,
+  .location-grid,
+  .enquiry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spaces-grid,
+  .gallery-grid,
+  .amenities-grid,
+  .beach-grid,
+  .reach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-large,
+  .gallery-wide,
+  .gallery-tall {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .gallery-item {
+    min-height: 230px;
+  }
+
+  .about-image,
+  .image-frame,
+  .image-frame img {
+    min-height: 350px;
+  }
+
+  .enquiry-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group,
+  .form-group:last-of-type,
+  .enquiry-submit,
+  .form-message {
+    grid-column: 1;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container,
+  .map-container iframe {
+    min-height: 340px;
+  }
+
+  .amenity-card {
+    min-height: 125px;
+    padding: 22px;
+  }
+
+  .amenity-content h3 {
+    font-size: 1.45rem;
+  }
+
+  .space-card {
+    min-height: 320px;
+  }
+}
