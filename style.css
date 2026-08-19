@@ -268,56 +268,35 @@ button{cursor:pointer}
 .fact-card strong{display:block;font-family:"Cormorant Garamond",serif;color:var(--gold-light);font-size:2rem;line-height:1}
 .fact-card span{display:block;color:var(--muted);font-size:.61rem;text-transform:uppercase;letter-spacing:.08em;margin-top:8px}
 
-.amenities-section{background:var(--surface)}
-.amenities-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.amenity-card{
-  min-height:142px;
-  padding:24px;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
-  display:flex;
-  align-items:center;
-  gap:17px;
-  cursor:pointer;
-  transition:transform .35s var(--ease),border-color .35s ease,box-shadow .35s ease,background .35s ease;
+.amenities-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  width:100%;
 }
-.amenity-card:hover,.amenity-card:focus{
-  transform:translateY(-6px);
-  border-color:var(--line-gold);
-  box-shadow:var(--shadow);
-  outline:none;
-  background:rgba(255,255,255,.055);
-}
-.amenity-icon{font-size:2rem;flex:0 0 48px;text-align:center}
-.amenity-content{flex:1}
-.amenity-content h3{font-family:"Cormorant Garamond",serif;font-size:1.6rem;line-height:1.1}
-.amenity-content span{font-size:.61rem;color:var(--gold-light);text-transform:uppercase;letter-spacing:.13em}
-.amenity-arrow{color:var(--gold);font-size:.75rem;transition:transform .3s ease}
-.amenity-card:hover .amenity-arrow{transform:translate(3px,-3px)}
-.amenity-modal{
-  position:fixed;z-index:2500;inset:0;
-  background:rgba(0,0,0,.78);
-  display:grid;place-items:center;padding:20px;
-  opacity:0;visibility:hidden;pointer-events:none;
-  transition:opacity .25s ease,visibility .25s ease;
-}
-.amenity-modal.active{opacity:1;visibility:visible;pointer-events:auto}
-.amenity-modal-content{
-  position:relative;width:min(560px,100%);
-  padding:46px;background:var(--surface);
-  border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
-  transform:translateY(20px) scale(.98);
-  transition:transform .35s var(--ease);
-}
-.amenity-modal.active .amenity-modal-content{transform:none}
-.amenity-modal-close{
-  position:absolute;right:15px;top:9px;background:none;border:0;color:#fff;font-size:2rem;
-}
-.modal-icon{font-size:2.3rem;margin-bottom:14px}
-.amenity-modal-title{font-family:"Cormorant Garamond",serif;font-size:2.4rem;line-height:1}
-.amenity-modal-text{color:var(--muted);margin-top:12px}
 
+.amenity-card{
+  width:100%;
+  min-width:0;
+}
+
+@media(max-width:900px){
+  .amenities-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+  .amenities-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .amenity-card{
+    min-height:125px;
+    padding:22px;
+  }
+}
 .gallery-section{background:var(--bg)}
 .gallery-grid{
   display:grid;
