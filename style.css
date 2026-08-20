@@ -969,3 +969,138 @@ img {
     padding:24px;
   }
 }
+/* =========================
+   HOW TO REACH — FINAL
+========================= */
+
+.reach-section{
+  background:var(--bg);
+}
+
+.reach-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  align-items:stretch;
+}
+
+.reach-card{
+  display:flex;
+  gap:22px;
+  padding:34px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  transition:.3s ease;
+}
+
+.reach-card:hover{
+  border-color:rgba(199,167,106,.45);
+  transform:translateY(-3px);
+}
+
+.reach-icon{
+  width:48px;
+  min-width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  color:var(--gold);
+  font-size:1.65rem;
+  border:1px solid rgba(199,167,106,.3);
+  border-radius:50%;
+}
+
+.reach-content{
+  min-width:0;
+  flex:1;
+}
+
+.reach-content h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:2rem;
+  line-height:1.05;
+}
+
+.reach-content>p{
+  color:var(--muted);
+  margin:10px 0 22px;
+  font-size:.9rem;
+}
+
+.route-guide{
+  padding:18px 20px;
+  margin-bottom:22px;
+  border-left:2px solid var(--gold);
+  background:rgba(255,255,255,.025);
+}
+
+.route-guide strong{
+  display:block;
+  color:var(--gold-light);
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.route-guide ol{
+  margin:0;
+  padding-left:20px;
+  color:var(--muted);
+  font-size:.82rem;
+}
+
+.route-guide li{
+  padding:4px 0;
+}
+
+.route-guide b{
+  color:#e9e5dc;
+}
+
+.reach-card .direction-button{
+  width:100%;
+  text-align:center;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+  .reach-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:650px){
+
+  .reach-card{
+    flex-direction:column;
+    gap:16px;
+    padding:24px;
+  }
+
+  .reach-icon{
+    width:44px;
+    min-width:44px;
+    height:44px;
+  }
+
+  .reach-content h3{
+    font-size:1.85rem;
+  }
+
+  .route-guide{
+    padding:16px;
+  }
+
+  .route-guide ol{
+    font-size:.78rem;
+  }
+
+  .reach-card .direction-button{
+    font-size:.68rem;
+    padding:13px 12px;
+  }
+}
