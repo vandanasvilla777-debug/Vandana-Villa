@@ -52,19 +52,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function closeMobileMenu() {
-    mobileMenu?.classList.remove("is-open");
-    menuButton?.classList.remove("is-open");
-    menuButton?.setAttribute("aria-expanded", "false");
-    menuButton?.setAttribute("aria-label", "Open navigation menu");
+  mobileMenu?.classList.remove("is-open");
+  menuButton?.classList.remove("is-open");
+
+  menuButton?.setAttribute("aria-expanded", "false");
+  menuButton?.setAttribute("aria-label", "Open navigation menu");
+
+  document.body.classList.remove("mobile-menu-open");
   }
 
   menuButton?.addEventListener("click", () => {
-    const isOpen = mobileMenu?.classList.toggle("is-open") ?? false;
-    menuButton.classList.toggle("is-open", isOpen);
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-    menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-  });
+  const isOpen = mobileMenu?.classList.toggle("is-open") ?? false;
 
+  menuButton.classList.toggle("is-open", isOpen);
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+  menuButton.setAttribute(
+    "aria-label",
+    isOpen
+      ? "Close navigation menu"
+      : "Open navigation menu"
+  );
+});
   function closeAmenityModal() {
     if (!amenityModal) return;
     amenityModal.classList.remove("active");
@@ -309,4 +322,10 @@ document.addEventListener("DOMContentLoaded", () => {
       image.classList.add("image-not-found");
     });
   });
+});
+document.querySelectorAll("img").forEach((image) => {
+  image.addEventListener("error", () => {
+    image.classList.add("image-not-found");
+  });
+});
 });
