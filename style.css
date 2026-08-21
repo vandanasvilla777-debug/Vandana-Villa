@@ -612,7 +612,43 @@ button{cursor:pointer}
   position:absolute;left:50%;bottom:22px;transform:translateX(-50%);
   color:#e9e2d8;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
 }
+/* VILLA TOUR */
+.villa-tour{
+  background:var(--bg);
+}
 
+.villa-video{
+  width:100%;
+  max-width:1100px;
+  margin:40px auto 0;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:#000;
+  box-shadow:var(--shadow);
+}
+
+.villa-video video{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:650px;
+  object-fit:cover;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .villa-video{
+    margin-top:28px;
+    border-radius:18px;
+  }
+
+  .villa-video video{
+    width:100%;
+    min-height:220px;
+    object-fit:cover;
+  }
+}
 .beaches-section{background:var(--surface)}
 .beach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .beach-card{
