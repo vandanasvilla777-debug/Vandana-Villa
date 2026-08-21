@@ -1249,3 +1249,87 @@ img {
     overflow-x:hidden;
   }
 }
+/* BEFORE YOU ARRIVE */
+
+.before-arrive{
+  background:var(--surface);
+}
+
+.arrival-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:40px;
+}
+
+.arrival-card{
+  padding:28px 24px;
+  min-height:210px;
+  background:var(--surface-2);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  transition:.35s ease;
+}
+
+.arrival-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(199,167,106,.5);
+  box-shadow:var(--shadow);
+}
+
+.arrival-icon{
+  display:block;
+  font-size:2rem;
+  margin-bottom:18px;
+}
+
+.arrival-card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.65rem;
+  line-height:1.1;
+  margin-bottom:10px;
+}
+
+.arrival-card p{
+  color:var(--muted);
+  font-size:.82rem;
+  line-height:1.7;
+}
+
+
+/* TABLET */
+
+@media(max-width:900px){
+  .arrival-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+  .arrival-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:28px;
+  }
+
+  .arrival-card{
+    min-height:auto;
+    padding:23px 20px;
+  }
+
+  .arrival-icon{
+    font-size:1.8rem;
+    margin-bottom:14px;
+  }
+
+  .arrival-card h3{
+    font-size:1.5rem;
+  }
+
+  .arrival-card p{
+    font-size:.8rem;
+  }
+}
