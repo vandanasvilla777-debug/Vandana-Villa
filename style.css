@@ -1209,3 +1209,43 @@ img {
     padding:13px 12px;
   }
 }
+@media (max-width: 600px){
+
+  .container{
+    width:100%;
+    max-width:100%;
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .section{
+    padding-top:70px;
+    padding-bottom:70px;
+  }
+
+  .section-heading h2{
+    font-size:2rem;
+    line-height:1.05;
+  }
+
+  .section-heading p{
+    font-size:.82rem;
+    line-height:1.6;
+    max-width:100%;
+  }
+
+  img,
+  video{
+    max-width:100%;
+  }
+
+  .gallery-grid,
+  .essentials-grid{
+    width:100%;
+    max-width:100%;
+  }
+
+  body{
+    overflow-x:hidden;
+  }
+}
