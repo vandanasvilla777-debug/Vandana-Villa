@@ -323,9 +323,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-document.querySelectorAll("img").forEach((image) => {
-  image.addEventListener("error", () => {
-    image.classList.add("image-not-found");
-  });
-});
-});
+
