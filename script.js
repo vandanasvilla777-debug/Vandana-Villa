@@ -316,11 +316,12 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   }
 
-  // Prevent broken images from creating visually awkward empty blocks.
+    // Prevent broken images from creating visually awkward empty blocks.
   document.querySelectorAll("img").forEach((image) => {
     image.addEventListener("error", () => {
       image.classList.add("image-not-found");
     });
   });
+
 });
 
