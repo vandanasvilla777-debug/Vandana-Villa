@@ -1806,3 +1806,131 @@ img {
     transform: translateY(-7px) rotate(-45deg);
   }
 }
+/* =========================================
+   HOUSE RULES
+   ========================================= */
+
+.house-rules {
+  background: var(--bg);
+}
+
+.house-rules .section-heading {
+  margin-bottom: 45px;
+}
+
+.rules-timing {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 42px;
+}
+
+.timing-card {
+  min-width: 180px;
+  padding: 24px 30px;
+  text-align: center;
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+}
+
+.timing-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: #c9b078;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.timing-card strong {
+  color: #f4eee4;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.house-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.house-rule-card {
+  min-height: 210px;
+  padding: 28px;
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 18px;
+  transition: transform .3s ease,
+              border-color .3s ease,
+              background .3s ease;
+}
+
+.house-rule-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(216,179,106,.35);
+  background: rgba(216,179,106,.05);
+}
+
+.rule-icon {
+  margin-bottom: 22px;
+  font-size: 1.4rem;
+}
+
+.house-rule-card h3 {
+  margin: 0 0 12px;
+  color: #f4eee4;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.house-rule-card p {
+  margin: 0;
+  color: rgba(244,238,228,.68);
+  font-size: .88rem;
+  line-height: 1.75;
+}
+
+.house-rule-card strong {
+  color: #d8b36a;
+}
+
+
+/* MOBILE */
+@media (max-width: 760px) {
+
+  .rules-timing {
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .timing-card {
+    min-width: 0;
+    width: 50%;
+    padding: 18px 10px;
+  }
+
+  .timing-card strong {
+    font-size: 1.65rem;
+  }
+
+  .house-rules-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .house-rule-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .house-rule-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .house-rule-card p {
+    font-size: .84rem;
+  }
+}
