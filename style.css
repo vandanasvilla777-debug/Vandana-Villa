@@ -132,11 +132,6 @@ button{cursor:pointer}
     transform:scale(1);
   }
 }
-.page-loader.is-hidden{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
 .site-header{
   position:fixed;
   z-index:1200;
@@ -2127,4 +2122,9 @@ img {
   .mobile-menu.is-open {
     display: flex !important;
   }
+}
+.page-loader.is-hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
 }
