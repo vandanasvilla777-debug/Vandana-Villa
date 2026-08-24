@@ -66,18 +66,8 @@ button{cursor:pointer}
 }
 .split-heading>p{max-width:390px;margin-bottom:4px}
 
-.page-loader{
-  position:fixed;
-  z-index:5000;
-  inset:0;
-  display:grid;
-  place-items:center;
-  align-content:center;
-  gap:12px;
-  background:#171514;
-  transition:opacity .65s var(--ease),visibility .65s var(--ease);
-}
-/* =========================================
+
+/* ======================================
    PREMIUM LOADER
 ========================================= */
 
