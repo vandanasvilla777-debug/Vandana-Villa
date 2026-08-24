@@ -1933,4 +1933,163 @@ img {
   .house-rule-card p {
     font-size: .84rem;
   }
+} /* =========================================
+    HOUSE RULES — COMPACT LUXURY FIX
+    ========================================= */
+
+.house-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.house-rule-card {
+  min-height: 0 !important;
+  height: auto;
+  padding: 24px 22px;
+  border-radius: 16px;
+}
+
+.house-rule-card .rule-icon {
+  margin-bottom: 14px;
+  font-size: 1.25rem;
+}
+
+.house-rule-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.house-rule-card p {
+  font-size: .82rem;
+  line-height: 1.55;
+}
+
+
+/* TABLET */
+@media (max-width: 900px) {
+  .house-rules-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  .house-rules .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .rules-timing {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .timing-card {
+    padding: 17px 10px;
+    border-radius: 15px;
+  }
+
+  .timing-card strong {
+    font-size: 1.55rem;
+  }
+
+  .house-rules-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .house-rule-card {
+    min-height: 0 !important;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .house-rule-card .rule-icon {
+    margin-bottom: 9px;
+    font-size: 1.15rem;
+  }
+
+  .house-rule-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+  }
+
+  .house-rule-card p {
+    font-size: .8rem;
+    line-height: 1.5;
+  }
+}
+/* =========================================
+   FINAL MOBILE MENU FIX
+   ========================================= */
+
+@media (max-width: 760px) {
+
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5000;
+  }
+
+  .nav-container {
+    min-height: 72px;
+    width: 100%;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .menu-button {
+    display: flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    margin-left: auto !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: 1px solid rgba(214,179,106,.45);
+    border-radius: 50%;
+    cursor: pointer;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 6000;
+  }
+
+  .menu-button span {
+    display: block !important;
+    width: 20px !important;
+    height: 2px !important;
+    background: #d6b36a !important;
+    border-radius: 2px;
+  }
+
+  .mobile-menu {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(24,22,20,.98);
+    z-index: 5500;
+  }
+
+  .mobile-menu.is-open {
+    display: flex !important;
+    flex-direction: column;
+  }
 }
