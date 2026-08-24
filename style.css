@@ -2022,74 +2022,59 @@ img {
     line-height: 1.5;
   }
 }
+
 /* =========================================
-   FINAL MOBILE MENU FIX
+   FINAL MOBILE MENU BUTTON
    ========================================= */
 
 @media (max-width: 760px) {
 
-  .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 5000;
+  .menu-button {
+    display: flex !important;
+    position: relative !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    padding: 0 !important;
+    margin-left: auto !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+
+    background: rgba(24,22,20,.92) !important;
+    border: 1px solid #d6b36a !important;
+    border-radius: 50% !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 99999 !important;
   }
 
-  .nav-container {
-    min-height: 72px;
-    width: 100%;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .menu-button span {
+    display: block !important;
+    width: 19px !important;
+    height: 2px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #d6b36a !important;
+    border-radius: 2px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .desktop-nav {
     display: none !important;
   }
 
-  .menu-button {
-    display: flex !important;
-    width: 44px !important;
-    height: 44px !important;
-    margin-left: auto !important;
-    padding: 0 !important;
-    flex-shrink: 0 !important;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 5px;
-    background: transparent;
-    border: 1px solid rgba(214,179,106,.45);
-    border-radius: 50%;
-    cursor: pointer;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: relative;
-    z-index: 6000;
-  }
-
-  .menu-button span {
-    display: block !important;
-    width: 20px !important;
-    height: 2px !important;
-    background: #d6b36a !important;
-    border-radius: 2px;
-  }
-
   .mobile-menu {
     display: none !important;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(24,22,20,.98);
-    z-index: 5500;
+    z-index: 99998 !important;
   }
 
   .mobile-menu.is-open {
     display: flex !important;
-    flex-direction: column;
   }
 }
