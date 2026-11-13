@@ -18,13 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const enquiryForm = document.getElementById("enquiryForm");
   const dateInput = document.getElementById("date");
+  const checkoutInput = document.getElementById("checkout");
 
   const galleryLightbox = document.getElementById("galleryLightbox");
   const galleryLightboxClose = document.getElementById("galleryLightboxClose");
   const galleryLightboxImage = document.getElementById("galleryLightboxImage");
   const lightboxCaption = document.getElementById("lightboxCaption");
 
-  const whatsappNumber = "919601996733";
+  const whatsappNumber = "919769602777";
 
   if (currentYear) {
     currentYear.textContent = new Date().getFullYear();
@@ -252,9 +253,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = String(formData.get("name") || "").trim();
       const phone = String(formData.get("phone") || "").trim();
       const date = String(formData.get("date") || "").trim();
+      const checkout = String(formData.get("checkout") || "").trim();
       const guests = String(formData.get("guests") || "").trim();
       const message = String(formData.get("message") || "").trim();
-
+      const digits = phone.replace(/\D/g, "");
+      if (digits.length < 10 || digits.length > 13) {
+        const formMessage = enquiryForm.querySelector(".form-message");
+        if (formMessage) formMessage.textContent = "Please enter a valid phone / WhatsApp number.";
+        document.getElementById("phone")?.focus();
+        return;
+      }
+      if (date && checkout && checkout <= date) {
+        const formMessage = enquiryForm.querySelector(".form-message");
+        if (formMessage) formMessage.textContent = "Check-out date must be after check-in date.";
+        checkoutInput?.focus();
+        return;
+      }
       const whatsappMessage = [
         "Hello Vandana Villa,",
         "",
@@ -262,7 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "",
         `Name: ${name}`,
         `WhatsApp / Phone: ${phone}`,
-        `Preferred Date: ${date || "Not specified"}`,
+        `Check-in: ${date || "Not specified"}`,
+        `Check-out: ${checkout || "Not specified"}`,
         `Number of Guests: ${guests || "Not specified"}`,
         "",
         "Message:",
@@ -290,6 +305,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const month = String(today.getMonth() + 1).padStart(2, "0");
     const day = String(today.getDate()).padStart(2, "0");
     dateInput.min = `${year}-${month}-${day}`;
+    if (checkoutInput) checkoutInput.min = dateInput.value || `${year}-${month}-${day}`;
+    dateInput.addEventListener("change", () => {
+      if (checkoutInput) {
+        checkoutInput.min = dateInput.value || `${year}-${month}-${day}`;
+        if (checkoutInput.value && checkoutInput.value <= dateInput.value) checkoutInput.value = "";
+      }
+    });
   }
 
   window.addEventListener("resize", () => {
