@@ -2180,3 +2180,90 @@ button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+/* =================================
+   VANDANA VILLA — LIGHT LUXURY THEME
+================================= */
+
+:root {
+  --bg: #F8F6F0;
+  --surface: #EFECE3;
+  --surface-2: #E7E3D8;
+  --surface-3: #DDD8CA;
+
+  --text: #292B27;
+  --muted: #77776D;
+
+  --gold: #B69A67;
+  --gold-light: #92784D;
+  --cream: #F8F6F0;
+
+  --line: rgba(41,43,39,.12);
+  --line-gold: rgba(182,154,103,.35);
+
+  --shadow: 0 24px 70px rgba(40,35,25,.10);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page-loader {
+  background: var(--bg);
+}
+
+.page-loader > span {
+  color: var(--text);
+}
+
+.site-header.scrolled {
+  background: rgba(248,246,240,.96);
+  box-shadow: 0 8px 30px rgba(40,35,25,.08);
+}
+
+.desktop-nav a,
+.mobile-menu a {
+  color: var(--text);
+}
+
+.mobile-menu {
+  background: var(--bg);
+}
+
+.menu-button span {
+  background: var(--text);
+}
+
+.about {
+  background: var(--surface);
+}
+
+.amenities-section {
+  background: var(--bg);
+}
+
+.amenity-card {
+  background: #FFFFFF;
+  box-shadow: 0 8px 25px rgba(40,35,25,.04);
+}
+
+.amenity-card:hover {
+  background: #F5F1E7;
+  box-shadow: 0 15px 35px rgba(40,35,25,.09);
+}
+
+.amenity-modal-content {
+  background: var(--surface);
+}
+
+.amenity-modal-close {
+  color: var(--text);
+}
+
+.fact-card {
+  background: rgba(255,255,255,.65);
+}
+
+.hero {
+  background: #292B27;
+}
