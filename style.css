@@ -2315,3 +2315,32 @@ body {
 .house-rule-card strong {
   color: #92784D !important;
 }
+/* STEP 4 — PREMIUM LIGHT HEADER */
+
+.site-header.scrolled {
+  background: rgba(248, 246, 240, 0.97) !important;
+  border-bottom: 1px solid #E5DFD2;
+  box-shadow: 0 5px 22px rgba(40, 35, 25, 0.08);
+}
+
+.site-header.scrolled .desktop-nav a {
+  color: #292B27 !important;
+}
+
+.site-header.scrolled .menu-button span {
+  background: #292B27 !important;
+}
+
+.mobile-menu {
+  background: #F8F6F0 !important;
+  color: #292B27 !important;
+}
+
+.mobile-menu a {
+  color: #292B27 !important;
+  border-bottom: 1px solid #E5DFD2;
+}
+
+.mobile-menu a:hover {
+  color: #92784D !important;
+}
