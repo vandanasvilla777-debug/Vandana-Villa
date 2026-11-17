@@ -2267,3 +2267,51 @@ body {
 .hero {
   background: #292B27;
 }
+/* LIGHT THEME — TEXT VISIBILITY FIX */
+
+.about-content .lead {
+  color: #393A34 !important;
+}
+
+.about-content p {
+  color: #68685F !important;
+}
+
+.fact-card strong {
+  color: #92784D !important;
+}
+
+.fact-card span {
+  color: #68685F !important;
+}
+
+/* House Rules */
+.timing-card {
+  background: #FFFFFF !important;
+  border-color: #E5DFD2 !important;
+}
+
+.timing-card span {
+  color: #92784D !important;
+}
+
+.timing-card strong {
+  color: #292B27 !important;
+}
+
+.house-rule-card {
+  background: #FFFFFF !important;
+  border-color: #E5DFD2 !important;
+}
+
+.house-rule-card h3 {
+  color: #292B27 !important;
+}
+
+.house-rule-card p {
+  color: #68685F !important;
+}
+
+.house-rule-card strong {
+  color: #92784D !important;
+}
