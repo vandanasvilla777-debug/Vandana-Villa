@@ -257,15 +257,25 @@ document.addEventListener("DOMContentLoaded", () => {
       const guests = String(formData.get("guests") || "").trim();
       const message = String(formData.get("message") || "").trim();
       const digits = phone.replace(/\D/g, "");
+      const formMessage = enquiryForm.querySelector(".form-message");
+      const showFormMessage = (message, type = "error") => {
+        if (!formMessage) return;
+        formMessage.textContent = message;
+        formMessage.classList.toggle("is-error", type === "error");
+        formMessage.classList.toggle("is-success", type === "success");
+      };
       if (digits.length < 10 || digits.length > 13) {
-        const formMessage = enquiryForm.querySelector(".form-message");
-        if (formMessage) formMessage.textContent = "Please enter a valid phone / WhatsApp number.";
+        showFormMessage("Please enter a valid phone / WhatsApp number.");
         document.getElementById("phone")?.focus();
         return;
       }
+      if (guests && (!Number.isInteger(Number(guests)) || Number(guests) < 1 || Number(guests) > 20)) {
+        showFormMessage("Please enter a total group size between 1 and 20 guests.");
+        document.getElementById("guests")?.focus();
+        return;
+      }
       if (date && checkout && checkout <= date) {
-        const formMessage = enquiryForm.querySelector(".form-message");
-        if (formMessage) formMessage.textContent = "Check-out date must be after check-in date.";
+        showFormMessage("Check-out date must be after check-in date.");
         checkoutInput?.focus();
         return;
       }
@@ -291,11 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       window.open(whatsappURL, "_blank", "noopener,noreferrer");
 
-      const formMessage = enquiryForm.querySelector(".form-message");
-      if (formMessage) {
-        formMessage.textContent =
-          "Your enquiry is ready to send on WhatsApp.";
-      }
+      showFormMessage("Your enquiry is ready to send on WhatsApp. Please tap Send in WhatsApp to complete it.", "success");
     });
   }
 

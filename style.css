@@ -2180,167 +2180,21 @@ button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
-/* =================================
-   VANDANA VILLA — LIGHT LUXURY THEME
-================================= */
 
-:root {
-  --bg: #F8F6F0;
-  --surface: #EFECE3;
-  --surface-2: #E7E3D8;
-  --surface-3: #DDD8CA;
 
-  --text: #292B27;
-  --muted: #77776D;
-
-  --gold: #B69A67;
-  --gold-light: #92784D;
-  --cream: #F8F6F0;
-
-  --line: rgba(41,43,39,.12);
-  --line-gold: rgba(182,154,103,.35);
-
-  --shadow: 0 24px 70px rgba(40,35,25,.10);
+/* Website maintenance pass: clearer tentative timing and form feedback */
+.timing-note {
+  margin: 14px auto 0;
+  max-width: 720px;
+  text-align: center;
+  color: rgba(255,255,255,.68);
+  font-size: .82rem;
+  line-height: 1.6;
 }
-
-body {
-  background: var(--bg);
-  color: var(--text);
+.form-message {
+  min-height: 1.5em;
+  margin-top: 10px;
+  line-height: 1.5;
 }
-
-.page-loader {
-  background: var(--bg);
-}
-
-.page-loader > span {
-  color: var(--text);
-}
-
-.site-header.scrolled {
-  background: rgba(248,246,240,.96);
-  box-shadow: 0 8px 30px rgba(40,35,25,.08);
-}
-
-.desktop-nav a,
-.mobile-menu a {
-  color: var(--text);
-}
-
-.mobile-menu {
-  background: var(--bg);
-}
-
-.menu-button span {
-  background: var(--text);
-}
-
-.about {
-  background: var(--surface);
-}
-
-.amenities-section {
-  background: var(--bg);
-}
-
-.amenity-card {
-  background: #FFFFFF;
-  box-shadow: 0 8px 25px rgba(40,35,25,.04);
-}
-
-.amenity-card:hover {
-  background: #F5F1E7;
-  box-shadow: 0 15px 35px rgba(40,35,25,.09);
-}
-
-.amenity-modal-content {
-  background: var(--surface);
-}
-
-.amenity-modal-close {
-  color: var(--text);
-}
-
-.fact-card {
-  background: rgba(255,255,255,.65);
-}
-
-.hero {
-  background: #292B27;
-}
-/* LIGHT THEME — TEXT VISIBILITY FIX */
-
-.about-content .lead {
-  color: #393A34 !important;
-}
-
-.about-content p {
-  color: #68685F !important;
-}
-
-.fact-card strong {
-  color: #92784D !important;
-}
-
-.fact-card span {
-  color: #68685F !important;
-}
-
-/* House Rules */
-.timing-card {
-  background: #FFFFFF !important;
-  border-color: #E5DFD2 !important;
-}
-
-.timing-card span {
-  color: #92784D !important;
-}
-
-.timing-card strong {
-  color: #292B27 !important;
-}
-
-.house-rule-card {
-  background: #FFFFFF !important;
-  border-color: #E5DFD2 !important;
-}
-
-.house-rule-card h3 {
-  color: #292B27 !important;
-}
-
-.house-rule-card p {
-  color: #68685F !important;
-}
-
-.house-rule-card strong {
-  color: #92784D !important;
-}
-/* STEP 4 — PREMIUM LIGHT HEADER */
-
-.site-header.scrolled {
-  background: rgba(248, 246, 240, 0.97) !important;
-  border-bottom: 1px solid #E5DFD2;
-  box-shadow: 0 5px 22px rgba(40, 35, 25, 0.08);
-}
-
-.site-header.scrolled .desktop-nav a {
-  color: #292B27 !important;
-}
-
-.site-header.scrolled .menu-button span {
-  background: #292B27 !important;
-}
-
-.mobile-menu {
-  background: #F8F6F0 !important;
-  color: #292B27 !important;
-}
-
-.mobile-menu a {
-  color: #292B27 !important;
-  border-bottom: 1px solid #E5DFD2;
-}
-
-.mobile-menu a:hover {
-  color: #92784D !important;
-}
+.form-message.is-error { color: #ffb4a9; }
+.form-message.is-success { color: #b8dfbd; }
