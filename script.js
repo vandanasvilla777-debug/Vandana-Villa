@@ -145,31 +145,41 @@ document.addEventListener("DOMContentLoaded", () => {
     ...document.querySelectorAll(".desktop-nav a, .mobile-menu a")
   ];
 
-  function updateActiveNavigation() {
-    let currentSection = "home";
-    const scrollPosition =
-      window.scrollY + (header ? header.offsetHeight : 0) + 140;
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.offsetHeight;
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        currentSection = section.id;
-      }
-    });
-
+   function setActiveNavigation(sectionId) {
     navLinks.forEach((link) => {
       link.classList.toggle(
         "active",
-        link.getAttribute("href") === `#${currentSection}`
+        link.getAttribute("href") === `#${sectionId}`
       );
     });
   }
 
-  window.addEventListener("scroll", updateActiveNavigation, { passive: true });
-  window.addEventListener("resize", updateActiveNavigation);
-  updateActiveNavigation();
+  const navigationObserver = new IntersectionObserver(
+    (entries) => {
+      const visibleSections = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort(
+          (a, b) =>
+            a.boundingClientRect.top - b.boundingClientRect.top
+        );
+
+      if (visibleSections.length) {
+        setActiveNavigation(visibleSections[0].target.id);
+      } else if (window.scrollY < 200) {
+        setActiveNavigation("home");
+      }
+    },
+    {
+      rootMargin: "-140px 0px -65% 0px",
+      threshold: 0
+    }
+  );
+
+  sections.forEach((section) => {
+    navigationObserver.observe(section);
+  });
+
+  setActiveNavigation("home");
 
   function openAmenityModal(card) {
     if (!amenityModal) return;
