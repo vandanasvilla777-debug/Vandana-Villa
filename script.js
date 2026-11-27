@@ -31,9 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentYear.textContent = new Date().getFullYear();
   }
 
-  window.addEventListener("load", () => {
-    window.setTimeout(() => pageLoader?.classList.add("is-hidden"), 250);
-  });
+pageLoader?.classList.add("is-hidden");
 
   function handleScroll() {
     if (header) {
